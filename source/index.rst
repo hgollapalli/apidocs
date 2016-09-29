@@ -63,10 +63,12 @@ FlexSwitch API Model
 
 FlexSwitch Objects 
 ------------------
+        FlexSwitch Objects are classified into config and state objects. Below link contains the list of model objects provided by FlexSwitch.
+
 .. toctree::
    :maxdepth: 2
 
-
+   Model Objects       <modelObjects>
 
 
 Indices and tables
