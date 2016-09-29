@@ -1,0 +1,119 @@
+PortState Model Objects
+============================================
+
+*state/Port*
+------------------------------------
+
+- **IntfRef**
+	- **Data Type**: string
+	- **Description**: Front panel port name or system assigned interface id.
+	- This parameter is key element.
+- **IfEtherJabber**
+	- **Data Type**: int64
+	- **Description**: RFC 1757 Total number of jabber frames received and transmitted.
+- **IfEtherPkts128To255Octets**
+	- **Data Type**: int64
+	- **Description**: RFC 1757 Total number of ethernet packets sized between 128 and 255 bytes.
+- **IfInUcastPkts**
+	- **Data Type**: int64
+	- **Description**: RFC2233 Total number of unicast packets received on this port.
+- **IfOutDiscards**
+	- **Data Type**: int64
+	- **Description**: RFC2233 Total number of error free packets discarded and not transmitted.
+- **LastDownEventTime**
+	- **Data Type**: string
+	- **Description**: Timestamp corresponding to the last UP to DOWN operational state change event.
+- **LastUpEventTime**
+	- **Data Type**: string
+	- **Description**: Timestamp corresponding to the last DOWN to UP operational state change event.
+- **Pvid**
+	- **Data Type**: int32
+	- **Description**: The vlanid assigned to untagged traffic ingressing this port.
+- **ConfigMode**
+	- **Data Type**: string
+	- **Description**: The current mode of configuration on this port (L2/L3/Internal).
+- **IfEtherBcastPkts**
+	- **Data Type**: int64
+	- **Description**: RFC 1757 Total number of ethernet broadcast packets received and transmitted.
+- **IfEtherFragments**
+	- **Data Type**: int64
+	- **Description**: RFC1757 Total number of ethernet fragments received and transmitted.
+- **IfIndex**
+	- **Data Type**: int32
+	- **Description**: System assigned interface id for this port.
+- **IfEtherCRCAlignError**
+	- **Data Type**: int64
+	- **Description**: RFC 1757 Total number of CRC alignment errors.
+- **IfEtherPkts**
+	- **Data Type**: int64
+	- **Description**: RFC 1757 Total number of ethernet packets received and transmitted.
+- **IfOutErrors**
+	- **Data Type**: int64
+	- **Description**: RFC2233 Total number of packets discarded and not transmitted due to packet errors.
+- **IfOutUcastPkts**
+	- **Data Type**: int64
+	- **Description**: RFC2233 Total number of unicast packets transmitted on this port.
+- **IfEtherMCPkts**
+	- **Data Type**: int64
+	- **Description**: RFC 1757 Total number of multicast packets received and transmitted.
+- **IfEtherPkts1024To1518Octets**
+	- **Data Type**: int64
+	- **Description**: RFC 1757 Total number of ethernet packets sized between 1024 and 1518 bytes.
+- **IfEtherPkts512To1023Octets**
+	- **Data Type**: int64
+	- **Description**: RFC 1757 Total number of ethernet packets sized between 512 and 1023 bytes.
+- **IfInUnknownProtos**
+	- **Data Type**: int64
+	- **Description**: RFC2233 Total number of inbound packets discarded due to unknown protocol.
+- **IfEtherPkts256To511Octets**
+	- **Data Type**: int64
+	- **Description**: RFC 1757 Total number of ethernet packets sized between 256 and 511 bytes.
+- **IfEtherUnderSizePktCnt**
+	- **Data Type**: int64
+	- **Description**: RFC 1757 Total numbe of undersized packets received and transmitted.
+- **NumUpEvents**
+	- **Data Type**: int32
+	- **Description**: Number of times the operational state transitioned from DOWN to UP.
+- **IfInOctets**
+	- **Data Type**: int64
+	- **Description**: RFC2233 Total number of octets received on this port.
+- **OperState**
+	- **Data Type**: string
+	- **Description**: Operational state of front panel port.
+- **ErrDisableReason**
+	- **Data Type**: string
+	- **Description**: Reason explaining why port has been disabled by protocol code.
+- **IfEtherPkts65To127Octets**
+	- **Data Type**: int64
+	- **Description**: RFC 1757 Total number of ethernet packets sized between 65 and 127 bytes.
+- **IfInDiscards**
+	- **Data Type**: int64
+	- **Description**: RFC2233 Total number of inbound packets that were discarded.
+- **IfInErrors**
+	- **Data Type**: int64
+	- **Description**: RFC2233 Total number of inbound packets that contained an error.
+- **Name**
+	- **Data Type**: string
+	- **Description**: System assigned vlan name.
+- **PresentInHW**
+	- **Data Type**: string
+	- **Description**: Indication of whether this port object maps to a physical port. Set to 'No' for ports that are not broken out..
+- **IfEtherOverSizePktCnt**
+	- **Data Type**: int64
+	- **Description**: RFC 1757 Total number of oversized packets received and transmitted.
+- **IfEtherPkts64OrLessOctets**
+	- **Data Type**: int64
+	- **Description**: RFC1757 Total number of ethernet packets sized 64 bytes or lesser.
+- **IfOutOctets**
+	- **Data Type**: int64
+	- **Description**: RFC2233 Total number of octets transmitted on this port.
+- **NumDownEvents**
+	- **Data Type**: int32
+	- **Description**: Number of times the operational state transitioned from UP to DOWN.
+
+
+**REST API Supported:**
+	- GET
+		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://<device-management-IP>:8080/public/v1/state/Port
+
+
