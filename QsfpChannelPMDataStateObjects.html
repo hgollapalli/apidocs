@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>FlexSwitch API Documentation &mdash; FlexSwitchApis 1.0 documentation</title>
+  <title>QsfpChannelPMDataState Model Objects &mdash; FlexSwitchApis 1.0 documentation</title>
   
 
   
@@ -30,8 +30,10 @@
   
 
   
-    <link rel="top" title="FlexSwitchApis 1.0 documentation" href="#"/>
-        <link rel="next" title="FlexSwitch Model Objects" href="modelObjects.html"/> 
+    <link rel="top" title="FlexSwitchApis 1.0 documentation" href="index.html"/>
+        <link rel="up" title="FlexSwitch Model Objects" href="modelObjects.html"/>
+        <link rel="next" title="VoltageSensorState Model Objects" href="VoltageSensorStateObjects.html"/>
+        <link rel="prev" title="TemperatureSensor Model Objects" href="TemperatureSensorObjects.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -49,7 +51,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> FlexSwitchApis
+            <a href="index.html" class="icon icon-home"> FlexSwitchApis
           
 
           
@@ -80,126 +82,8 @@
           
             
             
-                <ul>
-<li class="toctree-l1"><a class="reference internal" href="modelObjects.html">Model Objects</a></li>
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="#">FlexSwitchApis</a>
-      </nav>
-
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          
-
- 
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="#">Docs</a> &raquo;</li>
-      
-    <li>FlexSwitch API Documentation</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
-  <div class="section" id="flexswitch-api-documentation">
-<h1>FlexSwitch API Documentation<a class="headerlink" href="#flexswitch-api-documentation" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><dl class="docutils">
-<dt><strong>FlexSwitch offers the following :</strong></dt>
-<dd><ul class="first last simple">
-<li>Fully programmable network protocol stack</li>
-<li>RESTful APIs at every level</li>
-<li>Highly customizable behavior</li>
-<li>Works on variety of switching silicon like Broadcom, Mellonox, Cavium, Barefoot</li>
-<li>Works with select Optical Modules</li>
-<li>Portable architecture to work on hardware from variety of vendors like Acton, Celestica, Alpha Networks, Facebook Wedge</li>
-<li>Highly instrumented to help the Network operators troubleshoot issues</li>
-</ul>
-</dd>
-</dl>
-</div></blockquote>
-<div class="section" id="who-should-read-this-document">
-<h2>Who should read this document<a class="headerlink" href="#who-should-read-this-document" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>This document is primarily intended for developers working in the areas like Network Management Systems (NMS), Element Management Systems (EMS). This document would also help any developer interested in developing creative applications.</p>
-<p>This document attempts to introduce you to <strong>REST API</strong> (REpresentational State Transfer) semantics in section <a class="reference internal" href="#rest-primer"><span class="std std-ref">What is REST API any way</span></a>. Feel free to skip this secion if you are a REST ninja.</p>
-<p>FlexSwitch software model for REST APIs is described in <a class="reference internal" href="#flex-api-model"><span class="std std-ref">FlexSwitch API Model</span></a>. FlexSwitch objects a.k.a REST endpoints are described in  <a class="reference internal" href="#flex-object-model"><span class="std std-ref">FlexSwitch Objects</span></a>.</p>
-</div></blockquote>
-</div>
-<div class="section" id="what-is-rest-api-any-way">
-<span id="rest-primer"></span><h2>What is REST API any way<a class="headerlink" href="#what-is-rest-api-any-way" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>REST is a simple way to organize interactions between independent systems. REST model is not limited to a particular transportation, however HTTP/HTTPS is the most used form of transfer protocol for REST based systems.
-REST design constitutes of resources (objects) and verbs (operations). The resources are generally designed to be independent. All resources support similar operations. Common operations supported by FlexSwitch software and their purpose is listed below</div></blockquote>
-<table border="1" class="docutils">
-<colgroup>
-<col width="34%" />
-<col width="17%" />
-<col width="49%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Operation</th>
-<th class="head" colspan="2">Purpose</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>GET</td>
-<td colspan="2">Retrieve a object</td>
-</tr>
-<tr class="row-odd"><td>POST</td>
-<td colspan="2">Create an object</td>
-</tr>
-<tr class="row-even"><td>PATCH</td>
-<td colspan="2">Update an existing object</td>
-</tr>
-<tr class="row-odd"><td>DELETE</td>
-<td colspan="2">Delete an existing object</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="flexswitch-api-model">
-<span id="flex-api-model"></span><h2>FlexSwitch API Model<a class="headerlink" href="#flexswitch-api-model" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>FlexSwitch partitions objects into config, state objects. These APIs allow users to configure or retrieve various objects.
-All the config APIs are identified by the URL <a class="reference external" href="http://ipaddress/public">http://ipaddress/public</a>/v&lt;Version#&gt;/config/&lt;object&gt;.</p>
-<p>Similarly all the state objects are identified by the URL <a class="reference external" href="http://ipaddress/public">http://ipaddress/public</a>/v&lt;Version#&gt;/state/&lt;object&gt;.</p>
-<p>In addition to these APIs FlexSwitch also supports retrieving of all autonomus events happened in the system with a URL at <a class="reference external" href="http://ipaddress/public/v1/events/Events/">http://ipaddress/public/v1/events/Events/</a>.</p>
-<p>Similarly FlexSwitch provides Faults and Alarms.  The following sections describe complete object list in detail</p>
-</div></blockquote>
-</div>
-<div class="section" id="flexswitch-objects">
-<span id="flex-object-model"></span><h2>FlexSwitch Objects<a class="headerlink" href="#flexswitch-objects" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div>FlexSwitch Objects are classified into config and state objects. Below link contains the list of model objects provided by FlexSwitch.</div></blockquote>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="modelObjects.html">Model Objects</a><ul>
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modelObjects.html">Model Objects</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ConfigLogStateObjects.html">ConfigLogState</a></li>
 <li class="toctree-l2"><a class="reference internal" href="XponderGlobalStateObjects.html">XponderGlobalState</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SystemStatusStateObjects.html">SystemStatusState</a></li>
@@ -247,22 +131,138 @@ All the config APIs are identified by the URL <a class="reference external" href
 <li class="toctree-l2"><a class="reference internal" href="FanSensorObjects.html">FanSensor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="QsfpChannelStateObjects.html">QsfpChannelState</a></li>
 <li class="toctree-l2"><a class="reference internal" href="TemperatureSensorObjects.html">TemperatureSensor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="QsfpChannelPMDataStateObjects.html">QsfpChannelPMDataState</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">QsfpChannelPMDataState</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#state-qsfpchannelpmdata"><em>state/QsfpChannelPMData</em></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="VoltageSensorStateObjects.html">VoltageSensorState</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PowerConverterSensorObjects.html">PowerConverterSensor</a></li>
 </ul>
 </li>
 </ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">FlexSwitchApis</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="modelObjects.html">FlexSwitch Model Objects</a> &raquo;</li>
+      
+    <li>QsfpChannelPMDataState Model Objects</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/QsfpChannelPMDataStateObjects.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
 </div>
-</div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="qsfpchannelpmdatastate-model-objects">
+<h1>QsfpChannelPMDataState Model Objects<a class="headerlink" href="#qsfpchannelpmdatastate-model-objects" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="state-qsfpchannelpmdata">
+<h2><em>state/QsfpChannelPMData</em><a class="headerlink" href="#state-qsfpchannelpmdata" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Multiple of these objects can exist in a system.</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>QsfpId</strong></dt>
+<dd><ul class="first last simple">
+<li><strong>Data Type</strong>: int32</li>
+<li><strong>Description</strong>: QSFP Id.</li>
+<li>This parameter is key element.</li>
 </ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Resource</strong></dt>
+<dd><ul class="first last simple">
+<li><strong>Data Type</strong>: string</li>
+<li><strong>Description</strong>: QSFP PM Resource Name.</li>
+<li>This parameter is key element.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>ChannelNum</strong></dt>
+<dd><ul class="first last simple">
+<li><strong>Data Type</strong>: int32</li>
+<li><strong>Description</strong>: Qsfp Channel Number.</li>
+<li>This parameter is key element.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Class</strong></dt>
+<dd><ul class="first last simple">
+<li><strong>Data Type</strong>: string</li>
+<li><strong>Description</strong>: Class of PM Data.</li>
+<li><strong>Default</strong>: CLASS-A</li>
+<li><strong>Possible Values</strong>: CLASS-A, CLASS-B, CLASS-B</li>
+<li>This parameter is key element.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Data</strong></dt>
+<dd><ul class="first last simple">
+<li><strong>Data Type</strong>: QsfpChannelPMData</li>
+<li><strong>Description</strong>: .</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="docutils">
+<dt><strong>Flexswitch API Supported:</strong></dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>GET By Key</dt>
+<dd><p class="first last">curl -X GET -H &#8216;Content-Type: application/json&#8217; &#8211;header &#8216;Accept: application/json&#8217; -d &#8216;{&lt;Model Object as json-Data&gt;}&#8217; <a class="reference external" href="http://device-management-IP:8080/public/v1/state/QsfpChannelPMData">http://device-management-IP:8080/public/v1/state/QsfpChannelPMData</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>GET ALL</dt>
+<dd><p class="first last">curl -X GET <a class="reference external" href="http://device-management-IP:8080/public/v1/state/QsfpChannelPMData">http://device-management-IP:8080/public/v1/state/QsfpChannelPMData</a>?CurrentMarker=&lt;x&gt;&amp;Count=&lt;y&gt;</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
 </div>
 
 
@@ -272,8 +272,10 @@ All the config APIs are identified by the URL <a class="reference external" href
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="modelObjects.html" class="btn btn-neutral float-right" title="FlexSwitch Model Objects" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="VoltageSensorStateObjects.html" class="btn btn-neutral float-right" title="VoltageSensorState Model Objects" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
+      
+        <a href="TemperatureSensorObjects.html" class="btn btn-neutral" title="TemperatureSensor Model Objects" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
