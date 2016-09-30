@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SystemStatusState Model Objects &mdash; FlexSwitchApis 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="FlexSwitchApis 1.0 documentation" href="index.html"/>
+        <link rel="up" title="FlexSwitch Model Objects" href="modelObjects.html"/>
+        <link rel="next" title="SystemSwVersionState Model Objects" href="SystemSwVersionStateObjects.html"/>
+        <link rel="prev" title="XponderGlobalState Model Objects" href="XponderGlobalStateObjects.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> FlexSwitchApis
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modelObjects.html">Model Objects</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ConfigLogStateObjects.html">ConfigLogState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="XponderGlobalStateObjects.html">XponderGlobalState</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SystemStatusState</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#state-systemstatus"><em>state/SystemStatus</em></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SystemSwVersionStateObjects.html">SystemSwVersionState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="XponderGlobalObjects.html">XponderGlobal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ApiInfoStateObjects.html">ApiInfoState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DWDMModuleObjects.html">DWDMModule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DWDMModuleClntIntfObjects.html">DWDMModuleClntIntf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DWDMModuleNwIntfPMStateObjects.html">DWDMModuleNwIntfPMState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DWDMModuleNwIntfObjects.html">DWDMModuleNwIntf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DWDMModuleClntIntfStateObjects.html">DWDMModuleClntIntfState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DWDMModuleNwIntfStateObjects.html">DWDMModuleNwIntfState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FaultStateObjects.html">FaultState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FMgrGlobalObjects.html">FMgrGlobal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AlarmStateObjects.html">AlarmState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NotifierEnableObjects.html">NotifierEnable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AsicGlobalStateObjects.html">AsicGlobalState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EthernetPMStateObjects.html">EthernetPMState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MacTableEntryStateObjects.html">MacTableEntryState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AsicGlobalPMObjects.html">AsicGlobalPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VlanObjects.html">Vlan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PortStateObjects.html">PortState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AsicGlobalPMStateObjects.html">AsicGlobalPMState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EthernetPMObjects.html">EthernetPM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PortObjects.html">Port</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VlanStateObjects.html">VlanState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DaemonStateObjects.html">DaemonState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SystemParamObjects.html">SystemParam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ComponentLoggingObjects.html">ComponentLogging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SystemLoggingObjects.html">SystemLogging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SystemParamStateObjects.html">SystemParamState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TemperatureSensorStateObjects.html">TemperatureSensorState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerConverterSensorStateObjects.html">PowerConverterSensorState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VoltageSensorObjects.html">VoltageSensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TemperatureSensorPMDataStateObjects.html">TemperatureSensorPMDataState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FanSensorPMDataStateObjects.html">FanSensorPMDataState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PlatformMgmtDeviceStateObjects.html">PlatformMgmtDeviceState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerConverterSensorPMDataStateObjects.html">PowerConverterSensorPMDataState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="QsfpObjects.html">Qsfp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VoltageSensorPMDataStateObjects.html">VoltageSensorPMDataState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="QsfpStateObjects.html">QsfpState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="QsfpPMDataStateObjects.html">QsfpPMDataState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FanSensorStateObjects.html">FanSensorState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="QsfpChannelObjects.html">QsfpChannel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FanSensorObjects.html">FanSensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="QsfpChannelStateObjects.html">QsfpChannelState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TemperatureSensorObjects.html">TemperatureSensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="QsfpChannelPMDataStateObjects.html">QsfpChannelPMDataState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VoltageSensorStateObjects.html">VoltageSensorState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PowerConverterSensorObjects.html">PowerConverterSensor</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">FlexSwitchApis</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="modelObjects.html">FlexSwitch Model Objects</a> &raquo;</li>
+      
+    <li>SystemStatusState Model Objects</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/SystemStatusStateObjects.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="systemstatusstate-model-objects">
+<h1>SystemStatusState Model Objects<a class="headerlink" href="#systemstatusstate-model-objects" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="state-systemstatus">
+<h2><em>state/SystemStatus</em><a class="headerlink" href="#state-systemstatus" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Only one of these object can exist in a system.</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Name</strong></dt>
+<dd><ul class="first last simple">
+<li><strong>Data Type</strong>: string</li>
+<li><strong>Description</strong>: Name of the system.</li>
+<li>This parameter is key element.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Reason</strong></dt>
+<dd><ul class="first last simple">
+<li><strong>Data Type</strong>: string</li>
+<li><strong>Description</strong>: Reason if system not ready.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>UpTime</strong></dt>
+<dd><ul class="first last simple">
+<li><strong>Data Type</strong>: string</li>
+<li><strong>Description</strong>: Uptime of this system.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>NumCreateCalls</strong></dt>
+<dd><ul class="first last simple">
+<li><strong>Data Type</strong>: string</li>
+<li><strong>Description</strong>: Number of create api calls made.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Ready</strong></dt>
+<dd><ul class="first last simple">
+<li><strong>Data Type</strong>: bool</li>
+<li><strong>Description</strong>: System is ready to accept api calls.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>NumActionCalls</strong></dt>
+<dd><ul class="first last simple">
+<li><strong>Data Type</strong>: string</li>
+<li><strong>Description</strong>: Number of action api calls made.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>NumDeleteCalls</strong></dt>
+<dd><ul class="first last simple">
+<li><strong>Data Type</strong>: string</li>
+<li><strong>Description</strong>: Number of delete api calls made.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>NumGetCalls</strong></dt>
+<dd><ul class="first last simple">
+<li><strong>Data Type</strong>: string</li>
+<li><strong>Description</strong>: Number of get api calls made.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>NumUpdateCalls</strong></dt>
+<dd><ul class="first last simple">
+<li><strong>Data Type</strong>: string</li>
+<li><strong>Description</strong>: Number of update api calls made.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>FlexDaemons</strong></dt>
+<dd><ul class="first last simple">
+<li><strong>Data Type</strong>: DaemonState</li>
+<li><strong>Description</strong>: Daemon states.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="docutils">
+<dt><strong>Flexswitch API Supported:</strong></dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>GET By Key</dt>
+<dd><p class="first last">curl -X GET -H &#8216;Content-Type: application/json&#8217; &#8211;header &#8216;Accept: application/json&#8217; -d &#8216;{&lt;Model Object as json-Data&gt;}&#8217; <a class="reference external" href="http://device-management-IP:8080/public/v1/state/SystemStatus">http://device-management-IP:8080/public/v1/state/SystemStatus</a></p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="SystemSwVersionStateObjects.html" class="btn btn-neutral float-right" title="SystemSwVersionState Model Objects" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="XponderGlobalStateObjects.html" class="btn btn-neutral" title="XponderGlobalState Model Objects" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Snaproute.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

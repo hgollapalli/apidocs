@@ -4,6 +4,7 @@ PlatformMgmtDeviceState Model Objects
 *state/PlatformMgmtDevice*
 ------------------------------------
 
+- Only one of these object can exist in a system.
 - **DeviceName**
 	- **Data Type**: string
 	- **Description**: Device Name.
@@ -29,8 +30,8 @@ PlatformMgmtDeviceState Model Objects
 	- **Description**: Version.
 
 
-**REST API Supported:**
-	- GET
-		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://<device-management-IP>:8080/public/v1/state/PlatformMgmtDevice
+**Flexswitch API Supported:**
+	- GET By Key
+		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/state/PlatformMgmtDevice
 
 
