@@ -4,14 +4,15 @@ PowerConverterSensorState Model Objects
 *state/PowerConverterSensor*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **Name**
-	- **Data Type**: string
-	- **Description**: Power Converter Sensor Name.
-	- This parameter is key element.
-- **CurrentPower**
-	- **Data Type**: float64
-	- **Description**: Current Output Power Value.
+- Multiple objects of this type can exist in a system.
+
++--------------------+---------------+-----------------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |       **DESCRIPTION**       | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+-----------------------------+-------------+------------------+
+| Name **[KEY]**     | string        | Power Converter Sensor Name | N/A         | N/A              |
++--------------------+---------------+-----------------------------+-------------+------------------+
+| CurrentPower       | float64       | Current Output Power Value  | N/A         | N/A              |
++--------------------+---------------+-----------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

@@ -4,38 +4,47 @@ QsfpState Model Objects
 *state/Qsfp*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **QsfpId**
-	- **Data Type**: int32
-	- **Description**: QSFP Id.
-	- This parameter is key element.
-- **Present**
-	- **Data Type**: bool
-	- **Description**: Present or Not Value.
-- **Temperature**
-	- **Data Type**: float64
-	- **Description**: Current temperature.
-- **VendorRevision**
-	- **Data Type**: string
-	- **Description**: Vendor Revision.
-- **VendorSerialNumber**
-	- **Data Type**: string
-	- **Description**: Vendor Serial Number.
-- **Voltage**
-	- **Data Type**: float64
-	- **Description**: Current Voltage.
-- **DataCode**
-	- **Data Type**: string
-	- **Description**: Data Code.
-- **VendorName**
-	- **Data Type**: string
-	- **Description**: Vendor Name.
-- **VendorOUI**
-	- **Data Type**: string
-	- **Description**: Vendor OUI.
-- **VendorPartNumber**
-	- **Data Type**: string
-	- **Description**: Vendor Part Number.
+- Multiple objects of this type can exist in a system.
+
++--------------------+---------------+----------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |   **DESCRIPTION**    | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+----------------------+-------------+------------------+
+| QsfpId **[KEY]**   | int32         | QSFP Id              | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| Present            | bool          | Present or Not Value | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| UDF1               | float64       | User defined field 1 | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| AccBER             | float64       | Accumulated BER      | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| CurrBER            | float64       | Current BER          | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| VendorPartNumber   | string        | Vendor Part Number   | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| UDF3               | float64       | User defined field 3 | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| VendorOUI          | string        | Vendor OUI           | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| VendorName         | string        | Vendor Name          | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| VendorRevision     | string        | Vendor Revision      | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| VendorSerialNumber | string        | Vendor Serial Number | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| MinBER             | float64       | Minimum BER          | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| UDF0               | float64       | User defined field 0 | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| Temperature        | float64       | Current temperature  | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| UDF2               | float64       | User defined field 2 | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| Voltage            | float64       | Current Voltage      | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| DataCode           | string        | Data Code            | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| MaxBER             | float64       | Maximum BER          | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

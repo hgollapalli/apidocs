@@ -4,23 +4,23 @@ AsicGlobalState Model Objects
 *state/AsicGlobal*
 ------------------------------------
 
-- Only one of these object can exist in a system.
-- **ModuleId**
-	- **Data Type**: uint8
-	- **Description**: Module identifier.
-	- This parameter is key element.
-- **ModuleTemp**
-	- **Data Type**: float64
-	- **Description**: Current module temperature.
-- **PartNumber**
-	- **Data Type**: string
-	- **Description**: Part number of underlying switching asic.
-- **RevisionId**
-	- **Data Type**: string
-	- **Description**: Revision ID of underlying switching asic.
-- **VendorId**
-	- **Data Type**: string
-	- **Description**: Vendor identification value.
+- Only one object of this type can exist in a system.
+
++--------------------+---------------+--------------------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| ModuleId **[KEY]** | uint8         | Module identifier              | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| ModuleTemp         | float64       | Current module temperature     | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| PartNumber         | string        | Part number of underlying      | N/A         | N/A              |
+|                    |               | switching asic                 |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| RevisionId         | string        | Revision ID of underlying      | N/A         | N/A              |
+|                    |               | switching asic                 |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| VendorId           | string        | Vendor identification value    | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

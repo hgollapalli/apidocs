@@ -4,17 +4,19 @@ XponderGlobalState Model Objects
 *state/XponderGlobal*
 ------------------------------------
 
-- Only one of these object can exist in a system.
-- **XponderId**
-	- **Data Type**: uint8
-	- **Description**: Xponder module identifier.
-	- This parameter is key element.
-- **XponderDescription**
-	- **Data Type**: string
-	- **Description**: User configurable description string for the xponder module.
-- **XponderMode**
-	- **Data Type**: string
-	- **Description**: Global operational mode of Xponder module.
+- Only one object of this type can exist in a system.
+
++---------------------+---------------+--------------------------------+-------------+------------------+
+| **PARAMETER NAME**  | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| XponderId **[KEY]** | uint8         | Xponder module identifier      | N/A         | N/A              |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| XponderMode         | string        | Global operational mode of     | N/A         | N/A              |
+|                     |               | Xponder module                 |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| XponderDescription  | string        | User configurable description  | N/A         | N/A              |
+|                     |               | string for the xponder module  |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

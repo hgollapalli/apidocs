@@ -4,20 +4,21 @@ XponderGlobal Model Objects
 *config/XponderGlobal*
 ------------------------------------
 
-- Only one of these object can exist in a system.
-- **XponderId**
-	- **Data Type**: uint8
-	- **Description**: Xponder module identifier.
-	- **Default**: 0
-	- This parameter is key element.
-- **XponderMode**
-	- **Data Type**: string
-	- **Description**: Global operational mode of Xponder module.
-	- **Default**: OutOfService
-- **XponderDescription**
-	- **Data Type**: string
-	- **Description**: User configurable description string for the xponder module.
-	- **Default**: This is a Voyager platform
+- Only one object of this type can exist in a system.
+
++---------------------+---------------+--------------------------------+----------------------------+--------------------------------+
+| **PARAMETER NAME**  | **DATA TYPE** |        **DESCRIPTION**         |        **DEFAULT**         |        **VALID VALUES**        |
++---------------------+---------------+--------------------------------+----------------------------+--------------------------------+
+| XponderId **[KEY]** | uint8         | Xponder module identifier      |                          0 | N/A                            |
++---------------------+---------------+--------------------------------+----------------------------+--------------------------------+
+| XponderDescription  | string        | User configurable description  | This is a Voyager platform | N/A                            |
+|                     |               | string for the xponder module  |                            |                                |
++---------------------+---------------+--------------------------------+----------------------------+--------------------------------+
+| XponderMode         | string        | Global operational mode of     | OutOfService               | InServiceWire, InServiceRegen, |
+|                     |               | Xponder module                 |                            | InServiceOverSub,              |
+|                     |               |                                |                            | InServicePacketOptical,        |
+|                     |               |                                |                            | OutOfService                   |
++---------------------+---------------+--------------------------------+----------------------------+--------------------------------+
 
 
 **Flexswitch API Supported:**

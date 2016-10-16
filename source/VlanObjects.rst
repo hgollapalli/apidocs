@@ -4,17 +4,25 @@ Vlan Model Objects
 *config/Vlan*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **VlanId**
-	- **Data Type**: int32
-	- **Description**: 802.1Q tag/Vlan ID for vlan being provisioned.
-	- This parameter is key element.
-- **IntfList**
-	- **Data Type**: string
-	- **Description**: List of interface names or ifindex values to  be added as tagged members of the vlan.
-- **UntagIntfList**
-	- **Data Type**: string
-	- **Description**: List of interface names or ifindex values to  be added as untagged members of the vlan.
+- Multiple objects of this type can exist in a system.
+
++--------------------+---------------+--------------------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| VlanId **[KEY]**   | int32         | 802.1Q tag/Vlan ID for vlan    | N/A         | N/A              |
+|                    |               | being provisioned              |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| IntfList           | string        | List of interface names or     | N/A         | N/A              |
+|                    |               | ifindex values to  be added as |             |                  |
+|                    |               | tagged members of the vlan     |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| UntagIntfList      | string        | List of interface names or     | N/A         | N/A              |
+|                    |               | ifindex values to  be added as |             |                  |
+|                    |               | untagged members of the vlan   |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| AdminState         | string        | Administrative state of this   | UP          | UP, DOWN         |
+|                    |               | vlan interface                 |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

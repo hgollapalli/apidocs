@@ -4,27 +4,28 @@ DWDMModuleClntIntfState Model Objects
 *state/DWDMModuleClntIntf*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **ClntIntfId**
-	- **Data Type**: uint8
-	- **Description**: DWDM Module client interface identifier.
-	- This parameter is key element.
-- **ModuleId**
-	- **Data Type**: uint8
-	- **Description**: DWDM Module identifier.
-	- This parameter is key element.
-- **PRBSTxErrCntLane0**
-	- **Data Type**: float64
-	- **Description**: Client interface host lane 0 PRBS TX Error count.
-- **PRBSTxErrCntLane1**
-	- **Data Type**: float64
-	- **Description**: Client interface host lane 1 PRBS TX Error count.
-- **PRBSTxErrCntLane2**
-	- **Data Type**: float64
-	- **Description**: Client interface host lane 2 PRBS TX Error count.
-- **PRBSTxErrCntLane3**
-	- **Data Type**: float64
-	- **Description**: Client interface host lane 3 PRBS TX Error count.
+- Multiple objects of this type can exist in a system.
+
++----------------------+---------------+--------------------------------+-------------+------------------+
+|  **PARAMETER NAME**  | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| ModuleId **[KEY]**   | uint8         | DWDM Module identifier         | N/A         | N/A              |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| ClntIntfId **[KEY]** | uint8         | DWDM Module client interface   | N/A         | N/A              |
+|                      |               | identifier                     |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| PRBSTxErrCntLane0    | float64       | Client interface host lane 0   | N/A         | N/A              |
+|                      |               | PRBS TX Error count            |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| PRBSTxErrCntLane1    | float64       | Client interface host lane 1   | N/A         | N/A              |
+|                      |               | PRBS TX Error count            |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| PRBSTxErrCntLane2    | float64       | Client interface host lane 2   | N/A         | N/A              |
+|                      |               | PRBS TX Error count            |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| PRBSTxErrCntLane3    | float64       | Client interface host lane 3   | N/A         | N/A              |
+|                      |               | PRBS TX Error count            |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

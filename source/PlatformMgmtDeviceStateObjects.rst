@@ -4,30 +4,25 @@ PlatformMgmtDeviceState Model Objects
 *state/PlatformMgmtDevice*
 ------------------------------------
 
-- Only one of these object can exist in a system.
-- **DeviceName**
-	- **Data Type**: string
-	- **Description**: Device Name.
-	- **Default**: BMC
-	- This parameter is key element.
-- **CPUUsage**
-	- **Data Type**: string
-	- **Description**: CPU Usage.
-- **Description**
-	- **Data Type**: string
-	- **Description**: Platform Description.
-- **MemoryUsage**
-	- **Data Type**: string
-	- **Description**: Memory Usage.
-- **ResetReason**
-	- **Data Type**: string
-	- **Description**: Reset Reason.
-- **Uptime**
-	- **Data Type**: string
-	- **Description**: Uptime and load description.
-- **Version**
-	- **Data Type**: string
-	- **Description**: Version.
+- Only one object of this type can exist in a system.
+
++----------------------+---------------+-----------------------------+-------------+------------------+
+|  **PARAMETER NAME**  | **DATA TYPE** |       **DESCRIPTION**       | **DEFAULT** | **VALID VALUES** |
++----------------------+---------------+-----------------------------+-------------+------------------+
+| DeviceName **[KEY]** | string        | Device Name                 | BMC         | N/A              |
++----------------------+---------------+-----------------------------+-------------+------------------+
+| Version              | string        | Version                     | N/A         | N/A              |
++----------------------+---------------+-----------------------------+-------------+------------------+
+| CPUUsage             | string        | CPU Usage                   | N/A         | N/A              |
++----------------------+---------------+-----------------------------+-------------+------------------+
+| Description          | string        | Platform Description        | N/A         | N/A              |
++----------------------+---------------+-----------------------------+-------------+------------------+
+| MemoryUsage          | string        | Memory Usage                | N/A         | N/A              |
++----------------------+---------------+-----------------------------+-------------+------------------+
+| ResetReason          | string        | Reset Reason                | N/A         | N/A              |
++----------------------+---------------+-----------------------------+-------------+------------------+
+| Uptime               | string        | Uptime and load description | N/A         | N/A              |
++----------------------+---------------+-----------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

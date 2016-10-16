@@ -4,20 +4,17 @@ FanSensorPMDataState Model Objects
 *state/FanSensorPMData*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **Class**
-	- **Data Type**: string
-	- **Description**: Class of PM Data.
-	- **Default**: CLASS-A
-	- **Possible Values**: CLASS-A, CLASS-B, CLASS-B
-	- This parameter is key element.
-- **Name**
-	- **Data Type**: string
-	- **Description**: Fan Sensor Name.
-	- This parameter is key element.
-- **Data**
-	- **Data Type**: FanSensorPMData
-	- **Description**: .
+- Multiple objects of this type can exist in a system.
+
++--------------------+-----------------+------------------+-------------+---------------------------+
+| **PARAMETER NAME** |  **DATA TYPE**  | **DESCRIPTION**  | **DEFAULT** |     **VALID VALUES**      |
++--------------------+-----------------+------------------+-------------+---------------------------+
+| Name **[KEY]**     | string          | Fan Sensor Name  | N/A         | N/A                       |
++--------------------+-----------------+------------------+-------------+---------------------------+
+| Class **[KEY]**    | string          | Class of PM Data | CLASS-A     | CLASS-A, CLASS-B, CLASS-B |
++--------------------+-----------------+------------------+-------------+---------------------------+
+| Data               | FanSensorPMData |                  | N/A         | N/A                       |
++--------------------+-----------------+------------------+-------------+---------------------------+
 
 
 **Flexswitch API Supported:**

@@ -4,86 +4,78 @@ DWDMModuleClntIntf Model Objects
 *config/DWDMModuleClntIntf*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **ClntIntfId**
-	- **Data Type**: uint8
-	- **Description**: DWDM Module client interface identifier.
-	- This parameter is key element.
-- **ModuleId**
-	- **Data Type**: uint8
-	- **Description**: DWDM Module identifier.
-	- This parameter is key element.
-- **RXFECDecDisable**
-	- **Data Type**: bool
-	- **Description**: 802.3bj FEC decoder enable/disable state for traffic from DWDM module to Host.
-	- **Default**: false
-- **RxPRBSPattern**
-	- **Data Type**: string
-	- **Description**: RX PRBS generator pattern.
-	- **Default**: 2^31
-- **TXFECDecDisable**
-	- **Data Type**: bool
-	- **Description**: 802.3bj FEC decoder enable/disable state for traffic from Host to DWDM Module.
-	- **Default**: false
-- **EnableHostLoopback**
-	- **Data Type**: bool
-	- **Description**: Enable/Disable loopback on all host lanes of this client interface.
-	- **Default**: false
-- **HostTxEqLfCtle**
-	- **Data Type**: uint8
-	- **Description**: Host interface TX deserializer equalization. LELPZRC LF-CTLE LFPZ gain code..
-	- **Default**: 0
-- **NwLaneTributaryToClntIntfMap**
-	- **Data Type**: uint8
-	- **Description**: Network lane/tributary id to map to client interface.
-- **AdminState**
-	- **Data Type**: string
-	- **Description**: Administrative state of this client interface.
-	- **Default**: UP
-- **EnableRxPRBS**
-	- **Data Type**: bool
-	- **Description**: Enable/Disable RX PRBS generation for all lanes of this client interface.
-	- **Default**: false
-- **HostRxSerializerTap0Gain**
-	- **Data Type**: uint8
-	- **Description**: Host RX Serializer tap 0 control.
-	- **Default**: 7
-- **HostRxSerializerTap1Gain**
-	- **Data Type**: uint8
-	- **Description**: Host RX Serializer tap 1 control.
-	- **Default**: 7
-- **HostRxSerializerTap2Delay**
-	- **Data Type**: uint8
-	- **Description**: Host RX Serializer tap 2 control.
-	- **Default**: 5
-- **HostRxSerializerTap2Gain**
-	- **Data Type**: uint8
-	- **Description**: Host RX Serializer tap 2 control.
-	- **Default**: 15
-- **TxPRBSPattern**
-	- **Data Type**: string
-	- **Description**: PRBS pattern to use for checker.
-	- **Default**: 2^31
-- **HostTxEqDfe**
-	- **Data Type**: uint8
-	- **Description**: Host interface TX deserializer equalization. s-DFE.
-	- **Default**: 0
-- **EnableIntSerdesNWLoopback**
-	- **Data Type**: bool
-	- **Description**: Enable/Disable serdes internal loopback.
-	- **Default**: false
-- **EnableTxPRBSChecker**
-	- **Data Type**: bool
-	- **Description**: Enable/Disable TX PRBS checker for all lanes of this client interface.
-	- **Default**: false
-- **HostRxSerializerTap0Delay**
-	- **Data Type**: uint8
-	- **Description**: Host RX Serializer tap 0 control.
-	- **Default**: 7
-- **HostTxEqCtle**
-	- **Data Type**: uint8
-	- **Description**: Host interface TX deserializer equalization. LELRC CTLE LE gain code..
-	- **Default**: 18
+- Multiple objects of this type can exist in a system.
+
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+|      **PARAMETER NAME**      | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** |   **VALID VALUES**    |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| ModuleId **[KEY]**           | uint8         | DWDM Module identifier         | N/A         | N/A                   |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| ClntIntfId **[KEY]**         | uint8         | DWDM Module client interface   | N/A         | N/A                   |
+|                              |               | identifier                     |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| EnableHostLoopback           | bool          | Enable/Disable loopback on     | false       | N/A                   |
+|                              |               | all host lanes of this client  |             |                       |
+|                              |               | interface                      |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| EnableIntSerdesNWLoopback    | bool          | Enable/Disable serdes internal | false       | N/A                   |
+|                              |               | loopback                       |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| HostTxEqCtle                 | uint8         | Host interface TX deserializer |          18 | N/A                   |
+|                              |               | equalization. LELRC CTLE LE    |             |                       |
+|                              |               | gain code.                     |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| EnableTxPRBSChecker          | bool          | Enable/Disable TX PRBS checker | false       | N/A                   |
+|                              |               | for all lanes of this client   |             |                       |
+|                              |               | interface                      |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| HostRxSerializerTap1Gain     | uint8         | Host RX Serializer tap 1       |           7 | N/A                   |
+|                              |               | control                        |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| HostTxEqLfCtle               | uint8         | Host interface TX deserializer |           0 | N/A                   |
+|                              |               | equalization. LELPZRC LF-CTLE  |             |                       |
+|                              |               | LFPZ gain code.                |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| RxPRBSPattern                | string        | RX PRBS generator pattern      | 2^31        | 2^7, 2^15, 2^23, 2^31 |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| TXFECDecDisable              | bool          | 802.3bj FEC decoder            | false       | N/A                   |
+|                              |               | enable/disable state for       |             |                       |
+|                              |               | traffic from Host to DWDM      |             |                       |
+|                              |               | Module                         |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| NwLaneTributaryToClntIntfMap | uint8         | Network lane/tributary id to   | N/A         | N/A                   |
+|                              |               | map to client interface        |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| RXFECDecDisable              | bool          | 802.3bj FEC decoder            | false       | N/A                   |
+|                              |               | enable/disable state for       |             |                       |
+|                              |               | traffic from DWDM module to    |             |                       |
+|                              |               | Host                           |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| HostRxSerializerTap0Delay    | uint8         | Host RX Serializer tap 0       |           7 | N/A                   |
+|                              |               | control                        |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| HostRxSerializerTap0Gain     | uint8         | Host RX Serializer tap 0       |           7 | N/A                   |
+|                              |               | control                        |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| HostRxSerializerTap2Delay    | uint8         | Host RX Serializer tap 2       |           5 | N/A                   |
+|                              |               | control                        |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| HostRxSerializerTap2Gain     | uint8         | Host RX Serializer tap 2       |          15 | N/A                   |
+|                              |               | control                        |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| HostTxEqDfe                  | uint8         | Host interface TX deserializer |           0 | N/A                   |
+|                              |               | equalization. s-DFE            |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| AdminState                   | string        | Administrative state of this   | UP          | UP, DOWN              |
+|                              |               | client interface               |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| EnableRxPRBS                 | bool          | Enable/Disable RX PRBS         | false       | N/A                   |
+|                              |               | generation for all lanes of    |             |                       |
+|                              |               | this client interface          |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| TxPRBSPattern                | string        | PRBS pattern to use for        | 2^31        | 2^7, 2^15, 2^23, 2^31 |
+|                              |               | checker                        |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
 
 
 **Flexswitch API Supported:**

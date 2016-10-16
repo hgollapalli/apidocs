@@ -4,19 +4,19 @@ MacTableEntryState Model Objects
 *state/MacTableEntry*
 ------------------------------------
 
-- Only one of these object can exist in a system.
-- **MacAddr**
-	- **Data Type**: string
-	- **Description**: MAC Address.
-	- This parameter is key element.
-- **VlanId**
-	- **Data Type**: int32
-	- **Description**: Vlan id corresponding to which mac was learned.
-	- **Default**: 0
-- **Port**
-	- **Data Type**: int32
-	- **Description**: Port number on which mac was learned.
-	- **Default**: 0
+- Only one object of this type can exist in a system.
+
++--------------------+---------------+--------------------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| MacAddr **[KEY]**  | string        | MAC Address                    | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Port               | int32         | Port number on which mac was   |           0 | N/A              |
+|                    |               | learned                        |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| VlanId             | int32         | Vlan id corresponding to which |           0 | N/A              |
+|                    |               | mac was learned                |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

@@ -4,24 +4,19 @@ NotifierEnable Model Objects
 *config/NotifierEnable*
 ------------------------------------
 
-- Only one of these object can exist in a system.
-- **Vrf**
-	- **Data Type**: string
-	- **Description**: Vrf name.
-	- **Default**: default
-	- This parameter is key element.
-- **AlarmEnable**
-	- **Data Type**: bool
-	- **Description**: Enable Notifier.
-	- **Default**: true
-- **EventEnable**
-	- **Data Type**: bool
-	- **Description**: Enable Notifier.
-	- **Default**: true
-- **FaultEnable**
-	- **Data Type**: bool
-	- **Description**: Enable Notifier.
-	- **Default**: true
+- Only one object of this type can exist in a system.
+
++--------------------+---------------+-----------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** | **DESCRIPTION** | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+-----------------+-------------+------------------+
+| Vrf **[KEY]**      | string        | Vrf name        | default     | N/A              |
++--------------------+---------------+-----------------+-------------+------------------+
+| EventEnable        | bool          | Enable Notifier | true        | N/A              |
++--------------------+---------------+-----------------+-------------+------------------+
+| FaultEnable        | bool          | Enable Notifier | true        | N/A              |
++--------------------+---------------+-----------------+-------------+------------------+
+| AlarmEnable        | bool          | Enable Notifier | true        | N/A              |
++--------------------+---------------+-----------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

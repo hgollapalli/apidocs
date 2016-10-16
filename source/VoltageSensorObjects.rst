@@ -4,39 +4,31 @@ VoltageSensor Model Objects
 *config/VoltageSensor*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **Name**
-	- **Data Type**: string
-	- **Description**: Voltage Sensor Name.
-	- This parameter is key element.
-- **PMClassBAdminState**
-	- **Data Type**: string
-	- **Description**: PM Class-B Admin State.
-	- **Default**: Enable
-- **AdminState**
-	- **Data Type**: string
-	- **Description**: Enable/Disable.
-	- **Default**: Enable
-- **HigherAlarmThreshold**
-	- **Data Type**: float64
-	- **Description**: Higher Alarm Threshold for TCA.
-- **HigherWarningThreshold**
-	- **Data Type**: float64
-	- **Description**: Higher Warning Threshold for TCA.
-- **PMClassAAdminState**
-	- **Data Type**: string
-	- **Description**: PM Class-A Admin State.
-	- **Default**: Enable
-- **LowerAlarmThreshold**
-	- **Data Type**: float64
-	- **Description**: Lower Alarm Threshold for TCA.
-- **LowerWarningThreshold**
-	- **Data Type**: float64
-	- **Description**: Lower Warning Threshold for TCA.
-- **PMClassCAdminState**
-	- **Data Type**: string
-	- **Description**: PM Class-C Admin State.
-	- **Default**: Enable
+- Multiple objects of this type can exist in a system.
+
++------------------------+---------------+--------------------------------+-------------+------------------+
+|   **PARAMETER NAME**   | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| Name **[KEY]**         | string        | Voltage Sensor Name            | N/A         | N/A              |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| HigherAlarmThreshold   | float64       | Higher Alarm Threshold for TCA | N/A         | N/A              |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| LowerWarningThreshold  | float64       | Lower Warning Threshold for    | N/A         | N/A              |
+|                        |               | TCA                            |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassAAdminState     | string        | PM Class-A Admin State         | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassCAdminState     | string        | PM Class-C Admin State         | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| AdminState             | string        | Enable/Disable                 | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| HigherWarningThreshold | float64       | Higher Warning Threshold for   | N/A         | N/A              |
+|                        |               | TCA                            |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| LowerAlarmThreshold    | float64       | Lower Alarm Threshold for TCA  | N/A         | N/A              |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassBAdminState     | string        | PM Class-B Admin State         | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

@@ -4,24 +4,19 @@ QsfpPMDataState Model Objects
 *state/QsfpPMData*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **QsfpId**
-	- **Data Type**: int32
-	- **Description**: QSFP Id.
-	- This parameter is key element.
-- **Resource**
-	- **Data Type**: string
-	- **Description**: QSFP PM Resource Name.
-	- This parameter is key element.
-- **Class**
-	- **Data Type**: string
-	- **Description**: Class of PM Data.
-	- **Default**: CLASS-A
-	- **Possible Values**: CLASS-A, CLASS-B, CLASS-B
-	- This parameter is key element.
-- **Data**
-	- **Data Type**: QsfpPMData
-	- **Description**: .
+- Multiple objects of this type can exist in a system.
+
++--------------------+---------------+-----------------------+-------------+---------------------------+
+| **PARAMETER NAME** | **DATA TYPE** |    **DESCRIPTION**    | **DEFAULT** |     **VALID VALUES**      |
++--------------------+---------------+-----------------------+-------------+---------------------------+
+| Class **[KEY]**    | string        | Class of PM Data      | CLASS-A     | CLASS-A, CLASS-B, CLASS-B |
++--------------------+---------------+-----------------------+-------------+---------------------------+
+| QsfpId **[KEY]**   | int32         | QSFP Id               | N/A         | N/A                       |
++--------------------+---------------+-----------------------+-------------+---------------------------+
+| Resource **[KEY]** | string        | QSFP PM Resource Name | N/A         | N/A                       |
++--------------------+---------------+-----------------------+-------------+---------------------------+
+| Data               | QsfpPMData    |                       | N/A         | N/A                       |
++--------------------+---------------+-----------------------+-------------+---------------------------+
 
 
 **Flexswitch API Supported:**

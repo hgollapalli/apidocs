@@ -4,27 +4,23 @@ SystemParam Model Objects
 *config/SystemParam*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **Vrf**
-	- **Data Type**: string
-	- **Description**: System Vrf.
-	- **Default**: default
-	- This parameter is key element.
-- **SwitchMac**
-	- **Data Type**: string
-	- **Description**: Switch Mac Address.
-- **Description**
-	- **Data Type**: string
-	- **Description**: System Description.
-- **Hostname**
-	- **Data Type**: string
-	- **Description**: System Host Name.
-- **MgmtIp**
-	- **Data Type**: string
-	- **Description**: Management Ip of System.
-- **SwVersion**
-	- **Data Type**: string
-	- **Description**: FlexSwitch Version Information.
+- Multiple objects of this type can exist in a system.
+
++--------------------+---------------+--------------------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Vrf **[KEY]**      | string        | System Vrf                     | default     | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Hostname           | string        | System Host Name               | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| MgmtIp             | string        | Management Ip of System        | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| SwVersion          | string        | FlexSwitch Version Information | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| SwitchMac          | string        | Switch Mac Address             | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Description        | string        | System Description             | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

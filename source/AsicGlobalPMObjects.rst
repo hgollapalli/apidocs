@@ -4,44 +4,36 @@ AsicGlobalPM Model Objects
 *config/AsicGlobalPM*
 ------------------------------------
 
-- Only one of these object can exist in a system.
-- **Resource**
-	- **Data Type**: string
-	- **Description**: Resource identifier.
-	- **Possible Values**: Temperature
-	- This parameter is key element.
-- **ModuleId**
-	- **Data Type**: uint8
-	- **Description**: Module identifier.
-	- This parameter is key element.
-- **HighAlarmThreshold**
-	- **Data Type**: float64
-	- **Description**: High alarm threshold value for this PM.
-	- **Default**: 100000
-- **HighWarnThreshold**
-	- **Data Type**: float64
-	- **Description**: High warning threshold value for this PM.
-	- **Default**: 100000
-- **PMClassBEnable**
-	- **Data Type**: bool
-	- **Description**: Enable/Disable control for CLASS-B PM.
-	- **Default**: true
-- **PMClassCEnable**
-	- **Data Type**: bool
-	- **Description**: Enable/Disable control for CLASS-C PM.
-	- **Default**: true
-- **LowAlarmThreshold**
-	- **Data Type**: float64
-	- **Description**: Low alarm threshold value for this PM.
-	- **Default**: -100000
-- **LowWarnThreshold**
-	- **Data Type**: float64
-	- **Description**: Low warning threshold value for this PM.
-	- **Default**: -100000
-- **PMClassAEnable**
-	- **Data Type**: bool
-	- **Description**: Enable/Disable control for CLASS-A PM.
-	- **Default**: true
+- Only one object of this type can exist in a system.
+
++--------------------+---------------+--------------------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Resource **[KEY]** | string        | Resource identifier            | N/A         | Temperature      |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| ModuleId **[KEY]** | uint8         | Module identifier              |           0 | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| LowAlarmThreshold  | float64       | Low alarm threshold value for  |     -100000 | N/A              |
+|                    |               | this PM                        |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| LowWarnThreshold   | float64       | Low warning threshold value    |     -100000 | N/A              |
+|                    |               | for this PM                    |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassBEnable     | bool          | Enable/Disable control for     | true        | N/A              |
+|                    |               | CLASS-B PM                     |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassCEnable     | bool          | Enable/Disable control for     | true        | N/A              |
+|                    |               | CLASS-C PM                     |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| HighAlarmThreshold | float64       | High alarm threshold value for |      100000 | N/A              |
+|                    |               | this PM                        |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| HighWarnThreshold  | float64       | High warning threshold value   |      100000 | N/A              |
+|                    |               | for this PM                    |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassAEnable     | bool          | Enable/Disable control for     | true        | N/A              |
+|                    |               | CLASS-A PM                     |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

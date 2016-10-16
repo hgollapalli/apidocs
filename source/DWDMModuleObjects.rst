@@ -4,27 +4,28 @@ DWDMModule Model Objects
 *config/DWDMModule*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **ModuleId**
-	- **Data Type**: uint8
-	- **Description**: DWDM Module identifier.
-	- This parameter is key element.
-- **AdminState**
-	- **Data Type**: string
-	- **Description**: Reset state of this dwdm module (false (Reset deasserted).
-	- **Default**: DOWN
-- **EnableExtPMTickSrc**
-	- **Data Type**: bool
-	- **Description**: Enable/Disable external tick source for performance monitoring.
-	- **Default**: false
-- **IndependentLaneMode**
-	- **Data Type**: bool
-	- **Description**: Network lane configuration for the DWDM Module. true-Independent lanes.
-	- **Default**: true
-- **PMInterval**
-	- **Data Type**: uint8
-	- **Description**: Performance monitoring interval.
-	- **Default**: 1
+- Multiple objects of this type can exist in a system.
+
++---------------------+---------------+--------------------------------+-------------+------------------+
+| **PARAMETER NAME**  | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| ModuleId **[KEY]**  | uint8         | DWDM Module identifier         | N/A         | N/A              |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| PMInterval          | uint8         | Performance monitoring         |           1 | N/A              |
+|                     |               | interval                       |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| AdminState          | string        | Reset state of this dwdm       | DOWN        | UP, DOWN         |
+|                     |               | module (false (Reset           |             |                  |
+|                     |               | deasserted)                    |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| EnableExtPMTickSrc  | bool          | Enable/Disable external        | false       | N/A              |
+|                     |               | tick source for performance    |             |                  |
+|                     |               | monitoring                     |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| IndependentLaneMode | bool          | Network lane configuration     | true        | N/A              |
+|                     |               | for the DWDM Module.           |             |                  |
+|                     |               | true-Independent lanes         |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

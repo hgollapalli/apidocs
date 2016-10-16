@@ -4,14 +4,15 @@ FanSensorState Model Objects
 *state/FanSensor*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **Name**
-	- **Data Type**: string
-	- **Description**: Fan Sensor Name.
-	- This parameter is key element.
-- **CurrentSpeed**
-	- **Data Type**: int32
-	- **Description**: Fan Current Speed.
+- Multiple objects of this type can exist in a system.
+
++--------------------+---------------+-------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |  **DESCRIPTION**  | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+-------------------+-------------+------------------+
+| Name **[KEY]**     | string        | Fan Sensor Name   | N/A         | N/A              |
++--------------------+---------------+-------------------+-------------+------------------+
+| CurrentSpeed       | int32         | Fan Current Speed | N/A         | N/A              |
++--------------------+---------------+-------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

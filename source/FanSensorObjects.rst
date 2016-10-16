@@ -4,39 +4,31 @@ FanSensor Model Objects
 *config/FanSensor*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **Name**
-	- **Data Type**: string
-	- **Description**: Fan Sensor Name.
-	- This parameter is key element.
-- **AdminState**
-	- **Data Type**: string
-	- **Description**: Enable/Disable.
-	- **Default**: Enable
-- **LowerAlarmThreshold**
-	- **Data Type**: int32
-	- **Description**: Lower Alarm Threshold for TCA.
-- **LowerWarningThreshold**
-	- **Data Type**: int32
-	- **Description**: Lower Warning Threshold for TCA.
-- **PMClassCAdminState**
-	- **Data Type**: string
-	- **Description**: PM Class-C Admin State.
-	- **Default**: Enable
-- **HigherAlarmThreshold**
-	- **Data Type**: int32
-	- **Description**: Higher Alarm Threshold for TCA.
-- **HigherWarningThreshold**
-	- **Data Type**: int32
-	- **Description**: Higher Warning Threshold for TCA.
-- **PMClassAAdminState**
-	- **Data Type**: string
-	- **Description**: PM Class-A Admin State.
-	- **Default**: Enable
-- **PMClassBAdminState**
-	- **Data Type**: string
-	- **Description**: PM Class-B Admin State.
-	- **Default**: Enable
+- Multiple objects of this type can exist in a system.
+
++------------------------+---------------+--------------------------------+-------------+------------------+
+|   **PARAMETER NAME**   | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| Name **[KEY]**         | string        | Fan Sensor Name                | N/A         | N/A              |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| LowerAlarmThreshold    | int32         | Lower Alarm Threshold for TCA  | N/A         | N/A              |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassAAdminState     | string        | PM Class-A Admin State         | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| HigherAlarmThreshold   | int32         | Higher Alarm Threshold for TCA | N/A         | N/A              |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| HigherWarningThreshold | int32         | Higher Warning Threshold for   | N/A         | N/A              |
+|                        |               | TCA                            |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassBAdminState     | string        | PM Class-B Admin State         | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassCAdminState     | string        | PM Class-C Admin State         | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| AdminState             | string        | Enable/Disable                 | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| LowerWarningThreshold  | int32         | Lower Warning Threshold for    | N/A         | N/A              |
+|                        |               | TCA                            |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

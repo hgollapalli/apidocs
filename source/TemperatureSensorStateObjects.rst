@@ -4,14 +4,15 @@ TemperatureSensorState Model Objects
 *state/TemperatureSensor*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **Name**
-	- **Data Type**: string
-	- **Description**: Temperature Sensor Name.
-	- This parameter is key element.
-- **CurrentTemperature**
-	- **Data Type**: float64
-	- **Description**: Current Temperature Value.
+- Multiple objects of this type can exist in a system.
+
++--------------------+---------------+---------------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |      **DESCRIPTION**      | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+---------------------------+-------------+------------------+
+| Name **[KEY]**     | string        | Temperature Sensor Name   | N/A         | N/A              |
++--------------------+---------------+---------------------------+-------------+------------------+
+| CurrentTemperature | float64       | Current Temperature Value | N/A         | N/A              |
++--------------------+---------------+---------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

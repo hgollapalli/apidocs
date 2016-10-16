@@ -4,67 +4,56 @@ QsfpChannel Model Objects
 *config/QsfpChannel*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **ChannelNum**
-	- **Data Type**: int32
-	- **Description**: Qsfp Channel Number.
-	- This parameter is key element.
-- **QsfpId**
-	- **Data Type**: int32
-	- **Description**: Qsfp Id.
-	- This parameter is key element.
-- **HigherWarningTXPower**
-	- **Data Type**: float64
-	- **Description**: Higher Warning Rx power for TCA.
-- **LowerAlarmTXBias**
-	- **Data Type**: float64
-	- **Description**: Lower Alarm Tx Current Bias for TCA.
-- **AdminState**
-	- **Data Type**: string
-	- **Description**: Enable/Disable.
-	- **Default**: Disable
-- **HigherAlarmTXBias**
-	- **Data Type**: float64
-	- **Description**: Higher Alarm Tx Current Bias for TCA.
-- **LowerWarningTXPower**
-	- **Data Type**: float64
-	- **Description**: Lower Warning Rx power for TCA.
-- **HigherAlarmTXPower**
-	- **Data Type**: float64
-	- **Description**: Higher Alarm Rx power for TCA.
-- **HigherWarningRXPower**
-	- **Data Type**: float64
-	- **Description**: Higher Warning Rx power Threshold for TCA.
-- **LowerAlarmRXPower**
-	- **Data Type**: float64
-	- **Description**: Lower Alarm Rx power Threshold for TCA.
-- **LowerAlarmTXPower**
-	- **Data Type**: float64
-	- **Description**: Lower Alarm Rx power for TCA.
-- **PMClassAAdminState**
-	- **Data Type**: string
-	- **Description**: PM Class-A Admin State.
-	- **Default**: Disable
-- **PMClassBAdminState**
-	- **Data Type**: string
-	- **Description**: PM Class-B Admin State.
-	- **Default**: Disable
-- **PMClassCAdminState**
-	- **Data Type**: string
-	- **Description**: PM Class-C Admin State.
-	- **Default**: Disable
-- **HigherAlarmRXPower**
-	- **Data Type**: float64
-	- **Description**: Higher Alarm Rx power Threshold for TCA.
-- **LowerWarningRXPower**
-	- **Data Type**: float64
-	- **Description**: Lower Warning Rx power Threshold for TCA.
-- **LowerWarningTXBias**
-	- **Data Type**: float64
-	- **Description**: Lower Warning Tx Current Bias for TCA.
-- **HigherWarningTXBias**
-	- **Data Type**: float64
-	- **Description**: Higher Warning Tx Current Bias for TCA.
+- Multiple objects of this type can exist in a system.
+
++----------------------+---------------+--------------------------------+-------------+------------------+
+|  **PARAMETER NAME**  | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| ChannelNum **[KEY]** | int32         | Qsfp Channel Number            | N/A         | N/A              |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| QsfpId **[KEY]**     | int32         | Qsfp Id                        | N/A         | N/A              |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| HigherAlarmTXPower   | float64       | Higher Alarm Rx power for TCA  | N/A         | N/A              |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| AdminState           | string        | Enable/Disable                 | Disable     | Enable, Disable  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| HigherWarningTXBias  | float64       | Higher Warning Tx Current Bias | N/A         | N/A              |
+|                      |               | for TCA                        |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| LowerAlarmTXPower    | float64       | Lower Alarm Rx power for TCA   | N/A         | N/A              |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| LowerWarningTXPower  | float64       | Lower Warning Rx power for TCA | N/A         | N/A              |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassCAdminState   | string        | PM Class-C Admin State         | Disable     | Enable, Disable  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| HigherAlarmRXPower   | float64       | Higher Alarm Rx power          | N/A         | N/A              |
+|                      |               | Threshold for TCA              |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| HigherWarningTXPower | float64       | Higher Warning Rx power for    | N/A         | N/A              |
+|                      |               | TCA                            |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| LowerAlarmRXPower    | float64       | Lower Alarm Rx power Threshold | N/A         | N/A              |
+|                      |               | for TCA                        |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| LowerAlarmTXBias     | float64       | Lower Alarm Tx Current Bias    | N/A         | N/A              |
+|                      |               | for TCA                        |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassAAdminState   | string        | PM Class-A Admin State         | Disable     | Enable, Disable  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| HigherAlarmTXBias    | float64       | Higher Alarm Tx Current Bias   | N/A         | N/A              |
+|                      |               | for TCA                        |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| HigherWarningRXPower | float64       | Higher Warning Rx power        | N/A         | N/A              |
+|                      |               | Threshold for TCA              |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| LowerWarningRXPower  | float64       | Lower Warning Rx power         | N/A         | N/A              |
+|                      |               | Threshold for TCA              |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| LowerWarningTXBias   | float64       | Lower Warning Tx Current Bias  | N/A         | N/A              |
+|                      |               | for TCA                        |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassBAdminState   | string        | PM Class-B Admin State         | Disable     | Enable, Disable  |
++----------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

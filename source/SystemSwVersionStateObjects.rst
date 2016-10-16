@@ -4,14 +4,15 @@ SystemSwVersionState Model Objects
 *state/SystemSwVersion*
 ------------------------------------
 
-- Only one of these object can exist in a system.
-- **FlexswitchVersion**
-	- **Data Type**: string
-	- **Description**: Flexswitch version.
-	- This parameter is key element.
-- **Repos**
-	- **Data Type**: RepoInfo
-	- **Description**: Git repo details.
+- Only one object of this type can exist in a system.
+
++-----------------------------+---------------+--------------------+-------------+------------------+
+|     **PARAMETER NAME**      | **DATA TYPE** |  **DESCRIPTION**   | **DEFAULT** | **VALID VALUES** |
++-----------------------------+---------------+--------------------+-------------+------------------+
+| FlexswitchVersion **[KEY]** | string        | Flexswitch version | N/A         | N/A              |
++-----------------------------+---------------+--------------------+-------------+------------------+
+| Repos                       | RepoInfo      | Git repo details   | N/A         | N/A              |
++-----------------------------+---------------+--------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

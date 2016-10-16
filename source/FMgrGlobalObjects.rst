@@ -4,15 +4,15 @@ FMgrGlobal Model Objects
 *config/FMgrGlobal*
 ------------------------------------
 
-- Only one of these object can exist in a system.
-- **Vrf**
-	- **Data Type**: string
-	- **Description**: System Vrf.
-	- **Default**: default
-	- This parameter is key element.
-- **Enable**
-	- **Data Type**: bool
-	- **Description**: Enable Fault Manager.
+- Only one object of this type can exist in a system.
+
++--------------------+---------------+----------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |   **DESCRIPTION**    | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+----------------------+-------------+------------------+
+| Vrf **[KEY]**      | string        | System Vrf           | default     | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
+| Enable             | bool          | Enable Fault Manager | N/A         | N/A              |
++--------------------+---------------+----------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

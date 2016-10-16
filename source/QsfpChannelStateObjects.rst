@@ -4,27 +4,23 @@ QsfpChannelState Model Objects
 *state/QsfpChannel*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **ChannelNum**
-	- **Data Type**: int32
-	- **Description**: Qsfp Channel Number.
-	- This parameter is key element.
-- **QsfpId**
-	- **Data Type**: int32
-	- **Description**: QSFP Id.
-	- This parameter is key element.
-- **Present**
-	- **Data Type**: bool
-	- **Description**: Present or Not Value.
-- **RXPower**
-	- **Data Type**: float64
-	- **Description**: Rx power on channel 1.
-- **TXBias**
-	- **Data Type**: float64
-	- **Description**: Tx Current Bias on channel 1.
-- **TXPower**
-	- **Data Type**: float64
-	- **Description**: Rx power on channel 1.
+- Multiple objects of this type can exist in a system.
+
++----------------------+---------------+------------------------------+-------------+------------------+
+|  **PARAMETER NAME**  | **DATA TYPE** |       **DESCRIPTION**        | **DEFAULT** | **VALID VALUES** |
++----------------------+---------------+------------------------------+-------------+------------------+
+| ChannelNum **[KEY]** | int32         | Qsfp Channel Number          | N/A         | N/A              |
++----------------------+---------------+------------------------------+-------------+------------------+
+| QsfpId **[KEY]**     | int32         | QSFP Id                      | N/A         | N/A              |
++----------------------+---------------+------------------------------+-------------+------------------+
+| TXPower              | float64       | Rx power on channel 1        | N/A         | N/A              |
++----------------------+---------------+------------------------------+-------------+------------------+
+| Present              | bool          | Present or Not Value         | N/A         | N/A              |
++----------------------+---------------+------------------------------+-------------+------------------+
+| RXPower              | float64       | Rx power on channel 1        | N/A         | N/A              |
++----------------------+---------------+------------------------------+-------------+------------------+
+| TXBias               | float64       | Tx Current Bias on channel 1 | N/A         | N/A              |
++----------------------+---------------+------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

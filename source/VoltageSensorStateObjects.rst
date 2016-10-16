@@ -4,14 +4,15 @@ VoltageSensorState Model Objects
 *state/VoltageSensor*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **Name**
-	- **Data Type**: string
-	- **Description**: Voltage Sensor Name.
-	- This parameter is key element.
-- **CurrentVoltage**
-	- **Data Type**: float64
-	- **Description**: Current Voltage Value.
+- Multiple objects of this type can exist in a system.
+
++--------------------+---------------+-----------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |    **DESCRIPTION**    | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+-----------------------+-------------+------------------+
+| Name **[KEY]**     | string        | Voltage Sensor Name   | N/A         | N/A              |
++--------------------+---------------+-----------------------+-------------+------------------+
+| CurrentVoltage     | float64       | Current Voltage Value | N/A         | N/A              |
++--------------------+---------------+-----------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

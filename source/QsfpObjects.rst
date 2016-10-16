@@ -4,51 +4,45 @@ Qsfp Model Objects
 *config/Qsfp*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **QsfpId**
-	- **Data Type**: int32
-	- **Description**: Qsfp Id.
-	- This parameter is key element.
-- **LowerWarningTemperature**
-	- **Data Type**: float64
-	- **Description**: Lower Warning temperature threshold for TCA.
-- **LowerWarningVoltage**
-	- **Data Type**: float64
-	- **Description**: Lower Warning Voltage threshold for TCA.
-- **PMClassBAdminState**
-	- **Data Type**: string
-	- **Description**: PM Class-B Admin State.
-	- **Default**: Disable
-- **HigherAlarmVoltage**
-	- **Data Type**: float64
-	- **Description**: Higher Alarm Voltage threshold for TCA.
-- **HigherWarningTemperature**
-	- **Data Type**: float64
-	- **Description**: Higher Warning temperature threshold for TCA.
-- **LowerAlarmTemperature**
-	- **Data Type**: float64
-	- **Description**: Lower Alarm temperature threshold for TCA.
-- **LowerAlarmVoltage**
-	- **Data Type**: float64
-	- **Description**: Lower Alarm Voltage threshold for TCA.
-- **PMClassCAdminState**
-	- **Data Type**: string
-	- **Description**: PM Class-C Admin State.
-	- **Default**: Disable
-- **AdminState**
-	- **Data Type**: string
-	- **Description**: Enable/Disable.
-	- **Default**: Disable
-- **HigherAlarmTemperature**
-	- **Data Type**: float64
-	- **Description**: Higher Alarm temperature threshold for TCA.
-- **HigherWarningVoltage**
-	- **Data Type**: float64
-	- **Description**: Higher Warning Voltage threshold for TCA.
-- **PMClassAAdminState**
-	- **Data Type**: string
-	- **Description**: PM Class-A Admin State.
-	- **Default**: Disable
+- Multiple objects of this type can exist in a system.
+
++--------------------------+---------------+--------------------------------+-------------+------------------+
+|    **PARAMETER NAME**    | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| QsfpId **[KEY]**         | int32         | Qsfp Id                        | N/A         | N/A              |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| AdminState               | string        | Enable/Disable                 | Disable     | Enable, Disable  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| HigherAlarmTemperature   | float64       | Higher Alarm temperature       | N/A         | N/A              |
+|                          |               | threshold for TCA              |             |                  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| LowerAlarmTemperature    | float64       | Lower Alarm temperature        | N/A         | N/A              |
+|                          |               | threshold for TCA              |             |                  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| LowerWarningVoltage      | float64       | Lower Warning Voltage          | N/A         | N/A              |
+|                          |               | threshold for TCA              |             |                  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassAAdminState       | string        | PM Class-A Admin State         | Disable     | Enable, Disable  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassBAdminState       | string        | PM Class-B Admin State         | Disable     | Enable, Disable  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| HigherAlarmVoltage       | float64       | Higher Alarm Voltage threshold | N/A         | N/A              |
+|                          |               | for TCA                        |             |                  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| HigherWarningTemperature | float64       | Higher Warning temperature     | N/A         | N/A              |
+|                          |               | threshold for TCA              |             |                  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| HigherWarningVoltage     | float64       | Higher Warning Voltage         | N/A         | N/A              |
+|                          |               | threshold for TCA              |             |                  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| LowerAlarmVoltage        | float64       | Lower Alarm Voltage threshold  | N/A         | N/A              |
+|                          |               | for TCA                        |             |                  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| LowerWarningTemperature  | float64       | Lower Warning temperature      | N/A         | N/A              |
+|                          |               | threshold for TCA              |             |                  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassCAdminState       | string        | PM Class-C Admin State         | Disable     | Enable, Disable  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

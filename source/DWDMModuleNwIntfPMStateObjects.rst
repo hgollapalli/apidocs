@@ -4,32 +4,25 @@ DWDMModuleNwIntfPMState Model Objects
 *state/DWDMModuleNwIntfPM*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **ModuleId**
-	- **Data Type**: uint8
-	- **Description**: DWDM Module identifier.
-	- This parameter is key element.
-- **NwIntfId**
-	- **Data Type**: uint8
-	- **Description**: DWDM Module network interface identifier.
-	- This parameter is key element.
-- **Resource**
-	- **Data Type**: string
-	- **Description**: Opticd resource name for which PM Data is required.
-	- This parameter is key element.
-- **Type**
-	- **Data Type**: string
-	- **Description**: Min/Max/Avg.
-	- This parameter is key element.
-- **Class**
-	- **Data Type**: string
-	- **Description**: Class of PM Data.
-	- **Default**: CLASS-A
-	- **Possible Values**: CLASS-A, CLASS-B, CLASS-B
-	- This parameter is key element.
-- **Data**
-	- **Data Type**: DWDMModulePMData
-	- **Description**: .
+- Multiple objects of this type can exist in a system.
+
++--------------------+------------------+--------------------------------+-------------+---------------------------+
+| **PARAMETER NAME** |  **DATA TYPE**   |        **DESCRIPTION**         | **DEFAULT** |     **VALID VALUES**      |
++--------------------+------------------+--------------------------------+-------------+---------------------------+
+| Class **[KEY]**    | string           | Class of PM Data               | CLASS-A     | CLASS-A, CLASS-B, CLASS-B |
++--------------------+------------------+--------------------------------+-------------+---------------------------+
+| ModuleId **[KEY]** | uint8            | DWDM Module identifier         | N/A         | N/A                       |
++--------------------+------------------+--------------------------------+-------------+---------------------------+
+| NwIntfId **[KEY]** | uint8            | DWDM Module network interface  | N/A         | N/A                       |
+|                    |                  | identifier                     |             |                           |
++--------------------+------------------+--------------------------------+-------------+---------------------------+
+| Resource **[KEY]** | string           | Opticd resource name for which | N/A         | N/A                       |
+|                    |                  | PM Data is required            |             |                           |
++--------------------+------------------+--------------------------------+-------------+---------------------------+
+| Type **[KEY]**     | string           | Min/Max/Avg                    | N/A         | N/A                       |
++--------------------+------------------+--------------------------------+-------------+---------------------------+
+| Data               | DWDMModulePMData |                                | N/A         | N/A                       |
++--------------------+------------------+--------------------------------+-------------+---------------------------+
 
 
 **Flexswitch API Supported:**

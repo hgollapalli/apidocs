@@ -4,20 +4,17 @@ PowerConverterSensorPMDataState Model Objects
 *state/PowerConverterSensorPMData*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **Name**
-	- **Data Type**: string
-	- **Description**: Power Converter Sensor Name.
-	- This parameter is key element.
-- **Class**
-	- **Data Type**: string
-	- **Description**: Class of PM Data.
-	- **Default**: CLASS-A
-	- **Possible Values**: CLASS-A, CLASS-B, CLASS-B
-	- This parameter is key element.
-- **Data**
-	- **Data Type**: PowerConverterSensorPMData
-	- **Description**: .
+- Multiple objects of this type can exist in a system.
+
++--------------------+----------------------------+-----------------------------+-------------+---------------------------+
+| **PARAMETER NAME** |       **DATA TYPE**        |       **DESCRIPTION**       | **DEFAULT** |     **VALID VALUES**      |
++--------------------+----------------------------+-----------------------------+-------------+---------------------------+
+| Class **[KEY]**    | string                     | Class of PM Data            | CLASS-A     | CLASS-A, CLASS-B, CLASS-B |
++--------------------+----------------------------+-----------------------------+-------------+---------------------------+
+| Name **[KEY]**     | string                     | Power Converter Sensor Name | N/A         | N/A                       |
++--------------------+----------------------------+-----------------------------+-------------+---------------------------+
+| Data               | PowerConverterSensorPMData |                             | N/A         | N/A                       |
++--------------------+----------------------------+-----------------------------+-------------+---------------------------+
 
 
 **Flexswitch API Supported:**

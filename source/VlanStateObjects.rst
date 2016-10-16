@@ -4,20 +4,26 @@ VlanState Model Objects
 *state/Vlan*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **VlanId**
-	- **Data Type**: int32
-	- **Description**: 802.1Q tag/Vlan ID for vlan being provisioned.
-	- This parameter is key element.
-- **VlanName**
-	- **Data Type**: string
-	- **Description**: System assigned vlan name.
-- **IfIndex**
-	- **Data Type**: int32
-	- **Description**: System assigned interface id for this vlan interface.
-- **OperState**
-	- **Data Type**: string
-	- **Description**: Operational state of vlan interface.
+- Multiple objects of this type can exist in a system.
+
++------------------------+---------------+--------------------------------+-------------+------------------+
+|   **PARAMETER NAME**   | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| VlanId **[KEY]**       | int32         | 802.1Q tag/Vlan ID for vlan    | N/A         | N/A              |
+|                        |               | being provisioned              |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| IfIndex                | int32         | System assigned interface id   | N/A         | N/A              |
+|                        |               | for this vlan interface        |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| OperState              | string        | Operational state of vlan      | N/A         | N/A              |
+|                        |               | interface                      |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| SysInternalDescription | string        | This is a system generated     | N/A         | N/A              |
+|                        |               | string that explains the       |             |                  |
+|                        |               | operstate value                |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| VlanName               | string        | System assigned vlan name      | N/A         | N/A              |
++------------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

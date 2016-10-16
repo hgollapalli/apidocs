@@ -4,35 +4,32 @@ DaemonState Model Objects
 *state/Daemon*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **Name**
-	- **Data Type**: string
-	- **Description**: Daemon name.
-	- This parameter is key element.
-- **Reason**
-	- **Data Type**: string
-	- **Description**: Reason for current state of the daemon.
-- **RestartReason**
-	- **Data Type**: string
-	- **Description**: Last restart reason.
-- **State**
-	- **Data Type**: string
-	- **Description**: State of the daemon.
-- **Enable**
-	- **Data Type**: bool
-	- **Description**: If the daemon configured to be enabled.
-- **KeepAlive**
-	- **Data Type**: string
-	- **Description**: KeepAlive state of the daemon.
-- **RestartCount**
-	- **Data Type**: int32
-	- **Description**: Number of times this daemon has been restarted.
-- **RestartTime**
-	- **Data Type**: string
-	- **Description**: Last restart time.
-- **StartTime**
-	- **Data Type**: string
-	- **Description**: Daemon start time.
+- Multiple objects of this type can exist in a system.
+
++--------------------+---------------+--------------------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Name **[KEY]**     | string        | Daemon name                    | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| State              | string        | State of the daemon            | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| KeepAlive          | string        | KeepAlive state of the daemon  | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| RestartReason      | string        | Last restart reason            | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| RestartTime        | string        | Last restart time              | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| StartTime          | string        | Daemon start time              | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Enable             | bool          | If the daemon configured to be | N/A         | N/A              |
+|                    |               | enabled                        |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Reason             | string        | Reason for current state of    | N/A         | N/A              |
+|                    |               | the daemon                     |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| RestartCount       | int32         | Number of times this daemon    | N/A         | N/A              |
+|                    |               | has been restarted             |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

@@ -4,56 +4,65 @@ Port Model Objects
 *config/Port*
 ------------------------------------
 
-- Only one of these object can exist in a system.
-- **IntfRef**
-	- **Data Type**: string
-	- **Description**: Front panel port name or system assigned interface id.
-	- This parameter is key element.
-- **AdminState**
-	- **Data Type**: string
-	- **Description**: Administrative state of this port.
-	- **Default**: DOWN
-- **BreakOutMode**
-	- **Data Type**: string
-	- **Description**: Break out mode for the port. Only applicable on ports that support breakout. Valid modes - 1x40.
-- **Description**
-	- **Data Type**: string
-	- **Description**: User provided string description.
-	- **Default**: FP Port
-- **LoopbackMode**
-	- **Data Type**: string
-	- **Description**: Desired loopback setting for this port.
-	- **Default**: NONE
-- **IfIndex**
-	- **Data Type**: int32
-	- **Description**: System assigned interface id for this port. Read only attribute.
-- **MediaType**
-	- **Data Type**: string
-	- **Description**: Type of media inserted into this port.
-- **PhyIntfType**
-	- **Data Type**: string
-	- **Description**: Type of internal phy interface.
-- **Speed**
-	- **Data Type**: int32
-	- **Description**: Port speed in Mbps.
-- **Autoneg**
-	- **Data Type**: string
-	- **Description**: Autonegotiation setting for this port.
-	- **Default**: OFF
-- **Duplex**
-	- **Data Type**: string
-	- **Description**: Duplex setting for this port.
-	- **Default**: Full Duplex
-- **EnableFEC**
-	- **Data Type**: bool
-	- **Description**: Enable/Disable 802.3bj FEC on this interface.
-	- **Default**: false
-- **MacAddr**
-	- **Data Type**: string
-	- **Description**: Mac address associated with this port.
-- **Mtu**
-	- **Data Type**: int32
-	- **Description**: Maximum transmission unit size for this port.
+- Only one object of this type can exist in a system.
+
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** |        **VALID VALUES**        |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| IntfRef **[KEY]**  | string        | Front panel port name or       | N/A         | N/A                            |
+|                    |               | system assigned interface id   |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| Duplex             | string        | Duplex setting for this port   | Full Duplex | Half Duplex, Full Duplex       |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| EnableFEC          | bool          | Enable/Disable 802.3bj FEC on  | false       | N/A                            |
+|                    |               | this interface                 |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| LoopbackMode       | string        | Desired loopback setting for   | NONE        | NONE, MAC, PHY, RMT            |
+|                    |               | this port                      |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| MediaType          | string        | Type of media inserted into    | N/A         | N/A                            |
+|                    |               | this port                      |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| Mtu                | int32         | Maximum transmission unit size | N/A         | N/A                            |
+|                    |               | for this port                  |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| PRBSRxEnable       | bool          | Enable/Disable PRBS checker on | false       | N/A                            |
+|                    |               | this port                      |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| BreakOutMode       | string        | Break out mode for the port.   | N/A         | 1x40(1), 4x10(2)               |
+|                    |               | Only applicable on ports that  |             |                                |
+|                    |               | support breakout. Valid modes  |             |                                |
+|                    |               | - 1x40                         |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| Description        | string        | User provided string           | FP Port     | N/A                            |
+|                    |               | description                    |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| PhyIntfType        | string        | Type of internal phy interface | N/A         | GMII, SGMII, QSMII, SFI, XFI,  |
+|                    |               |                                |             | XAUI, XLAUI, RXAUI, CR, CR2,   |
+|                    |               |                                |             | CR4, KR, KR2, KR4, SR, SR2,    |
+|                    |               |                                |             | SR4, SR10, LR, LR4             |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| Speed              | int32         | Port speed in Mbps             | N/A         | N/A                            |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| MacAddr            | string        | Mac address associated with    | N/A         | N/A                            |
+|                    |               | this port                      |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| PRBSTxEnable       | bool          | Enable/Disable generation of   | false       | N/A                            |
+|                    |               | PRBS on this port              |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| Autoneg            | string        | Autonegotiation setting for    | OFF         | ON, OFF                        |
+|                    |               | this port                      |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| PRBSPolynomial     | string        | PRBS polynomial to use for     | 2^7         | 2^7, 2^23, 2^31                |
+|                    |               | generation/checking            |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| AdminState         | string        | Administrative state of this   | DOWN        | UP, DOWN                       |
+|                    |               | port                           |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| IfIndex            | int32         | System assigned interface      | N/A         | N/A                            |
+|                    |               | id for this port. Read only    |             |                                |
+|                    |               | attribute                      |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
 
 
 **Flexswitch API Supported:**

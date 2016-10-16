@@ -4,113 +4,147 @@ PortState Model Objects
 *state/Port*
 ------------------------------------
 
-- Only one of these object can exist in a system.
-- **IntfRef**
-	- **Data Type**: string
-	- **Description**: Front panel port name or system assigned interface id.
-	- This parameter is key element.
-- **LastDownEventTime**
-	- **Data Type**: string
-	- **Description**: Timestamp corresponding to the last UP to DOWN operational state change event.
-- **IfEtherOverSizePktCnt**
-	- **Data Type**: int64
-	- **Description**: RFC 1757 Total number of oversized packets received and transmitted.
-- **IfEtherPkts256To511Octets**
-	- **Data Type**: int64
-	- **Description**: RFC 1757 Total number of ethernet packets sized between 256 and 511 bytes.
-- **IfOutUcastPkts**
-	- **Data Type**: int64
-	- **Description**: RFC2233 Total number of unicast packets transmitted on this port.
-- **IfInErrors**
-	- **Data Type**: int64
-	- **Description**: RFC2233 Total number of inbound packets that contained an error.
-- **IfInOctets**
-	- **Data Type**: int64
-	- **Description**: RFC2233 Total number of octets received on this port.
-- **IfEtherPkts512To1023Octets**
-	- **Data Type**: int64
-	- **Description**: RFC 1757 Total number of ethernet packets sized between 512 and 1023 bytes.
-- **IfEtherPkts64OrLessOctets**
-	- **Data Type**: int64
-	- **Description**: RFC1757 Total number of ethernet packets sized 64 bytes or lesser.
-- **IfEtherUnderSizePktCnt**
-	- **Data Type**: int64
-	- **Description**: RFC 1757 Total numbe of undersized packets received and transmitted.
-- **ConfigMode**
-	- **Data Type**: string
-	- **Description**: The current mode of configuration on this port (L2/L3/Internal).
-- **IfEtherJabber**
-	- **Data Type**: int64
-	- **Description**: RFC 1757 Total number of jabber frames received and transmitted.
-- **NumDownEvents**
-	- **Data Type**: int32
-	- **Description**: Number of times the operational state transitioned from UP to DOWN.
-- **IfEtherPkts65To127Octets**
-	- **Data Type**: int64
-	- **Description**: RFC 1757 Total number of ethernet packets sized between 65 and 127 bytes.
-- **LastUpEventTime**
-	- **Data Type**: string
-	- **Description**: Timestamp corresponding to the last DOWN to UP operational state change event.
-- **OperState**
-	- **Data Type**: string
-	- **Description**: Operational state of front panel port.
-- **ErrDisableReason**
-	- **Data Type**: string
-	- **Description**: Reason explaining why port has been disabled by protocol code.
-- **IfIndex**
-	- **Data Type**: int32
-	- **Description**: System assigned interface id for this port.
-- **IfInUnknownProtos**
-	- **Data Type**: int64
-	- **Description**: RFC2233 Total number of inbound packets discarded due to unknown protocol.
-- **IfOutOctets**
-	- **Data Type**: int64
-	- **Description**: RFC2233 Total number of octets transmitted on this port.
-- **IfEtherPkts1024To1518Octets**
-	- **Data Type**: int64
-	- **Description**: RFC 1757 Total number of ethernet packets sized between 1024 and 1518 bytes.
-- **IfInUcastPkts**
-	- **Data Type**: int64
-	- **Description**: RFC2233 Total number of unicast packets received on this port.
-- **IfEtherPkts128To255Octets**
-	- **Data Type**: int64
-	- **Description**: RFC 1757 Total number of ethernet packets sized between 128 and 255 bytes.
-- **IfOutDiscards**
-	- **Data Type**: int64
-	- **Description**: RFC2233 Total number of error free packets discarded and not transmitted.
-- **IfOutErrors**
-	- **Data Type**: int64
-	- **Description**: RFC2233 Total number of packets discarded and not transmitted due to packet errors.
-- **Name**
-	- **Data Type**: string
-	- **Description**: System assigned vlan name.
-- **PresentInHW**
-	- **Data Type**: string
-	- **Description**: Indication of whether this port object maps to a physical port. Set to 'No' for ports that are not broken out..
-- **IfEtherCRCAlignError**
-	- **Data Type**: int64
-	- **Description**: RFC 1757 Total number of CRC alignment errors.
-- **IfEtherMCPkts**
-	- **Data Type**: int64
-	- **Description**: RFC 1757 Total number of multicast packets received and transmitted.
-- **IfEtherPkts**
-	- **Data Type**: int64
-	- **Description**: RFC 1757 Total number of ethernet packets received and transmitted.
-- **IfInDiscards**
-	- **Data Type**: int64
-	- **Description**: RFC2233 Total number of inbound packets that were discarded.
-- **NumUpEvents**
-	- **Data Type**: int32
-	- **Description**: Number of times the operational state transitioned from DOWN to UP.
-- **Pvid**
-	- **Data Type**: int32
-	- **Description**: The vlanid assigned to untagged traffic ingressing this port.
-- **IfEtherBcastPkts**
-	- **Data Type**: int64
-	- **Description**: RFC 1757 Total number of ethernet broadcast packets received and transmitted.
-- **IfEtherFragments**
-	- **Data Type**: int64
-	- **Description**: RFC1757 Total number of ethernet fragments received and transmitted.
+- Only one object of this type can exist in a system.
+
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+|     **PARAMETER NAME**      | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IntfRef **[KEY]**           | string        | Front panel port name or       | N/A         | N/A              |
+|                             |               | system assigned interface id   |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| ConfigMode                  | string        | The current mode of            | N/A         | N/A              |
+|                             |               | configuration on this port     |             |                  |
+|                             |               | (L2/L3/Internal)               |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfEtherPkts1024To1518Octets | int64         | RFC 1757 Total number of       | N/A         | N/A              |
+|                             |               | ethernet packets sized between |             |                  |
+|                             |               | 1024 and 1518 bytes            |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfEtherPkts128To255Octets   | int64         | RFC 1757 Total number of       | N/A         | N/A              |
+|                             |               | ethernet packets sized between |             |                  |
+|                             |               | 128 and 255 bytes              |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfEtherUnderSizePktCnt      | int64         | RFC 1757 Total numbe of        | N/A         | N/A              |
+|                             |               | undersized packets received    |             |                  |
+|                             |               | and transmitted                |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| Name                        | string        | System assigned vlan name      | N/A         | N/A              |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| NumDownEvents               | int32         | Number of times the            | N/A         | N/A              |
+|                             |               | operational state transitioned |             |                  |
+|                             |               | from UP to DOWN                |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfEtherOverSizePktCnt       | int64         | RFC 1757 Total number of       | N/A         | N/A              |
+|                             |               | oversized packets received and |             |                  |
+|                             |               | transmitted                    |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfEtherPkts65To127Octets    | int64         | RFC 1757 Total number of       | N/A         | N/A              |
+|                             |               | ethernet packets sized between |             |                  |
+|                             |               | 65 and 127 bytes               |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfOutOctets                 | int64         | RFC2233 Total number of octets | N/A         | N/A              |
+|                             |               | transmitted on this port       |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| LastDownEventTime           | string        | Timestamp corresponding to the | N/A         | N/A              |
+|                             |               | last UP to DOWN operational    |             |                  |
+|                             |               | state change event             |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| LastUpEventTime             | string        | Timestamp corresponding to the | N/A         | N/A              |
+|                             |               | last DOWN to UP operational    |             |                  |
+|                             |               | state change event             |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfEtherBcastPkts            | int64         | RFC 1757 Total number of       | N/A         | N/A              |
+|                             |               | ethernet broadcast packets     |             |                  |
+|                             |               | received and transmitted       |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfInOctets                  | int64         | RFC2233 Total number of octets | N/A         | N/A              |
+|                             |               | received on this port          |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfInUnknownProtos           | int64         | RFC2233 Total number of        | N/A         | N/A              |
+|                             |               | inbound packets discarded due  |             |                  |
+|                             |               | to unknown protocol            |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfOutUcastPkts              | int64         | RFC2233 Total number of        | N/A         | N/A              |
+|                             |               | unicast packets transmitted on |             |                  |
+|                             |               | this port                      |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| PRBSRxErrCnt                | int64         | Receive error count reported   | N/A         | N/A              |
+|                             |               | by PRBS checker                |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfEtherCRCAlignError        | int64         | RFC 1757 Total number of CRC   | N/A         | N/A              |
+|                             |               | alignment errors               |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfEtherPkts                 | int64         | RFC 1757 Total number of       | N/A         | N/A              |
+|                             |               | ethernet packets received and  |             |                  |
+|                             |               | transmitted                    |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfEtherPkts64OrLessOctets   | int64         | RFC1757 Total number of        | N/A         | N/A              |
+|                             |               | ethernet packets sized 64      |             |                  |
+|                             |               | bytes or lesser                |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfInErrors                  | int64         | RFC2233 Total number of        | N/A         | N/A              |
+|                             |               | inbound packets that contained |             |                  |
+|                             |               | an error                       |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfInUcastPkts               | int64         | RFC2233 Total number of        | N/A         | N/A              |
+|                             |               | unicast packets received on    |             |                  |
+|                             |               | this port                      |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| OperState                   | string        | Operational state of front     | N/A         | N/A              |
+|                             |               | panel port                     |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| PresentInHW                 | string        | Indication of whether this     | N/A         | N/A              |
+|                             |               | port object maps to a physical |             |                  |
+|                             |               | port. Set to 'No' for ports    |             |                  |
+|                             |               | that are not broken out.       |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfEtherPkts512To1023Octets  | int64         | RFC 1757 Total number of       | N/A         | N/A              |
+|                             |               | ethernet packets sized between |             |                  |
+|                             |               | 512 and 1023 bytes             |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfEtherMCPkts               | int64         | RFC 1757 Total number of       | N/A         | N/A              |
+|                             |               | multicast packets received and |             |                  |
+|                             |               | transmitted                    |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfEtherFragments            | int64         | RFC1757 Total number of        | N/A         | N/A              |
+|                             |               | ethernet fragments received    |             |                  |
+|                             |               | and transmitted                |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfEtherPkts256To511Octets   | int64         | RFC 1757 Total number of       | N/A         | N/A              |
+|                             |               | ethernet packets sized between |             |                  |
+|                             |               | 256 and 511 bytes              |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfInDiscards                | int64         | RFC2233 Total number of        | N/A         | N/A              |
+|                             |               | inbound packets that were      |             |                  |
+|                             |               | discarded                      |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| NumUpEvents                 | int32         | Number of times the            | N/A         | N/A              |
+|                             |               | operational state transitioned |             |                  |
+|                             |               | from DOWN to UP                |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| Pvid                        | int32         | The vlanid assigned to         | N/A         | N/A              |
+|                             |               | untagged traffic ingressing    |             |                  |
+|                             |               | this port                      |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| ErrDisableReason            | string        | Reason explaining why port has | N/A         | N/A              |
+|                             |               | been disabled by protocol code |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfEtherJabber               | int64         | RFC 1757 Total number of       | N/A         | N/A              |
+|                             |               | jabber frames received and     |             |                  |
+|                             |               | transmitted                    |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfIndex                     | int32         | System assigned interface id   | N/A         | N/A              |
+|                             |               | for this port                  |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfOutDiscards               | int64         | RFC2233 Total number of error  | N/A         | N/A              |
+|                             |               | free packets discarded and not |             |                  |
+|                             |               | transmitted                    |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
+| IfOutErrors                 | int64         | RFC2233 Total number of        | N/A         | N/A              |
+|                             |               | packets discarded and not      |             |                  |
+|                             |               | transmitted due to packet      |             |                  |
+|                             |               | errors                         |             |                  |
++-----------------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

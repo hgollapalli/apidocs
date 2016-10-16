@@ -4,20 +4,17 @@ VoltageSensorPMDataState Model Objects
 *state/VoltageSensorPMData*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **Name**
-	- **Data Type**: string
-	- **Description**: Voltage Sensor Name.
-	- This parameter is key element.
-- **Class**
-	- **Data Type**: string
-	- **Description**: Class of PM Data.
-	- **Default**: CLASS-A
-	- **Possible Values**: CLASS-A, CLASS-B, CLASS-B
-	- This parameter is key element.
-- **Data**
-	- **Data Type**: VoltageSensorPMData
-	- **Description**: .
+- Multiple objects of this type can exist in a system.
+
++--------------------+---------------------+---------------------+-------------+---------------------------+
+| **PARAMETER NAME** |    **DATA TYPE**    |   **DESCRIPTION**   | **DEFAULT** |     **VALID VALUES**      |
++--------------------+---------------------+---------------------+-------------+---------------------------+
+| Class **[KEY]**    | string              | Class of PM Data    | CLASS-A     | CLASS-A, CLASS-B, CLASS-B |
++--------------------+---------------------+---------------------+-------------+---------------------------+
+| Name **[KEY]**     | string              | Voltage Sensor Name | N/A         | N/A                       |
++--------------------+---------------------+---------------------+-------------+---------------------------+
+| Data               | VoltageSensorPMData |                     | N/A         | N/A                       |
++--------------------+---------------------+---------------------+-------------+---------------------------+
 
 
 **Flexswitch API Supported:**

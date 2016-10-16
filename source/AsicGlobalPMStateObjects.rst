@@ -4,24 +4,24 @@ AsicGlobalPMState Model Objects
 *state/AsicGlobalPM*
 ------------------------------------
 
-- Only one of these object can exist in a system.
-- **ModuleId**
-	- **Data Type**: uint8
-	- **Description**: Module identifier.
-	- This parameter is key element.
-- **Resource**
-	- **Data Type**: string
-	- **Description**: Resource identifier.
-	- This parameter is key element.
-- **ClassAPMData**
-	- **Data Type**: PMData
-	- **Description**: PM Data corresponding to PM Class A.
-- **ClassBPMData**
-	- **Data Type**: PMData
-	- **Description**: PM Data corresponding to PM Class B.
-- **ClassCPMData**
-	- **Data Type**: PMData
-	- **Description**: PM Data corresponding to PM Class C.
+- Only one object of this type can exist in a system.
+
++--------------------+---------------+--------------------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| ModuleId **[KEY]** | uint8         | Module identifier              | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Resource **[KEY]** | string        | Resource identifier            | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| ClassBPMData       | PMData        | PM Data corresponding to PM    | N/A         | N/A              |
+|                    |               | Class B                        |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| ClassCPMData       | PMData        | PM Data corresponding to PM    | N/A         | N/A              |
+|                    |               | Class C                        |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| ClassAPMData       | PMData        | PM Data corresponding to PM    | N/A         | N/A              |
+|                    |               | Class A                        |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

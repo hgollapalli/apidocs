@@ -4,81 +4,67 @@ DWDMModuleNwIntf Model Objects
 *config/DWDMModuleNwIntf*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **NwIntfId**
-	- **Data Type**: uint8
-	- **Description**: DWDM Module network interface identifier.
-	- This parameter is key element.
-- **ModuleId**
-	- **Data Type**: uint8
-	- **Description**: DWDM Module identifier.
-	- This parameter is key element.
-- **AdminState**
-	- **Data Type**: string
-	- **Description**: Administrative state of this network interface.
-	- **Default**: UP
-- **FECMode**
-	- **Data Type**: string
-	- **Description**: DWDM Module network interface FEC mode.
-	- **Default**: 15%SDFEC
-- **ModulationFmt**
-	- **Data Type**: string
-	- **Description**: Modulation format to use for this network interface.
-	- **Default**: 16QAM
-- **RxPRBSInvertPattern**
-	- **Data Type**: bool
-	- **Description**: Check against inverted PRBS polynomial pattern.
-	- **Default**: true
-- **TxPulseShapeFltrRollOff**
-	- **Data Type**: float64
-	- **Description**: TX pulse shape filter roll off factor.
-	- **Default**: 0.301
-- **TxPulseShapeFltrType**
-	- **Data Type**: string
-	- **Description**: TX pulse shaping filter type.
-	- **Default**: RootRaisedCos
-- **ClntIntfIdToTributary0Map**
-	- **Data Type**: uint8
-	- **Description**: Client interface ID to map to network interface tributary 0.
-- **DiffEncoding**
-	- **Data Type**: bool
-	- **Description**: Control to enable/disable DWDM Module network interface encoding type.
-	- **Default**: true
-- **EnableTxPRBS**
-	- **Data Type**: bool
-	- **Description**: Enable TX PRBS generation on this network interface.
-	- **Default**: false
-- **TxPower**
-	- **Data Type**: float64
-	- **Description**: Transmit output power for this network interface in dBm.
-	- **Default**: 0
-- **ChannelNumber**
-	- **Data Type**: uint8
-	- **Description**: TX Channel number to use for this network interface.
-	- **Default**: 48
-- **RxPRBSPattern**
-	- **Data Type**: string
-	- **Description**: PRBS pattern to use for checker.
-	- **Default**: 2^31
-- **TxPRBSPattern**
-	- **Data Type**: string
-	- **Description**: Pattern to use for TX PRBS generation.
-	- **Default**: 2^31
-- **TxPRBSInvertPattern**
-	- **Data Type**: bool
-	- **Description**: Generate inverted PRBS polynomial pattern.
-	- **Default**: true
-- **TxPowerRampdBmPerSec**
-	- **Data Type**: float64
-	- **Description**: Rate of change of tx power on this network interface.
-	- **Default**: 1
-- **ClntIntfIdToTributary1Map**
-	- **Data Type**: uint8
-	- **Description**: Client interface ID to map to network interface tributary 1.
-- **EnableRxPRBSChecker**
-	- **Data Type**: bool
-	- **Description**: Enable RX PRBS checker.
-	- **Default**: false
+- Multiple objects of this type can exist in a system.
+
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+|    **PARAMETER NAME**     | **DATA TYPE** |        **DESCRIPTION**         |  **DEFAULT**  |        **VALID VALUES**        |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| ModuleId **[KEY]**        | uint8         | DWDM Module identifier         | N/A           | N/A                            |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| NwIntfId **[KEY]**        | uint8         | DWDM Module network interface  | N/A           | N/A                            |
+|                           |               | identifier                     |               |                                |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| ClntIntfIdToTributary1Map | uint8         | Client interface ID to map to  | N/A           | N/A                            |
+|                           |               | network interface tributary 1  |               |                                |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| AdminState                | string        | Administrative state of this   | UP            | UP, DOWN                       |
+|                           |               | network interface              |               |                                |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| FECMode                   | string        | DWDM Module network interface  | 15%SDFEC      | 15%SDFEC, 15%OvrHeadSDFEC,     |
+|                           |               | FEC mode                       |               | 25%OvrHeadSDFEC                |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| TxPowerRampdBmPerSec      | float64       | Rate of change of tx power on  |             1 | N/A                            |
+|                           |               | this network interface         |               |                                |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| TxPRBSPattern             | string        | Pattern to use for TX PRBS     | 2^31          | 2^7, 2^15, 2^23, 2^31          |
+|                           |               | generation                     |               |                                |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| TxPulseShapeFltrRollOff   | float64       | TX pulse shape filter roll off |         0.301 | N/A                            |
+|                           |               | factor                         |               |                                |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| TxPulseShapeFltrType      | string        | TX pulse shaping filter type   | RootRaisedCos | RootRaisedCos, RaisedCos,      |
+|                           |               |                                |               | Gaussian                       |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| ChannelNumber             | uint8         | TX Channel number to use for   |            48 | N/A                            |
+|                           |               | this network interface         |               |                                |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| EnableRxPRBSChecker       | bool          | Enable RX PRBS checker         | false         | N/A                            |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| EnableTxPRBS              | bool          | Enable TX PRBS generation on   | false         | N/A                            |
+|                           |               | this network interface         |               |                                |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| RxPRBSPattern             | string        | PRBS pattern to use for        | 2^31          | 2^7, 2^15, 2^23, 2^31          |
+|                           |               | checker                        |               |                                |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| RxPRBSInvertPattern       | bool          | Check against inverted PRBS    | true          | N/A                            |
+|                           |               | polynomial pattern             |               |                                |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| TxPRBSInvertPattern       | bool          | Generate inverted PRBS         | true          | N/A                            |
+|                           |               | polynomial pattern             |               |                                |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| TxPower                   | float64       | Transmit output power for this |             0 | N/A                            |
+|                           |               | network interface in dBm       |               |                                |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| ClntIntfIdToTributary0Map | uint8         | Client interface ID to map to  | N/A           | N/A                            |
+|                           |               | network interface tributary 0  |               |                                |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| DiffEncoding              | bool          | Control to enable/disable      | true          | N/A                            |
+|                           |               | DWDM Module network interface  |               |                                |
+|                           |               | encoding type                  |               |                                |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
+| ModulationFmt             | string        | Modulation format to use for   | 16QAM         | QPSK, 8QAM, 16QAM              |
+|                           |               | this network interface         |               |                                |
++---------------------------+---------------+--------------------------------+---------------+--------------------------------+
 
 
 **Flexswitch API Supported:**

@@ -4,15 +4,18 @@ ComponentLogging Model Objects
 *config/ComponentLogging*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **Module**
-	- **Data Type**: string
-	- **Description**: Module name to set logging level.
-	- This parameter is key element.
-- **Level**
-	- **Data Type**: string
-	- **Description**: Logging level.
-	- **Default**: info
+- Multiple objects of this type can exist in a system.
+
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** |        **VALID VALUES**        |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| Module **[KEY]**   | string        | Module name to set logging     | N/A         | N/A                            |
+|                    |               | level                          |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| Level              | string        | Logging level                  | info        | crit, err, warn, alert, emerg, |
+|                    |               |                                |             | notice, info, debug, trace,    |
+|                    |               |                                |             | off                            |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
 
 
 **Flexswitch API Supported:**

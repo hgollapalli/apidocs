@@ -4,32 +4,29 @@ SystemParamState Model Objects
 *state/SystemParam*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **Vrf**
-	- **Data Type**: string
-	- **Description**: System Vrf.
-	- This parameter is key element.
-- **Kernel**
-	- **Data Type**: string
-	- **Description**: Kernel version running on this system.
-- **MgmtIp**
-	- **Data Type**: string
-	- **Description**: Management Ip of System.
-- **SwVersion**
-	- **Data Type**: string
-	- **Description**: FlexSwitch Version Information.
-- **SwitchMac**
-	- **Data Type**: string
-	- **Description**: Switch Mac Address.
-- **Description**
-	- **Data Type**: string
-	- **Description**: System Description.
-- **Distro**
-	- **Data Type**: string
-	- **Description**: Linux distro running on this system.
-- **Hostname**
-	- **Data Type**: string
-	- **Description**: System Host Name.
+- Multiple objects of this type can exist in a system.
+
++--------------------+---------------+--------------------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Vrf **[KEY]**      | string        | System Vrf                     | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Description        | string        | System Description             | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Distro             | string        | Linux distro running on this   | N/A         | N/A              |
+|                    |               | system                         |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Hostname           | string        | System Host Name               | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Kernel             | string        | Kernel version running on this | N/A         | N/A              |
+|                    |               | system                         |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| MgmtIp             | string        | Management Ip of System        | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| SwVersion          | string        | FlexSwitch Version Information | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| SwitchMac          | string        | Switch Mac Address             | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

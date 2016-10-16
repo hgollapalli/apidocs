@@ -4,38 +4,36 @@ SystemStatusState Model Objects
 *state/SystemStatus*
 ------------------------------------
 
-- Only one of these object can exist in a system.
-- **Name**
-	- **Data Type**: string
-	- **Description**: Name of the system.
-	- This parameter is key element.
-- **Reason**
-	- **Data Type**: string
-	- **Description**: Reason if system not ready.
-- **UpTime**
-	- **Data Type**: string
-	- **Description**: Uptime of this system.
-- **NumCreateCalls**
-	- **Data Type**: string
-	- **Description**: Number of create api calls made.
-- **Ready**
-	- **Data Type**: bool
-	- **Description**: System is ready to accept api calls.
-- **NumActionCalls**
-	- **Data Type**: string
-	- **Description**: Number of action api calls made.
-- **NumDeleteCalls**
-	- **Data Type**: string
-	- **Description**: Number of delete api calls made.
-- **NumGetCalls**
-	- **Data Type**: string
-	- **Description**: Number of get api calls made.
-- **NumUpdateCalls**
-	- **Data Type**: string
-	- **Description**: Number of update api calls made.
-- **FlexDaemons**
-	- **Data Type**: DaemonState
-	- **Description**: Daemon states.
+- Only one object of this type can exist in a system.
+
++--------------------+---------------+--------------------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Name **[KEY]**     | string        | Name of the system             | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| NumActionCalls     | string        | Number of action api calls     | N/A         | N/A              |
+|                    |               | made                           |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| NumDeleteCalls     | string        | Number of delete api calls     | N/A         | N/A              |
+|                    |               | made                           |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| NumGetCalls        | string        | Number of get api calls made   | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| NumUpdateCalls     | string        | Number of update api calls     | N/A         | N/A              |
+|                    |               | made                           |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Ready              | bool          | System is ready to accept api  | N/A         | N/A              |
+|                    |               | calls                          |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Reason             | string        | Reason if system not ready     | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| FlexDaemons        | DaemonState   | Daemon states                  | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| NumCreateCalls     | string        | Number of create api calls     | N/A         | N/A              |
+|                    |               | made                           |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| UpTime             | string        | Uptime of this system          | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

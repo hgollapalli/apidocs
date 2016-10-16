@@ -4,44 +4,48 @@ EthernetPM Model Objects
 *config/EthernetPM*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **IntfRef**
-	- **Data Type**: string
-	- **Description**: Interface name of port.
-	- This parameter is key element.
-- **Resource**
-	- **Data Type**: string
-	- **Description**: Resource identifier.
-	- **Possible Values**: StatUnderSizePkts, StatOverSizePkts, StatFragments, StatCRCAlignErrors, StatJabber, StatEtherPkts, StatMCPkts, StatBCPkts, Stat64OctOrLess, Stat65OctTo126Oct, Stat128OctTo255Oct, Stat128OctTo255Oct, Stat256OctTo511Oct, Stat512OctTo1023Oct, Statc1024OctTo1518Oct
-	- This parameter is key element.
-- **PMClassBEnable**
-	- **Data Type**: bool
-	- **Description**: Enable/Disable control for CLASS-B PM.
-	- **Default**: true
-- **PMClassCEnable**
-	- **Data Type**: bool
-	- **Description**: Enable/Disable control for CLASS-C PM.
-	- **Default**: true
-- **HighAlarmThreshold**
-	- **Data Type**: float64
-	- **Description**: High alarm threshold value for this PM.
-	- **Default**: 100000
-- **LowAlarmThreshold**
-	- **Data Type**: float64
-	- **Description**: Low alarm threshold value for this PM.
-	- **Default**: -100000
-- **PMClassAEnable**
-	- **Data Type**: bool
-	- **Description**: Enable/Disable control for CLASS-A PM.
-	- **Default**: true
-- **HighWarnThreshold**
-	- **Data Type**: float64
-	- **Description**: High warning threshold value for this PM.
-	- **Default**: 100000
-- **LowWarnThreshold**
-	- **Data Type**: float64
-	- **Description**: Low warning threshold value for this PM.
-	- **Default**: -100000
+- Multiple objects of this type can exist in a system.
+
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** |        **VALID VALUES**        |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| Resource **[KEY]** | string        | Resource identifier            | N/A         | StatUnderSizePkts,             |
+|                    |               |                                |             | StatOverSizePkts,              |
+|                    |               |                                |             | StatFragments,                 |
+|                    |               |                                |             | StatCRCAlignErrors,            |
+|                    |               |                                |             | StatJabber, StatEtherPkts,     |
+|                    |               |                                |             | StatMCPkts, StatBCPkts,        |
+|                    |               |                                |             | Stat64OctOrLess,               |
+|                    |               |                                |             | Stat65OctTo126Oct,             |
+|                    |               |                                |             | Stat128OctTo255Oct,            |
+|                    |               |                                |             | Stat128OctTo255Oct,            |
+|                    |               |                                |             | Stat256OctTo511Oct,            |
+|                    |               |                                |             | Stat512OctTo1023Oct,           |
+|                    |               |                                |             | Statc1024OctTo1518Oct          |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| IntfRef **[KEY]**  | string        | Interface name of port         | N/A         | N/A                            |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| HighAlarmThreshold | float64       | High alarm threshold value for |      100000 | N/A                            |
+|                    |               | this PM                        |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| LowAlarmThreshold  | float64       | Low alarm threshold value for  |     -100000 | N/A                            |
+|                    |               | this PM                        |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| PMClassAEnable     | bool          | Enable/Disable control for     | true        | N/A                            |
+|                    |               | CLASS-A PM                     |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| PMClassBEnable     | bool          | Enable/Disable control for     | true        | N/A                            |
+|                    |               | CLASS-B PM                     |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| PMClassCEnable     | bool          | Enable/Disable control for     | true        | N/A                            |
+|                    |               | CLASS-C PM                     |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| HighWarnThreshold  | float64       | High warning threshold value   |      100000 | N/A                            |
+|                    |               | for this PM                    |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| LowWarnThreshold   | float64       | Low warning threshold value    |     -100000 | N/A                            |
+|                    |               | for this PM                    |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
 
 
 **Flexswitch API Supported:**

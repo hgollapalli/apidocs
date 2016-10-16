@@ -4,34 +4,29 @@ ConfigLogState Model Objects
 *state/ConfigLog*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **SeqNum**
-	- **Data Type**: uint32
-	- **Description**: Sequence number of the API call.
-	- This parameter is key element.
-- **Time**
-	- **Data Type**: string
-	- **Description**: When the API was called.
-	- This parameter is key element.
-- **API**
-	- **Data Type**: string
-	- **Description**: Name of the API called.
-	- This parameter is key element.
-- **Data**
-	- **Data Type**: string
-	- **Description**: User provided data.
-- **Operation**
-	- **Data Type**: string
-	- **Description**: Oprtation executed on this API.
-- **Result**
-	- **Data Type**: string
-	- **Description**: Result of the API call.
-- **UserAddr**
-	- **Data Type**: string
-	- **Description**: Host address from where the call was made.
-- **UserName**
-	- **Data Type**: string
-	- **Description**: User who made the call.
+- Multiple objects of this type can exist in a system.
+
++--------------------+---------------+--------------------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| API **[KEY]**      | string        | Name of the API called         | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| SeqNum **[KEY]**   | uint32        | Sequence number of the API     | N/A         | N/A              |
+|                    |               | call                           |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Time **[KEY]**     | string        | When the API was called        | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| UserAddr           | string        | Host address from where the    | N/A         | N/A              |
+|                    |               | call was made                  |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| UserName           | string        | User who made the call         | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Data               | string        | User provided data             | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Operation          | string        | Oprtation executed on this API | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Result             | string        | Result of the API call         | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

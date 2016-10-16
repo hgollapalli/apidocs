@@ -4,24 +4,24 @@ EthernetPMState Model Objects
 *state/EthernetPM*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **IntfRef**
-	- **Data Type**: string
-	- **Description**: Interface name of port.
-	- This parameter is key element.
-- **Resource**
-	- **Data Type**: string
-	- **Description**: Resource identifier.
-	- This parameter is key element.
-- **ClassAPMData**
-	- **Data Type**: PMData
-	- **Description**: PM Data corresponding to PM Class A.
-- **ClassBPMData**
-	- **Data Type**: PMData
-	- **Description**: PM Data corresponding to PM Class B.
-- **ClassCPMData**
-	- **Data Type**: PMData
-	- **Description**: PM Data corresponding to PM Class C.
+- Multiple objects of this type can exist in a system.
+
++--------------------+---------------+--------------------------------+-------------+------------------+
+| **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| IntfRef **[KEY]**  | string        | Interface name of port         | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Resource **[KEY]** | string        | Resource identifier            | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| ClassCPMData       | PMData        | PM Data corresponding to PM    | N/A         | N/A              |
+|                    |               | Class C                        |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| ClassAPMData       | PMData        | PM Data corresponding to PM    | N/A         | N/A              |
+|                    |               | Class A                        |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| ClassBPMData       | PMData        | PM Data corresponding to PM    | N/A         | N/A              |
+|                    |               | Class B                        |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

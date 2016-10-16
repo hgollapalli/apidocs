@@ -4,48 +4,42 @@ AlarmState Model Objects
 *state/Alarm*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **EventName**
-	- **Data Type**: string
-	- **Description**: Alarm event name picked up from events.json.
-	- This parameter is key element.
-- **OwnerId**
-	- **Data Type**: int32
-	- **Description**: Alarm owner daemon Id picked up from events.json.
-	- This parameter is key element.
-- **OwnerName**
-	- **Data Type**: string
-	- **Description**: Alarm owner daemon name picked up from events.json.
-	- This parameter is key element.
-- **SrcObjName**
-	- **Data Type**: string
-	- **Description**: Alarm event name picked up from events.json.
-	- This parameter is key element.
-- **EventId**
-	- **Data Type**: int32
-	- **Description**: Alarm event id picked up from events.json.
-	- This parameter is key element.
-- **OccuranceTime**
-	- **Data Type**: string
-	- **Description**: Timestamp at which fault occured.
-- **ResolutionTime**
-	- **Data Type**: string
-	- **Description**: Resolution Time stamp.
-- **SrcObjKey**
-	- **Data Type**: string
-	- **Description**: Fault Object Key.
-- **SrcObjUUID**
-	- **Data Type**: string
-	- **Description**: Fault Object UUID.
-- **Description**
-	- **Data Type**: string
-	- **Description**: Description explaining the fault.
-- **ResolutionReason**
-	- **Data Type**: string
-	- **Description**: Cleared/Disabled.
-- **Severity**
-	- **Data Type**: string
-	- **Description**: Alarm Severity.
+- Multiple objects of this type can exist in a system.
+
++----------------------+---------------+--------------------------------+-------------+------------------+
+|  **PARAMETER NAME**  | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| EventName **[KEY]**  | string        | Alarm event name picked up     | N/A         | N/A              |
+|                      |               | from events.json               |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| SrcObjName **[KEY]** | string        | Alarm event name picked up     | N/A         | N/A              |
+|                      |               | from events.json               |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| EventId **[KEY]**    | int32         | Alarm event id picked up from  | N/A         | N/A              |
+|                      |               | events.json                    |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| OwnerId **[KEY]**    | int32         | Alarm owner daemon Id picked   | N/A         | N/A              |
+|                      |               | up from events.json            |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| OwnerName **[KEY]**  | string        | Alarm owner daemon name picked | N/A         | N/A              |
+|                      |               | up from events.json            |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| ResolutionTime       | string        | Resolution Time stamp          | N/A         | N/A              |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| Severity             | string        | Alarm Severity                 | N/A         | N/A              |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| Description          | string        | Description explaining the     | N/A         | N/A              |
+|                      |               | fault                          |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| OccuranceTime        | string        | Timestamp at which fault       | N/A         | N/A              |
+|                      |               | occured                        |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| ResolutionReason     | string        | Cleared/Disabled               | N/A         | N/A              |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| SrcObjKey            | string        | Fault Object Key               | N/A         | N/A              |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| SrcObjUUID           | string        | Fault Object UUID              | N/A         | N/A              |
++----------------------+---------------+--------------------------------+-------------+------------------+
 
 
 **Flexswitch API Supported:**

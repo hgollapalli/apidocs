@@ -4,20 +4,17 @@ TemperatureSensorPMDataState Model Objects
 *state/TemperatureSensorPMData*
 ------------------------------------
 
-- Multiple of these objects can exist in a system.
-- **Class**
-	- **Data Type**: string
-	- **Description**: Class of PM Data.
-	- **Default**: CLASS-A
-	- **Possible Values**: CLASS-A, CLASS-B, CLASS-B
-	- This parameter is key element.
-- **Name**
-	- **Data Type**: string
-	- **Description**: Temperature Sensor Name.
-	- This parameter is key element.
-- **Data**
-	- **Data Type**: TemperatureSensorPMData
-	- **Description**: .
+- Multiple objects of this type can exist in a system.
+
++--------------------+-------------------------+-------------------------+-------------+---------------------------+
+| **PARAMETER NAME** |      **DATA TYPE**      |     **DESCRIPTION**     | **DEFAULT** |     **VALID VALUES**      |
++--------------------+-------------------------+-------------------------+-------------+---------------------------+
+| Class **[KEY]**    | string                  | Class of PM Data        | CLASS-A     | CLASS-A, CLASS-B, CLASS-B |
++--------------------+-------------------------+-------------------------+-------------+---------------------------+
+| Name **[KEY]**     | string                  | Temperature Sensor Name | N/A         | N/A                       |
++--------------------+-------------------------+-------------------------+-------------+---------------------------+
+| Data               | TemperatureSensorPMData |                         | N/A         | N/A                       |
++--------------------+-------------------------+-------------------------+-------------+---------------------------+
 
 
 **Flexswitch API Supported:**
