@@ -9,28 +9,33 @@ QsfpChannelPMDataState Model Objects
 +----------------------+-------------------+-----------------------+-------------+---------------------------+
 |  **PARAMETER NAME**  |   **DATA TYPE**   |    **DESCRIPTION**    | **DEFAULT** |     **VALID VALUES**      |
 +----------------------+-------------------+-----------------------+-------------+---------------------------+
-| ChannelNum **[KEY]** | int32             | Qsfp Channel Number   | N/A         | N/A                       |
-+----------------------+-------------------+-----------------------+-------------+---------------------------+
 | Class **[KEY]**      | string            | Class of PM Data      | CLASS-A     | CLASS-A, CLASS-B, CLASS-B |
 +----------------------+-------------------+-----------------------+-------------+---------------------------+
 | QsfpId **[KEY]**     | int32             | QSFP Id               | N/A         | N/A                       |
 +----------------------+-------------------+-----------------------+-------------+---------------------------+
 | Resource **[KEY]**   | string            | QSFP PM Resource Name | N/A         | N/A                       |
 +----------------------+-------------------+-----------------------+-------------+---------------------------+
+| ChannelNum **[KEY]** | int32             | Qsfp Channel Number   | N/A         | N/A                       |
++----------------------+-------------------+-----------------------+-------------+---------------------------+
 | Data                 | QsfpChannelPMData |                       | N/A         | N/A                       |
 +----------------------+-------------------+-----------------------+-------------+---------------------------+
 
 
 
-**FlexSwitch CURL API Supported:**
+*FlexSwitch CURL API Supported*
+------------------------------------
 
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/state/QsfpChannelPMData
 	- GET ALL
 		 curl -X GET http://device-management-IP:8080/public/v1/state/QsfpChannelPMData?CurrentMarker=<x>&Count=<y>
+	- GET By ID
+		 curl -X GET http://device-management-IP:8080/public/v1/config/QsfpChannelPMDataState/<uuid>
 
 
-**FlexSwitch SDK API Supported:**
+*FlexSwitch SDK API Supported:*
+------------------------------------
+
 
 
 - **GET**
@@ -44,8 +49,8 @@ QsfpChannelPMDataState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getQsfpChannelPMDataState(ChannelNum=channelnum, Class=class, QsfpId=qsfpid, Resource=resource)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getQsfpChannelPMDataState(Class=class, QsfpId=qsfpid, Resource=resource, ChannelNum=channelnum)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -64,8 +69,8 @@ QsfpChannelPMDataState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getQsfpChannelPMDataStateById(ObjectId=objectid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getQsfpChannelPMDataStateById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -86,8 +91,8 @@ QsfpChannelPMDataState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getAllQsfpChannelPMDataStates()
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAllQsfpChannelPMDataStates()
 
 		if error != None: #Error not being None implies there is some problem
 			print error

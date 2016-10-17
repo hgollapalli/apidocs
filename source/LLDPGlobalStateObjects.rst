@@ -12,6 +12,8 @@ LLDPGlobalState Model Objects
 | Vrf **[KEY]**      | string        | Vrf where LLDP Global Config   | N/A         | N/A              |
 |                    |               | is running                     |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
+| Enable             | bool          | Enable/Disable LLDP Globally   | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
 | Neighbors          | int32         | Total lldp Neighbors learned   | N/A         | N/A              |
 |                    |               | on the system                  |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
@@ -24,18 +26,21 @@ LLDPGlobalState Model Objects
 | TranmitInterval    | int32         | LLDP Re-Transmit Interval in   | N/A         | N/A              |
 |                    |               | seconds                        |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
-| Enable             | bool          | Enable/Disable LLDP Globally   | N/A         | N/A              |
-+--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 
-**FlexSwitch CURL API Supported:**
+*FlexSwitch CURL API Supported*
+------------------------------------
 
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/state/LLDPGlobal
+	- GET By ID
+		 curl -X GET http://device-management-IP:8080/public/v1/config/LLDPGlobalState/<uuid>
 
 
-**FlexSwitch SDK API Supported:**
+*FlexSwitch SDK API Supported:*
+------------------------------------
+
 
 
 - **GET**
@@ -49,8 +54,8 @@ LLDPGlobalState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getLLDPGlobalState(Vrf=vrf)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getLLDPGlobalState(Vrf=vrf)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -69,8 +74,8 @@ LLDPGlobalState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getLLDPGlobalStateById(ObjectId=objectid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getLLDPGlobalStateById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -91,8 +96,8 @@ LLDPGlobalState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getAllLLDPGlobalStates()
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAllLLDPGlobalStates()
 
 		if error != None: #Error not being None implies there is some problem
 			print error

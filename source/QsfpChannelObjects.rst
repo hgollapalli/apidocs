@@ -13,17 +13,13 @@ QsfpChannel Model Objects
 +----------------------+---------------+--------------------------------+-------------+------------------+
 | ChannelNum **[KEY]** | int32         | Qsfp Channel Number            | N/A         | N/A              |
 +----------------------+---------------+--------------------------------+-------------+------------------+
-| PMClassCAdminState   | string        | PM Class-C Admin State         | Disable     | Enable, Disable  |
-+----------------------+---------------+--------------------------------+-------------+------------------+
 | HigherAlarmTXBias    | float64       | Higher Alarm Tx Current Bias   | N/A         | N/A              |
 |                      |               | for TCA                        |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
-| HigherAlarmTXPower   | float64       | Higher Alarm Rx power for TCA  | N/A         | N/A              |
-+----------------------+---------------+--------------------------------+-------------+------------------+
-| LowerWarningRXPower  | float64       | Lower Warning Rx power         | N/A         | N/A              |
+| HigherWarningRXPower | float64       | Higher Warning Rx power        | N/A         | N/A              |
 |                      |               | Threshold for TCA              |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
-| PMClassAAdminState   | string        | PM Class-A Admin State         | Disable     | Enable, Disable  |
+| LowerAlarmTXPower    | float64       | Lower Alarm Rx power for TCA   | N/A         | N/A              |
 +----------------------+---------------+--------------------------------+-------------+------------------+
 | LowerWarningTXBias   | float64       | Lower Warning Tx Current Bias  | N/A         | N/A              |
 |                      |               | for TCA                        |             |                  |
@@ -33,31 +29,36 @@ QsfpChannel Model Objects
 | HigherAlarmRXPower   | float64       | Higher Alarm Rx power          | N/A         | N/A              |
 |                      |               | Threshold for TCA              |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
-| HigherWarningRXPower | float64       | Higher Warning Rx power        | N/A         | N/A              |
-|                      |               | Threshold for TCA              |             |                  |
+| LowerWarningTXPower  | float64       | Lower Warning Rx power for TCA | N/A         | N/A              |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassAAdminState   | string        | PM Class-A Admin State         | Disable     | Enable, Disable  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassCAdminState   | string        | PM Class-C Admin State         | Disable     | Enable, Disable  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
 | HigherWarningTXBias  | float64       | Higher Warning Tx Current Bias | N/A         | N/A              |
 |                      |               | for TCA                        |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
-| LowerAlarmTXPower    | float64       | Lower Alarm Rx power for TCA   | N/A         | N/A              |
+| LowerAlarmRXPower    | float64       | Lower Alarm Rx power Threshold | N/A         | N/A              |
+|                      |               | for TCA                        |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
 | AdminState           | string        | Enable/Disable                 | Disable     | Enable, Disable  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| HigherAlarmTXPower   | float64       | Higher Alarm Rx power for TCA  | N/A         | N/A              |
 +----------------------+---------------+--------------------------------+-------------+------------------+
 | HigherWarningTXPower | float64       | Higher Warning Rx power for    | N/A         | N/A              |
 |                      |               | TCA                            |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
-| LowerWarningTXPower  | float64       | Lower Warning Rx power for TCA | N/A         | N/A              |
-+----------------------+---------------+--------------------------------+-------------+------------------+
-| LowerAlarmRXPower    | float64       | Lower Alarm Rx power Threshold | N/A         | N/A              |
-|                      |               | for TCA                        |             |                  |
-+----------------------+---------------+--------------------------------+-------------+------------------+
 | LowerAlarmTXBias     | float64       | Lower Alarm Tx Current Bias    | N/A         | N/A              |
 |                      |               | for TCA                        |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
+| LowerWarningRXPower  | float64       | Lower Warning Rx power         | N/A         | N/A              |
+|                      |               | Threshold for TCA              |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
 
 
 
-**FlexSwitch CURL API Supported:**
+*FlexSwitch CURL API Supported*
+------------------------------------
 
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/QsfpChannel
@@ -65,19 +66,15 @@ QsfpChannel Model Objects
 		 curl -X GET http://device-management-IP:8080/public/v1/config/QsfpChannel/<uuid>
 	- GET ALL
 		 curl -X GET http://device-management-IP:8080/public/v1/config/QsfpChannel?CurrentMarker=<x>&Count=<y>
-	- CREATE(POST)
-		 curl -X POST -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/QsfpChannel
-	- DELETE By Key
-		 curl -X DELETE -i -H 'Accept:application/json' -d '{<Model Object as json data>}' http://device-management-IP:8080/public/v1/config/QsfpChannel
-	- DELETE By ID
-		 curl -X DELETE http://device-management-IP:8080/public/v1/config/QsfpChannel<uuid>
 	- UPDATE(PATCH) By Key
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/QsfpChannel
 	- UPDATE(PATCH) By ID
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/QsfpChannel<uuid>
 
 
-**FlexSwitch SDK API Supported:**
+*FlexSwitch SDK API Supported:*
+------------------------------------
+
 
 
 - **GET**
@@ -91,8 +88,8 @@ QsfpChannel Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getQsfpChannel(QsfpId=qsfpid, ChannelNum=channelnum)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getQsfpChannel(QsfpId=qsfpid, ChannelNum=channelnum)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -111,8 +108,8 @@ QsfpChannel Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getQsfpChannelById(ObjectId=objectid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getQsfpChannelById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -133,8 +130,8 @@ QsfpChannel Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getAllQsfpChannels()
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAllQsfpChannels()
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -142,61 +139,6 @@ QsfpChannel Model Objects
 			print 'Success'
 
 
-- **CREATE**
-
-::
-
-	import sys
-	import os
-	from flexswitchV2 import FlexSwitch
-
-	if __name__ == '__main__':
-		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.createQsfpChannel(QsfpId=qsfpid, ChannelNum=channelnum, PMClassCAdminState=pmclasscadminstate, HigherAlarmTXBias=higheralarmtxbias, HigherAlarmTXPower=higheralarmtxpower, LowerWarningRXPower=lowerwarningrxpower, PMClassAAdminState=pmclassaadminstate, LowerWarningTXBias=lowerwarningtxbias, PMClassBAdminState=pmclassbadminstate, HigherAlarmRXPower=higheralarmrxpower, HigherWarningRXPower=higherwarningrxpower, HigherWarningTXBias=higherwarningtxbias, LowerAlarmTXPower=loweralarmtxpower, AdminState=adminstate, HigherWarningTXPower=higherwarningtxpower, LowerWarningTXPower=lowerwarningtxpower, LowerAlarmRXPower=loweralarmrxpower, LowerAlarmTXBias=loweralarmtxbias)
-
-		if error != None: #Error not being None implies there is some problem
-			print error
-		else :
-			print 'Success'
-
-
-- **DELETE**
-
-::
-
-	import sys
-	import os
-	from flexswitchV2 import FlexSwitch
-
-	if __name__ == '__main__':
-		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.deleteQsfpChannel(QsfpId=qsfpid, ChannelNum=channelnum)
-
-		if error != None: #Error not being None implies there is some problem
-			print error
-		else :
-			print 'Success'
-
-
-- **DELETE By ID**
-
-::
-
-	import sys
-	import os
-	from flexswitchV2 import FlexSwitch
-
-	if __name__ == '__main__':
-		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.deleteQsfpChannelById(ObjectId=objectid
-
-		if error != None: #Error not being None implies there is some problem
-			print error
-		else :
-			print 'Success'
 
 
 - **UPDATE**
@@ -209,8 +151,8 @@ QsfpChannel Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.updateQsfpChannel(QsfpId=qsfpid, ChannelNum=channelnum, PMClassCAdminState=pmclasscadminstate, HigherAlarmTXBias=higheralarmtxbias, HigherAlarmTXPower=higheralarmtxpower, LowerWarningRXPower=lowerwarningrxpower, PMClassAAdminState=pmclassaadminstate, LowerWarningTXBias=lowerwarningtxbias, PMClassBAdminState=pmclassbadminstate, HigherAlarmRXPower=higheralarmrxpower, HigherWarningRXPower=higherwarningrxpower, HigherWarningTXBias=higherwarningtxbias, LowerAlarmTXPower=loweralarmtxpower, AdminState=adminstate, HigherWarningTXPower=higherwarningtxpower, LowerWarningTXPower=lowerwarningtxpower, LowerAlarmRXPower=loweralarmrxpower, LowerAlarmTXBias=loweralarmtxbias)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updateQsfpChannel(QsfpId=qsfpid, ChannelNum=channelnum, HigherAlarmTXBias=higheralarmtxbias, HigherWarningRXPower=higherwarningrxpower, LowerAlarmTXPower=loweralarmtxpower, LowerWarningTXBias=lowerwarningtxbias, PMClassBAdminState=pmclassbadminstate, HigherAlarmRXPower=higheralarmrxpower, LowerWarningTXPower=lowerwarningtxpower, PMClassAAdminState=pmclassaadminstate, PMClassCAdminState=pmclasscadminstate, HigherWarningTXBias=higherwarningtxbias, LowerAlarmRXPower=loweralarmrxpower, AdminState=adminstate, HigherAlarmTXPower=higheralarmtxpower, HigherWarningTXPower=higherwarningtxpower, LowerAlarmTXBias=loweralarmtxbias, LowerWarningRXPower=lowerwarningrxpower)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -228,8 +170,8 @@ QsfpChannel Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.updateQsfpChannelById(ObjectId=objectidPMClassCAdminState=pmclasscadminstate, HigherAlarmTXBias=higheralarmtxbias, HigherAlarmTXPower=higheralarmtxpower, LowerWarningRXPower=lowerwarningrxpower, PMClassAAdminState=pmclassaadminstate, LowerWarningTXBias=lowerwarningtxbias, PMClassBAdminState=pmclassbadminstate, HigherAlarmRXPower=higheralarmrxpower, HigherWarningRXPower=higherwarningrxpower, HigherWarningTXBias=higherwarningtxbias, LowerAlarmTXPower=loweralarmtxpower, AdminState=adminstate, HigherWarningTXPower=higherwarningtxpower, LowerWarningTXPower=lowerwarningtxpower, LowerAlarmRXPower=loweralarmrxpower, LowerAlarmTXBias=loweralarmtxbias)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updateQsfpChannelById(ObjectId=objectidHigherAlarmTXBias=higheralarmtxbias, HigherWarningRXPower=higherwarningrxpower, LowerAlarmTXPower=loweralarmtxpower, LowerWarningTXBias=lowerwarningtxbias, PMClassBAdminState=pmclassbadminstate, HigherAlarmRXPower=higheralarmrxpower, LowerWarningTXPower=lowerwarningtxpower, PMClassAAdminState=pmclassaadminstate, PMClassCAdminState=pmclasscadminstate, HigherWarningTXBias=higherwarningtxbias, LowerAlarmRXPower=loweralarmrxpower, AdminState=adminstate, HigherAlarmTXPower=higheralarmtxpower, HigherWarningTXPower=higherwarningtxpower, LowerAlarmTXBias=loweralarmtxbias, LowerWarningRXPower=lowerwarningrxpower)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

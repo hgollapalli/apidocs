@@ -13,11 +13,13 @@ VoltageSensor Model Objects
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | AdminState             | string        | Enable/Disable                 | Enable      | Enable, Disable  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| HigherAlarmThreshold   | float64       | Higher Alarm Threshold for TCA | N/A         | N/A              |
-+------------------------+---------------+--------------------------------+-------------+------------------+
 | PMClassAAdminState     | string        | PM Class-A Admin State         | Enable      | Enable, Disable  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassBAdminState     | string        | PM Class-B Admin State         | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
 | PMClassCAdminState     | string        | PM Class-C Admin State         | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| HigherAlarmThreshold   | float64       | Higher Alarm Threshold for TCA | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | HigherWarningThreshold | float64       | Higher Warning Threshold for   | N/A         | N/A              |
 |                        |               | TCA                            |             |                  |
@@ -27,12 +29,11 @@ VoltageSensor Model Objects
 | LowerWarningThreshold  | float64       | Lower Warning Threshold for    | N/A         | N/A              |
 |                        |               | TCA                            |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| PMClassBAdminState     | string        | PM Class-B Admin State         | Enable      | Enable, Disable  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
 
 
 
-**FlexSwitch CURL API Supported:**
+*FlexSwitch CURL API Supported*
+------------------------------------
 
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/VoltageSensor
@@ -40,19 +41,15 @@ VoltageSensor Model Objects
 		 curl -X GET http://device-management-IP:8080/public/v1/config/VoltageSensor/<uuid>
 	- GET ALL
 		 curl -X GET http://device-management-IP:8080/public/v1/config/VoltageSensor?CurrentMarker=<x>&Count=<y>
-	- CREATE(POST)
-		 curl -X POST -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/VoltageSensor
-	- DELETE By Key
-		 curl -X DELETE -i -H 'Accept:application/json' -d '{<Model Object as json data>}' http://device-management-IP:8080/public/v1/config/VoltageSensor
-	- DELETE By ID
-		 curl -X DELETE http://device-management-IP:8080/public/v1/config/VoltageSensor<uuid>
 	- UPDATE(PATCH) By Key
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/VoltageSensor
 	- UPDATE(PATCH) By ID
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/VoltageSensor<uuid>
 
 
-**FlexSwitch SDK API Supported:**
+*FlexSwitch SDK API Supported:*
+------------------------------------
+
 
 
 - **GET**
@@ -66,8 +63,8 @@ VoltageSensor Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getVoltageSensor(Name=name)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getVoltageSensor(Name=name)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -86,8 +83,8 @@ VoltageSensor Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getVoltageSensorById(ObjectId=objectid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getVoltageSensorById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -108,8 +105,8 @@ VoltageSensor Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getAllVoltageSensors()
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAllVoltageSensors()
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -117,61 +114,6 @@ VoltageSensor Model Objects
 			print 'Success'
 
 
-- **CREATE**
-
-::
-
-	import sys
-	import os
-	from flexswitchV2 import FlexSwitch
-
-	if __name__ == '__main__':
-		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.createVoltageSensor(Name=name, AdminState=adminstate, HigherAlarmThreshold=higheralarmthreshold, PMClassAAdminState=pmclassaadminstate, PMClassCAdminState=pmclasscadminstate, HigherWarningThreshold=higherwarningthreshold, LowerAlarmThreshold=loweralarmthreshold, LowerWarningThreshold=lowerwarningthreshold, PMClassBAdminState=pmclassbadminstate)
-
-		if error != None: #Error not being None implies there is some problem
-			print error
-		else :
-			print 'Success'
-
-
-- **DELETE**
-
-::
-
-	import sys
-	import os
-	from flexswitchV2 import FlexSwitch
-
-	if __name__ == '__main__':
-		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.deleteVoltageSensor(Name=name)
-
-		if error != None: #Error not being None implies there is some problem
-			print error
-		else :
-			print 'Success'
-
-
-- **DELETE By ID**
-
-::
-
-	import sys
-	import os
-	from flexswitchV2 import FlexSwitch
-
-	if __name__ == '__main__':
-		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.deleteVoltageSensorById(ObjectId=objectid
-
-		if error != None: #Error not being None implies there is some problem
-			print error
-		else :
-			print 'Success'
 
 
 - **UPDATE**
@@ -184,8 +126,8 @@ VoltageSensor Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.updateVoltageSensor(Name=name, AdminState=adminstate, HigherAlarmThreshold=higheralarmthreshold, PMClassAAdminState=pmclassaadminstate, PMClassCAdminState=pmclasscadminstate, HigherWarningThreshold=higherwarningthreshold, LowerAlarmThreshold=loweralarmthreshold, LowerWarningThreshold=lowerwarningthreshold, PMClassBAdminState=pmclassbadminstate)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updateVoltageSensor(Name=name, AdminState=adminstate, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate, PMClassCAdminState=pmclasscadminstate, HigherAlarmThreshold=higheralarmthreshold, HigherWarningThreshold=higherwarningthreshold, LowerAlarmThreshold=loweralarmthreshold, LowerWarningThreshold=lowerwarningthreshold)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -203,8 +145,8 @@ VoltageSensor Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.updateVoltageSensorById(ObjectId=objectidAdminState=adminstate, HigherAlarmThreshold=higheralarmthreshold, PMClassAAdminState=pmclassaadminstate, PMClassCAdminState=pmclasscadminstate, HigherWarningThreshold=higherwarningthreshold, LowerAlarmThreshold=loweralarmthreshold, LowerWarningThreshold=lowerwarningthreshold, PMClassBAdminState=pmclassbadminstate)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updateVoltageSensorById(ObjectId=objectidAdminState=adminstate, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate, PMClassCAdminState=pmclasscadminstate, HigherAlarmThreshold=higheralarmthreshold, HigherWarningThreshold=higherwarningthreshold, LowerAlarmThreshold=loweralarmthreshold, LowerWarningThreshold=lowerwarningthreshold)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

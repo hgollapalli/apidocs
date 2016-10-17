@@ -14,9 +14,6 @@ DWDMModuleClntIntfState Model Objects
 +----------------------+---------------+--------------------------------+-------------+------------------+
 | ModuleId **[KEY]**   | uint8         | DWDM Module identifier         | N/A         | N/A              |
 +----------------------+---------------+--------------------------------+-------------+------------------+
-| PRBSTxErrCntLane1    | float64       | Client interface host lane 1   | N/A         | N/A              |
-|                      |               | PRBS TX Error count            |             |                  |
-+----------------------+---------------+--------------------------------+-------------+------------------+
 | PRBSTxErrCntLane2    | float64       | Client interface host lane 2   | N/A         | N/A              |
 |                      |               | PRBS TX Error count            |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
@@ -26,18 +23,26 @@ DWDMModuleClntIntfState Model Objects
 | PRBSTxErrCntLane0    | float64       | Client interface host lane 0   | N/A         | N/A              |
 |                      |               | PRBS TX Error count            |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
+| PRBSTxErrCntLane1    | float64       | Client interface host lane 1   | N/A         | N/A              |
+|                      |               | PRBS TX Error count            |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
 
 
 
-**FlexSwitch CURL API Supported:**
+*FlexSwitch CURL API Supported*
+------------------------------------
 
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/state/DWDMModuleClntIntf
 	- GET ALL
 		 curl -X GET http://device-management-IP:8080/public/v1/state/DWDMModuleClntIntf?CurrentMarker=<x>&Count=<y>
+	- GET By ID
+		 curl -X GET http://device-management-IP:8080/public/v1/config/DWDMModuleClntIntfState/<uuid>
 
 
-**FlexSwitch SDK API Supported:**
+*FlexSwitch SDK API Supported:*
+------------------------------------
+
 
 
 - **GET**
@@ -51,8 +56,8 @@ DWDMModuleClntIntfState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getDWDMModuleClntIntfState(ClntIntfId=clntintfid, ModuleId=moduleid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getDWDMModuleClntIntfState(ClntIntfId=clntintfid, ModuleId=moduleid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -71,8 +76,8 @@ DWDMModuleClntIntfState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getDWDMModuleClntIntfStateById(ObjectId=objectid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getDWDMModuleClntIntfStateById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -93,8 +98,8 @@ DWDMModuleClntIntfState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getAllDWDMModuleClntIntfStates()
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAllDWDMModuleClntIntfStates()
 
 		if error != None: #Error not being None implies there is some problem
 			print error

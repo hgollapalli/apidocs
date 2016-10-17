@@ -11,20 +11,21 @@ SystemParam Model Objects
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | Vrf **[KEY]**      | string        | System Vrf                     | default     | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
-| SwitchMac          | string        | Switch Mac Address             | N/A         | N/A              |
-+--------------------+---------------+--------------------------------+-------------+------------------+
-| Description        | string        | System Description             | N/A         | N/A              |
-+--------------------+---------------+--------------------------------+-------------+------------------+
 | Hostname           | string        | System Host Name               | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | MgmtIp             | string        | Management Ip of System        | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | SwVersion          | string        | FlexSwitch Version Information | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
+| SwitchMac          | string        | Switch Mac Address             | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Description        | string        | System Description             | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 
-**FlexSwitch CURL API Supported:**
+*FlexSwitch CURL API Supported*
+------------------------------------
 
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/SystemParam
@@ -38,7 +39,9 @@ SystemParam Model Objects
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/SystemParam<uuid>
 
 
-**FlexSwitch SDK API Supported:**
+*FlexSwitch SDK API Supported:*
+------------------------------------
+
 
 
 - **GET**
@@ -52,8 +55,8 @@ SystemParam Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getSystemParam(Vrf=vrf)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getSystemParam(Vrf=vrf)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -72,8 +75,8 @@ SystemParam Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getSystemParamById(ObjectId=objectid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getSystemParamById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -94,8 +97,8 @@ SystemParam Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getAllSystemParams()
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAllSystemParams()
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -115,8 +118,8 @@ SystemParam Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.updateSystemParam(Vrf=vrf, SwitchMac=switchmac, Description=description, Hostname=hostname, MgmtIp=mgmtip, SwVersion=swversion)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updateSystemParam(Vrf=vrf, Hostname=hostname, MgmtIp=mgmtip, SwVersion=swversion, SwitchMac=switchmac, Description=description)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -134,8 +137,8 @@ SystemParam Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.updateSystemParamById(ObjectId=objectidSwitchMac=switchmac, Description=description, Hostname=hostname, MgmtIp=mgmtip, SwVersion=swversion)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updateSystemParamById(ObjectId=objectidHostname=hostname, MgmtIp=mgmtip, SwVersion=swversion, SwitchMac=switchmac, Description=description)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

@@ -19,7 +19,8 @@ ComponentLogging Model Objects
 
 
 
-**FlexSwitch CURL API Supported:**
+*FlexSwitch CURL API Supported*
+------------------------------------
 
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/ComponentLogging
@@ -27,13 +28,21 @@ ComponentLogging Model Objects
 		 curl -X GET http://device-management-IP:8080/public/v1/config/ComponentLogging/<uuid>
 	- GET ALL
 		 curl -X GET http://device-management-IP:8080/public/v1/config/ComponentLogging?CurrentMarker=<x>&Count=<y>
+	- CREATE(POST)
+		 curl -X POST -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/ComponentLogging
+	- DELETE By Key
+		 curl -X DELETE -i -H 'Accept:application/json' -d '{<Model Object as json data>}' http://device-management-IP:8080/public/v1/config/ComponentLogging
+	- DELETE By ID
+		 curl -X DELETE http://device-management-IP:8080/public/v1/config/ComponentLogging<uuid>
 	- UPDATE(PATCH) By Key
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/ComponentLogging
 	- UPDATE(PATCH) By ID
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/ComponentLogging<uuid>
 
 
-**FlexSwitch SDK API Supported:**
+*FlexSwitch SDK API Supported:*
+------------------------------------
+
 
 
 - **GET**
@@ -47,8 +56,8 @@ ComponentLogging Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getComponentLogging(Module=module)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getComponentLogging(Module=module)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -67,8 +76,8 @@ ComponentLogging Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getComponentLoggingById(ObjectId=objectid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getComponentLoggingById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -89,8 +98,8 @@ ComponentLogging Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getAllComponentLoggings()
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAllComponentLoggings()
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -98,6 +107,61 @@ ComponentLogging Model Objects
 			print 'Success'
 
 
+- **CREATE**
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.createComponentLogging(Module=module, Level=level)
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
+
+
+- **DELETE**
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.deleteComponentLogging(Module=module)
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
+
+
+- **DELETE By ID**
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.deleteComponentLoggingById(ObjectId=objectid
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
 
 
 - **UPDATE**
@@ -110,8 +174,8 @@ ComponentLogging Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.updateComponentLogging(Module=module, Level=level)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updateComponentLogging(Module=module, Level=level)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -129,8 +193,8 @@ ComponentLogging Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.updateComponentLoggingById(ObjectId=objectidLevel=level)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updateComponentLoggingById(ObjectId=objectidLevel=level)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

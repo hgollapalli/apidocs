@@ -9,24 +9,29 @@ TemperatureSensorPMDataState Model Objects
 +--------------------+-------------------------+-------------------------+-------------+---------------------------+
 | **PARAMETER NAME** |      **DATA TYPE**      |     **DESCRIPTION**     | **DEFAULT** |     **VALID VALUES**      |
 +--------------------+-------------------------+-------------------------+-------------+---------------------------+
-| Class **[KEY]**    | string                  | Class of PM Data        | CLASS-A     | CLASS-A, CLASS-B, CLASS-B |
-+--------------------+-------------------------+-------------------------+-------------+---------------------------+
 | Name **[KEY]**     | string                  | Temperature Sensor Name | N/A         | N/A                       |
++--------------------+-------------------------+-------------------------+-------------+---------------------------+
+| Class **[KEY]**    | string                  | Class of PM Data        | CLASS-A     | CLASS-A, CLASS-B, CLASS-B |
 +--------------------+-------------------------+-------------------------+-------------+---------------------------+
 | Data               | TemperatureSensorPMData |                         | N/A         | N/A                       |
 +--------------------+-------------------------+-------------------------+-------------+---------------------------+
 
 
 
-**FlexSwitch CURL API Supported:**
+*FlexSwitch CURL API Supported*
+------------------------------------
 
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/state/TemperatureSensorPMData
 	- GET ALL
 		 curl -X GET http://device-management-IP:8080/public/v1/state/TemperatureSensorPMData?CurrentMarker=<x>&Count=<y>
+	- GET By ID
+		 curl -X GET http://device-management-IP:8080/public/v1/config/TemperatureSensorPMDataState/<uuid>
 
 
-**FlexSwitch SDK API Supported:**
+*FlexSwitch SDK API Supported:*
+------------------------------------
+
 
 
 - **GET**
@@ -40,8 +45,8 @@ TemperatureSensorPMDataState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getTemperatureSensorPMDataState(Class=class, Name=name)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getTemperatureSensorPMDataState(Name=name, Class=class)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -60,8 +65,8 @@ TemperatureSensorPMDataState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getTemperatureSensorPMDataStateById(ObjectId=objectid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getTemperatureSensorPMDataStateById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -82,8 +87,8 @@ TemperatureSensorPMDataState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getAllTemperatureSensorPMDataStates()
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAllTemperatureSensorPMDataStates()
 
 		if error != None: #Error not being None implies there is some problem
 			print error

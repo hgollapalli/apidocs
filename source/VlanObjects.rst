@@ -20,10 +20,14 @@ Vlan Model Objects
 |                    |               | ifindex values to  be added as |             |                  |
 |                    |               | untagged members of the vlan   |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
+| AdminState         | string        | Administrative state of this   | UP          | UP, DOWN         |
+|                    |               | vlan interface                 |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 
-**FlexSwitch CURL API Supported:**
+*FlexSwitch CURL API Supported*
+------------------------------------
 
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/Vlan
@@ -31,13 +35,21 @@ Vlan Model Objects
 		 curl -X GET http://device-management-IP:8080/public/v1/config/Vlan/<uuid>
 	- GET ALL
 		 curl -X GET http://device-management-IP:8080/public/v1/config/Vlan?CurrentMarker=<x>&Count=<y>
+	- CREATE(POST)
+		 curl -X POST -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/Vlan
+	- DELETE By Key
+		 curl -X DELETE -i -H 'Accept:application/json' -d '{<Model Object as json data>}' http://device-management-IP:8080/public/v1/config/Vlan
+	- DELETE By ID
+		 curl -X DELETE http://device-management-IP:8080/public/v1/config/Vlan<uuid>
 	- UPDATE(PATCH) By Key
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/Vlan
 	- UPDATE(PATCH) By ID
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/Vlan<uuid>
 
 
-**FlexSwitch SDK API Supported:**
+*FlexSwitch SDK API Supported:*
+------------------------------------
+
 
 
 - **GET**
@@ -51,8 +63,8 @@ Vlan Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getVlan(VlanId=vlanid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getVlan(VlanId=vlanid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -71,8 +83,8 @@ Vlan Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getVlanById(ObjectId=objectid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getVlanById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -93,8 +105,8 @@ Vlan Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getAllVlans()
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAllVlans()
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -102,6 +114,61 @@ Vlan Model Objects
 			print 'Success'
 
 
+- **CREATE**
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.createVlan(VlanId=vlanid, IntfList=intflist, UntagIntfList=untagintflist, AdminState=adminstate)
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
+
+
+- **DELETE**
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.deleteVlan(VlanId=vlanid)
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
+
+
+- **DELETE By ID**
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.deleteVlanById(ObjectId=objectid
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
 
 
 - **UPDATE**
@@ -114,8 +181,8 @@ Vlan Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.updateVlan(VlanId=vlanid, IntfList=intflist, UntagIntfList=untagintflist)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updateVlan(VlanId=vlanid, IntfList=intflist, UntagIntfList=untagintflist, AdminState=adminstate)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -133,8 +200,8 @@ Vlan Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.updateVlanById(ObjectId=objectidIntfList=intflist, UntagIntfList=untagintflist)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updateVlanById(ObjectId=objectidIntfList=intflist, UntagIntfList=untagintflist, AdminState=adminstate)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

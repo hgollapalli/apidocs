@@ -22,7 +22,8 @@ XponderGlobal Model Objects
 
 
 
-**FlexSwitch CURL API Supported:**
+*FlexSwitch CURL API Supported*
+------------------------------------
 
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/XponderGlobal
@@ -34,7 +35,9 @@ XponderGlobal Model Objects
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/XponderGlobal<uuid>
 
 
-**FlexSwitch SDK API Supported:**
+*FlexSwitch SDK API Supported:*
+------------------------------------
+
 
 
 - **GET**
@@ -48,8 +51,8 @@ XponderGlobal Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getXponderGlobal(XponderId=xponderid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getXponderGlobal(XponderId=xponderid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -68,8 +71,8 @@ XponderGlobal Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getXponderGlobalById(ObjectId=objectid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getXponderGlobalById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -90,8 +93,8 @@ XponderGlobal Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getAllXponderGlobals()
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAllXponderGlobals()
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -111,8 +114,8 @@ XponderGlobal Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.updateXponderGlobal(XponderId=xponderid, XponderDescription=xponderdescription, XponderMode=xpondermode)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updateXponderGlobal(XponderId=xponderid, XponderDescription=xponderdescription, XponderMode=xpondermode)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -130,8 +133,8 @@ XponderGlobal Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.updateXponderGlobalById(ObjectId=objectidXponderDescription=xponderdescription, XponderMode=xpondermode)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updateXponderGlobalById(ObjectId=objectidXponderDescription=xponderdescription, XponderMode=xpondermode)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

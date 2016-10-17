@@ -9,27 +9,20 @@ AlarmState Model Objects
 +----------------------+---------------+--------------------------------+-------------+------------------+
 |  **PARAMETER NAME**  | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
 +----------------------+---------------+--------------------------------+-------------+------------------+
+| SrcObjName **[KEY]** | string        | Alarm event name picked up     | N/A         | N/A              |
+|                      |               | from events.json               |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
 | EventId **[KEY]**    | int32         | Alarm event id picked up from  | N/A         | N/A              |
 |                      |               | events.json                    |             |                  |
-+----------------------+---------------+--------------------------------+-------------+------------------+
-| EventName **[KEY]**  | string        | Alarm event name picked up     | N/A         | N/A              |
-|                      |               | from events.json               |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
 | OwnerName **[KEY]**  | string        | Alarm owner daemon name picked | N/A         | N/A              |
 |                      |               | up from events.json            |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
-| SrcObjName **[KEY]** | string        | Alarm event name picked up     | N/A         | N/A              |
+| EventName **[KEY]**  | string        | Alarm event name picked up     | N/A         | N/A              |
 |                      |               | from events.json               |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
 | OwnerId **[KEY]**    | int32         | Alarm owner daemon Id picked   | N/A         | N/A              |
 |                      |               | up from events.json            |             |                  |
-+----------------------+---------------+--------------------------------+-------------+------------------+
-| Description          | string        | Description explaining the     | N/A         | N/A              |
-|                      |               | fault                          |             |                  |
-+----------------------+---------------+--------------------------------+-------------+------------------+
-| ResolutionReason     | string        | Cleared/Disabled               | N/A         | N/A              |
-+----------------------+---------------+--------------------------------+-------------+------------------+
-| ResolutionTime       | string        | Resolution Time stamp          | N/A         | N/A              |
 +----------------------+---------------+--------------------------------+-------------+------------------+
 | Severity             | string        | Alarm Severity                 | N/A         | N/A              |
 +----------------------+---------------+--------------------------------+-------------+------------------+
@@ -37,21 +30,33 @@ AlarmState Model Objects
 +----------------------+---------------+--------------------------------+-------------+------------------+
 | SrcObjUUID           | string        | Fault Object UUID              | N/A         | N/A              |
 +----------------------+---------------+--------------------------------+-------------+------------------+
+| Description          | string        | Description explaining the     | N/A         | N/A              |
+|                      |               | fault                          |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
 | OccuranceTime        | string        | Timestamp at which fault       | N/A         | N/A              |
 |                      |               | occured                        |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| ResolutionReason     | string        | Cleared/Disabled               | N/A         | N/A              |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| ResolutionTime       | string        | Resolution Time stamp          | N/A         | N/A              |
 +----------------------+---------------+--------------------------------+-------------+------------------+
 
 
 
-**FlexSwitch CURL API Supported:**
+*FlexSwitch CURL API Supported*
+------------------------------------
 
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/state/Alarm
 	- GET ALL
 		 curl -X GET http://device-management-IP:8080/public/v1/state/Alarm?CurrentMarker=<x>&Count=<y>
+	- GET By ID
+		 curl -X GET http://device-management-IP:8080/public/v1/config/AlarmState/<uuid>
 
 
-**FlexSwitch SDK API Supported:**
+*FlexSwitch SDK API Supported:*
+------------------------------------
+
 
 
 - **GET**
@@ -65,8 +70,8 @@ AlarmState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getAlarmState(EventId=eventid, EventName=eventname, OwnerName=ownername, SrcObjName=srcobjname, OwnerId=ownerid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAlarmState(SrcObjName=srcobjname, EventId=eventid, OwnerName=ownername, EventName=eventname, OwnerId=ownerid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -85,8 +90,8 @@ AlarmState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getAlarmStateById(ObjectId=objectid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAlarmStateById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -107,8 +112,8 @@ AlarmState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getAllAlarmStates()
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAllAlarmStates()
 
 		if error != None: #Error not being None implies there is some problem
 			print error

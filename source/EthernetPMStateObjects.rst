@@ -25,15 +25,20 @@ EthernetPMState Model Objects
 
 
 
-**FlexSwitch CURL API Supported:**
+*FlexSwitch CURL API Supported*
+------------------------------------
 
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/state/EthernetPM
 	- GET ALL
 		 curl -X GET http://device-management-IP:8080/public/v1/state/EthernetPM?CurrentMarker=<x>&Count=<y>
+	- GET By ID
+		 curl -X GET http://device-management-IP:8080/public/v1/config/EthernetPMState/<uuid>
 
 
-**FlexSwitch SDK API Supported:**
+*FlexSwitch SDK API Supported:*
+------------------------------------
+
 
 
 - **GET**
@@ -47,8 +52,8 @@ EthernetPMState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getEthernetPMState(IntfRef=intfref, Resource=resource)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getEthernetPMState(IntfRef=intfref, Resource=resource)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -67,8 +72,8 @@ EthernetPMState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getEthernetPMStateById(ObjectId=objectid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getEthernetPMStateById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -89,8 +94,8 @@ EthernetPMState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getAllEthernetPMStates()
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAllEthernetPMStates()
 
 		if error != None: #Error not being None implies there is some problem
 			print error

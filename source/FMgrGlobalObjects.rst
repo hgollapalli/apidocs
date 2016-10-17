@@ -16,19 +16,28 @@ FMgrGlobal Model Objects
 
 
 
-**FlexSwitch CURL API Supported:**
+*FlexSwitch CURL API Supported*
+------------------------------------
 
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/FMgrGlobal
 	- GET By ID
 		 curl -X GET http://device-management-IP:8080/public/v1/config/FMgrGlobal/<uuid>
+	- CREATE(POST)
+		 curl -X POST -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/FMgrGlobal
+	- DELETE By Key
+		 curl -X DELETE -i -H 'Accept:application/json' -d '{<Model Object as json data>}' http://device-management-IP:8080/public/v1/config/FMgrGlobal
+	- DELETE By ID
+		 curl -X DELETE http://device-management-IP:8080/public/v1/config/FMgrGlobal<uuid>
 	- UPDATE(PATCH) By Key
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/FMgrGlobal
 	- UPDATE(PATCH) By ID
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/FMgrGlobal<uuid>
 
 
-**FlexSwitch SDK API Supported:**
+*FlexSwitch SDK API Supported:*
+------------------------------------
+
 
 
 - **GET**
@@ -42,8 +51,8 @@ FMgrGlobal Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getFMgrGlobal(Vrf=vrf)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getFMgrGlobal(Vrf=vrf)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -62,8 +71,8 @@ FMgrGlobal Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getFMgrGlobalById(ObjectId=objectid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getFMgrGlobalById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -84,8 +93,8 @@ FMgrGlobal Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getAllFMgrGlobals()
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAllFMgrGlobals()
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -93,6 +102,61 @@ FMgrGlobal Model Objects
 			print 'Success'
 
 
+- **CREATE**
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.createFMgrGlobal(Vrf=vrf, Enable=enable)
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
+
+
+- **DELETE**
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.deleteFMgrGlobal(Vrf=vrf)
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
+
+
+- **DELETE By ID**
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.deleteFMgrGlobalById(ObjectId=objectid
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
 
 
 - **UPDATE**
@@ -105,8 +169,8 @@ FMgrGlobal Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.updateFMgrGlobal(Vrf=vrf, Enable=enable)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updateFMgrGlobal(Vrf=vrf, Enable=enable)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -124,8 +188,8 @@ FMgrGlobal Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.updateFMgrGlobalById(ObjectId=objectidEnable=enable)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updateFMgrGlobalById(ObjectId=objectidEnable=enable)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

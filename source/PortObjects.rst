@@ -4,7 +4,7 @@ Port Model Objects
 *config/Port*
 ------------------------------------
 
-- Only one object of this type can exist in a system.
+- Multiple objects of this type can exist in a system.
 
 +--------------------+---------------+--------------------------------+-------------+--------------------------------+
 | **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** |        **VALID VALUES**        |
@@ -15,34 +15,20 @@ Port Model Objects
 | Description        | string        | User provided string           | FP Port     | N/A                            |
 |                    |               | description                    |             |                                |
 +--------------------+---------------+--------------------------------+-------------+--------------------------------+
-| MacAddr            | string        | Mac address associated with    | N/A         | N/A                            |
-|                    |               | this port                      |             |                                |
-+--------------------+---------------+--------------------------------+-------------+--------------------------------+
-| IfIndex            | int32         | System assigned interface      | N/A         | N/A                            |
-|                    |               | id for this port. Read only    |             |                                |
-|                    |               | attribute                      |             |                                |
-+--------------------+---------------+--------------------------------+-------------+--------------------------------+
 | LoopbackMode       | string        | Desired loopback setting for   | NONE        | NONE, MAC, PHY, RMT            |
 |                    |               | this port                      |             |                                |
-+--------------------+---------------+--------------------------------+-------------+--------------------------------+
-| Mtu                | int32         | Maximum transmission unit size | N/A         | N/A                            |
-|                    |               | for this port                  |             |                                |
-+--------------------+---------------+--------------------------------+-------------+--------------------------------+
-| PRBSRxEnable       | bool          | Enable/Disable PRBS checker on | false       | N/A                            |
-|                    |               | this port                      |             |                                |
-+--------------------+---------------+--------------------------------+-------------+--------------------------------+
-| Speed              | int32         | Port speed in Mbps             | N/A         | N/A                            |
-+--------------------+---------------+--------------------------------+-------------+--------------------------------+
-| AdminState         | string        | Administrative state of this   | DOWN        | UP, DOWN                       |
-|                    |               | port                           |             |                                |
 +--------------------+---------------+--------------------------------+-------------+--------------------------------+
 | MediaType          | string        | Type of media inserted into    | N/A         | N/A                            |
 |                    |               | this port                      |             |                                |
 +--------------------+---------------+--------------------------------+-------------+--------------------------------+
-| PhyIntfType        | string        | Type of internal phy interface | N/A         | GMII, SGMII, QSMII, SFI, XFI,  |
-|                    |               |                                |             | XAUI, XLAUI, RXAUI, CR, CR2,   |
-|                    |               |                                |             | CR4, KR, KR2, KR4, SR, SR2,    |
-|                    |               |                                |             | SR4, SR10, LR, LR4             |
+| PRBSPolynomial     | string        | PRBS polynomial to use for     | 2^7         | 2^7, 2^23, 2^31                |
+|                    |               | generation/checking            |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| EnableFEC          | bool          | Enable/Disable 802.3bj FEC on  | false       | N/A                            |
+|                    |               | this interface                 |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| PRBSTxEnable       | bool          | Enable/Disable generation of   | false       | N/A                            |
+|                    |               | PRBS on this port              |             |                                |
 +--------------------+---------------+--------------------------------+-------------+--------------------------------+
 | Autoneg            | string        | Autonegotiation setting for    | OFF         | ON, OFF                        |
 |                    |               | this port                      |             |                                |
@@ -54,37 +40,50 @@ Port Model Objects
 +--------------------+---------------+--------------------------------+-------------+--------------------------------+
 | Duplex             | string        | Duplex setting for this port   | Full Duplex | Half Duplex, Full Duplex       |
 +--------------------+---------------+--------------------------------+-------------+--------------------------------+
-| EnableFEC          | bool          | Enable/Disable 802.3bj FEC on  | false       | N/A                            |
-|                    |               | this interface                 |             |                                |
+| IfIndex            | int32         | System assigned interface      | N/A         | N/A                            |
+|                    |               | id for this port. Read only    |             |                                |
+|                    |               | attribute                      |             |                                |
 +--------------------+---------------+--------------------------------+-------------+--------------------------------+
-| PRBSPolynomial     | string        | PRBS polynomial to use for     | 2^7         | 2^7, 2^23, 2^31                |
-|                    |               | generation/checking            |             |                                |
+| Speed              | int32         | Port speed in Mbps             | N/A         | N/A                            |
 +--------------------+---------------+--------------------------------+-------------+--------------------------------+
-| PRBSTxEnable       | bool          | Enable/Disable generation of   | false       | N/A                            |
-|                    |               | PRBS on this port              |             |                                |
+| AdminState         | string        | Administrative state of this   | DOWN        | UP, DOWN                       |
+|                    |               | port                           |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| MacAddr            | string        | Mac address associated with    | N/A         | N/A                            |
+|                    |               | this port                      |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| Mtu                | int32         | Maximum transmission unit size | N/A         | N/A                            |
+|                    |               | for this port                  |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| PRBSRxEnable       | bool          | Enable/Disable PRBS checker on | false       | N/A                            |
+|                    |               | this port                      |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| PhyIntfType        | string        | Type of internal phy interface | N/A         | GMII, SGMII, QSMII, SFI, XFI,  |
+|                    |               |                                |             | XAUI, XLAUI, RXAUI, CR, CR2,   |
+|                    |               |                                |             | CR4, KR, KR2, KR4, SR, SR2,    |
+|                    |               |                                |             | SR4, SR10, LR, LR4             |
 +--------------------+---------------+--------------------------------+-------------+--------------------------------+
 
 
 
-**FlexSwitch CURL API Supported:**
+*FlexSwitch CURL API Supported*
+------------------------------------
 
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/Port
 	- GET By ID
 		 curl -X GET http://device-management-IP:8080/public/v1/config/Port/<uuid>
-	- CREATE(POST)
-		 curl -X POST -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/Port
-	- DELETE By Key
-		 curl -X DELETE -i -H 'Accept:application/json' -d '{<Model Object as json data>}' http://device-management-IP:8080/public/v1/config/Port
-	- DELETE By ID
-		 curl -X DELETE http://device-management-IP:8080/public/v1/config/Port<uuid>
+	- GET ALL
+		 curl -X GET http://device-management-IP:8080/public/v1/config/Port?CurrentMarker=<x>&Count=<y>
 	- UPDATE(PATCH) By Key
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/Port
 	- UPDATE(PATCH) By ID
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/Port<uuid>
 
 
-**FlexSwitch SDK API Supported:**
+*FlexSwitch SDK API Supported:*
+------------------------------------
+
 
 
 - **GET**
@@ -98,8 +97,8 @@ Port Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getPort(IntfRef=intfref)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getPort(IntfRef=intfref)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -118,8 +117,8 @@ Port Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getPortById(ObjectId=objectid)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getPortById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -140,8 +139,8 @@ Port Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.getAllPorts()
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAllPorts()
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -149,61 +148,6 @@ Port Model Objects
 			print 'Success'
 
 
-- **CREATE**
-
-::
-
-	import sys
-	import os
-	from flexswitchV2 import FlexSwitch
-
-	if __name__ == '__main__':
-		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.createPort(IntfRef=intfref, Description=description, MacAddr=macaddr, IfIndex=ifindex, LoopbackMode=loopbackmode, Mtu=mtu, PRBSRxEnable=prbsrxenable, Speed=speed, AdminState=adminstate, MediaType=mediatype, PhyIntfType=phyintftype, Autoneg=autoneg, BreakOutMode=breakoutmode, Duplex=duplex, EnableFEC=enablefec, PRBSPolynomial=prbspolynomial, PRBSTxEnable=prbstxenable)
-
-		if error != None: #Error not being None implies there is some problem
-			print error
-		else :
-			print 'Success'
-
-
-- **DELETE**
-
-::
-
-	import sys
-	import os
-	from flexswitchV2 import FlexSwitch
-
-	if __name__ == '__main__':
-		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.deletePort(IntfRef=intfref)
-
-		if error != None: #Error not being None implies there is some problem
-			print error
-		else :
-			print 'Success'
-
-
-- **DELETE By ID**
-
-::
-
-	import sys
-	import os
-	from flexswitchV2 import FlexSwitch
-
-	if __name__ == '__main__':
-		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.deletePortById(ObjectId=objectid
-
-		if error != None: #Error not being None implies there is some problem
-			print error
-		else :
-			print 'Success'
 
 
 - **UPDATE**
@@ -216,8 +160,8 @@ Port Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.updatePort(IntfRef=intfref, Description=description, MacAddr=macaddr, IfIndex=ifindex, LoopbackMode=loopbackmode, Mtu=mtu, PRBSRxEnable=prbsrxenable, Speed=speed, AdminState=adminstate, MediaType=mediatype, PhyIntfType=phyintftype, Autoneg=autoneg, BreakOutMode=breakoutmode, Duplex=duplex, EnableFEC=enablefec, PRBSPolynomial=prbspolynomial, PRBSTxEnable=prbstxenable)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updatePort(IntfRef=intfref, Description=description, LoopbackMode=loopbackmode, MediaType=mediatype, PRBSPolynomial=prbspolynomial, EnableFEC=enablefec, PRBSTxEnable=prbstxenable, Autoneg=autoneg, BreakOutMode=breakoutmode, Duplex=duplex, IfIndex=ifindex, Speed=speed, AdminState=adminstate, MacAddr=macaddr, Mtu=mtu, PRBSRxEnable=prbsrxenable, PhyIntfType=phyintftype)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -235,8 +179,8 @@ Port Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = fSwitch.updatePortById(ObjectId=objectidDescription=description, MacAddr=macaddr, IfIndex=ifindex, LoopbackMode=loopbackmode, Mtu=mtu, PRBSRxEnable=prbsrxenable, Speed=speed, AdminState=adminstate, MediaType=mediatype, PhyIntfType=phyintftype, Autoneg=autoneg, BreakOutMode=breakoutmode, Duplex=duplex, EnableFEC=enablefec, PRBSPolynomial=prbspolynomial, PRBSTxEnable=prbstxenable)
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updatePortById(ObjectId=objectidDescription=description, LoopbackMode=loopbackmode, MediaType=mediatype, PRBSPolynomial=prbspolynomial, EnableFEC=enablefec, PRBSTxEnable=prbstxenable, Autoneg=autoneg, BreakOutMode=breakoutmode, Duplex=duplex, IfIndex=ifindex, Speed=speed, AdminState=adminstate, MacAddr=macaddr, Mtu=mtu, PRBSRxEnable=prbsrxenable, PhyIntfType=phyintftype)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
