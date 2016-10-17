@@ -11,10 +11,6 @@ DWDMModule Model Objects
 +---------------------+---------------+--------------------------------+-------------+------------------+
 | ModuleId **[KEY]**  | uint8         | DWDM Module identifier         | N/A         | N/A              |
 +---------------------+---------------+--------------------------------+-------------+------------------+
-| AdminState          | string        | Reset state of this dwdm       | DOWN        | UP, DOWN         |
-|                     |               | module (false (Reset           |             |                  |
-|                     |               | deasserted)                    |             |                  |
-+---------------------+---------------+--------------------------------+-------------+------------------+
 | EnableExtPMTickSrc  | bool          | Enable/Disable external        | false       | N/A              |
 |                     |               | tick source for performance    |             |                  |
 |                     |               | monitoring                     |             |                  |
@@ -25,6 +21,10 @@ DWDMModule Model Objects
 +---------------------+---------------+--------------------------------+-------------+------------------+
 | PMInterval          | uint8         | Performance monitoring         |           1 | N/A              |
 |                     |               | interval                       |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| AdminState          | string        | Reset state of this dwdm       | DOWN        | UP, DOWN         |
+|                     |               | module (false (Reset           |             |                  |
+|                     |               | deasserted)                    |             |                  |
 +---------------------+---------------+--------------------------------+-------------+------------------+
 
 
@@ -124,7 +124,7 @@ DWDMModule Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateDWDMModule(ModuleId=moduleid, AdminState=adminstate, EnableExtPMTickSrc=enableextpmticksrc, IndependentLaneMode=independentlanemode, PMInterval=pminterval)
+		response, error = swtch.updateDWDMModule(ModuleId=moduleid, EnableExtPMTickSrc=enableextpmticksrc, IndependentLaneMode=independentlanemode, PMInterval=pminterval, AdminState=adminstate)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -143,7 +143,7 @@ DWDMModule Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateDWDMModuleById(ObjectId=objectidAdminState=adminstate, EnableExtPMTickSrc=enableextpmticksrc, IndependentLaneMode=independentlanemode, PMInterval=pminterval)
+		response, error = swtch.updateDWDMModuleById(ObjectId=objectidEnableExtPMTickSrc=enableextpmticksrc, IndependentLaneMode=independentlanemode, PMInterval=pminterval, AdminState=adminstate)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

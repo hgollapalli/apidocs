@@ -11,15 +11,17 @@ DWDMModuleState Model Objects
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | ModuleId **[KEY]**     | uint8         | DWDM Module identifier         | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| ModuleHWVersion        | string        | HW version of dwdm module      | N/A         | N/A              |
-+------------------------+---------------+--------------------------------+-------------+------------------+
-| VendorSerialNum        | string        | Vendor assigned serial number  | N/A         | N/A              |
-|                        |               | of dwdm module                 |             |                  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
 | VendorName             | string        | Vendor name of dwdm module     | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | ModuleActiveFWVersion  | string        | Firmware version of active     | N/A         | N/A              |
 |                        |               | partition of dwdm module       |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| ModuleTemp             | float64       | Module temperature in deg      | N/A         | N/A              |
+|                        |               | Celsius                        |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| ModuleActiveFWStatus   | string        | Firmware image status of       | N/A         | N/A              |
+|                        |               | active partition of dwdm       |             |                  |
+|                        |               | module                         |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | ModuleStandByFWStatus  | string        | Firmware image status of       | N/A         | N/A              |
 |                        |               | standby partition of dwdm      |             |                  |
@@ -27,6 +29,8 @@ DWDMModuleState Model Objects
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | ModuleState            | string        | Current MSA state of dwdm      | N/A         | N/A              |
 |                        |               | module                         |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| ModuleHWVersion        | string        | HW version of dwdm module      | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | ModuleVoltage          | float64       | Module power supply voltage in | N/A         | N/A              |
 |                        |               | Volts                          |             |                  |
@@ -36,18 +40,14 @@ DWDMModuleState Model Objects
 | VendorDateCode         | string        | Device manufacture data code   | N/A         | N/A              |
 |                        |               | of dwdm module                 |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| ModuleStandByFWVersion | string        | Firmware version of standby    | N/A         | N/A              |
-|                        |               | partition of dwdm module       |             |                  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
-| ModuleActiveFWStatus   | string        | Firmware image status of       | N/A         | N/A              |
-|                        |               | active partition of dwdm       |             |                  |
-|                        |               | module                         |             |                  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
-| ModuleTemp             | float64       | Module temperature in deg      | N/A         | N/A              |
-|                        |               | Celsius                        |             |                  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
 | VendorPartNum          | string        | Vendor assigned part number of | N/A         | N/A              |
 |                        |               | dwdm module                    |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| VendorSerialNum        | string        | Vendor assigned serial number  | N/A         | N/A              |
+|                        |               | of dwdm module                 |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| ModuleStandByFWVersion | string        | Firmware version of standby    | N/A         | N/A              |
+|                        |               | partition of dwdm module       |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 
 

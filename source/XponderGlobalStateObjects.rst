@@ -11,11 +11,11 @@ XponderGlobalState Model Objects
 +---------------------+---------------+--------------------------------+-------------+------------------+
 | XponderId **[KEY]** | uint8         | Xponder module identifier      | N/A         | N/A              |
 +---------------------+---------------+--------------------------------+-------------+------------------+
-| XponderDescription  | string        | User configurable description  | N/A         | N/A              |
-|                     |               | string for the xponder module  |             |                  |
-+---------------------+---------------+--------------------------------+-------------+------------------+
 | XponderMode         | string        | Global operational mode of     | N/A         | N/A              |
 |                     |               | Xponder module                 |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| XponderDescription  | string        | User configurable description  | N/A         | N/A              |
+|                     |               | string for the xponder module  |             |                  |
 +---------------------+---------------+--------------------------------+-------------+------------------+
 
 

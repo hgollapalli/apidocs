@@ -9,12 +9,16 @@ ConfigLogState Model Objects
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
 +--------------------+---------------+--------------------------------+-------------+------------------+
+| API **[KEY]**      | string        | Name of the API called         | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
 | SeqNum **[KEY]**   | uint32        | Sequence number of the API     | N/A         | N/A              |
 |                    |               | call                           |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | Time **[KEY]**     | string        | When the API was called        | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
-| API **[KEY]**      | string        | Name of the API called         | N/A         | N/A              |
+| Data               | string        | User provided data             | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Operation          | string        | Oprtation executed on this API | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | Result             | string        | Result of the API call         | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
@@ -22,10 +26,6 @@ ConfigLogState Model Objects
 |                    |               | call was made                  |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | UserName           | string        | User who made the call         | N/A         | N/A              |
-+--------------------+---------------+--------------------------------+-------------+------------------+
-| Data               | string        | User provided data             | N/A         | N/A              |
-+--------------------+---------------+--------------------------------+-------------+------------------+
-| Operation          | string        | Oprtation executed on this API | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 
 
@@ -58,7 +58,7 @@ ConfigLogState Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getConfigLogState(SeqNum=seqnum, Time=time, API=api)
+		response, error = swtch.getConfigLogState(API=api, SeqNum=seqnum, Time=time)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

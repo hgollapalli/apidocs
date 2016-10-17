@@ -9,9 +9,9 @@ TemperatureSensorPMDataState Model Objects
 +--------------------+-------------------------+-------------------------+-------------+---------------------------+
 | **PARAMETER NAME** |      **DATA TYPE**      |     **DESCRIPTION**     | **DEFAULT** |     **VALID VALUES**      |
 +--------------------+-------------------------+-------------------------+-------------+---------------------------+
-| Name **[KEY]**     | string                  | Temperature Sensor Name | N/A         | N/A                       |
-+--------------------+-------------------------+-------------------------+-------------+---------------------------+
 | Class **[KEY]**    | string                  | Class of PM Data        | CLASS-A     | CLASS-A, CLASS-B, CLASS-B |
++--------------------+-------------------------+-------------------------+-------------+---------------------------+
+| Name **[KEY]**     | string                  | Temperature Sensor Name | N/A         | N/A                       |
 +--------------------+-------------------------+-------------------------+-------------+---------------------------+
 | Data               | TemperatureSensorPMData |                         | N/A         | N/A                       |
 +--------------------+-------------------------+-------------------------+-------------+---------------------------+
@@ -46,7 +46,7 @@ TemperatureSensorPMDataState Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getTemperatureSensorPMDataState(Name=name, Class=class)
+		response, error = swtch.getTemperatureSensorPMDataState(Class=class, Name=name)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

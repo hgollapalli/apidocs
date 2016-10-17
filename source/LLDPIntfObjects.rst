@@ -12,12 +12,12 @@ LLDPIntf Model Objects
 | IntfRef **[KEY]**  | string        | IfIndex where lldp needs is    | None        | N/A                  |
 |                    |               | enabled/disabled               |             |                      |
 +--------------------+---------------+--------------------------------+-------------+----------------------+
-| Enable             | bool          | Enable/Disable lldp config Per | true        | N/A                  |
-|                    |               | Port                           |             |                      |
-+--------------------+---------------+--------------------------------+-------------+----------------------+
 | TxRxMode           | string        | Transmit/Receive mode          | TxRx        | TxOnly, RxOnly, TxRx |
 |                    |               | configruration for the LLDP    |             |                      |
 |                    |               | agent specific to an interface |             |                      |
++--------------------+---------------+--------------------------------+-------------+----------------------+
+| Enable             | bool          | Enable/Disable lldp config Per | true        | N/A                  |
+|                    |               | Port                           |             |                      |
 +--------------------+---------------+--------------------------------+-------------+----------------------+
 
 
@@ -117,7 +117,7 @@ LLDPIntf Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateLLDPIntf(IntfRef=intfref, Enable=enable, TxRxMode=txrxmode)
+		response, error = swtch.updateLLDPIntf(IntfRef=intfref, TxRxMode=txrxmode, Enable=enable)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -136,7 +136,7 @@ LLDPIntf Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateLLDPIntfById(ObjectId=objectidEnable=enable, TxRxMode=txrxmode)
+		response, error = swtch.updateLLDPIntfById(ObjectId=objectidTxRxMode=txrxmode, Enable=enable)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

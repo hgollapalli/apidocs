@@ -12,8 +12,6 @@ VlanState Model Objects
 | VlanId **[KEY]**       | int32         | 802.1Q tag/Vlan ID for vlan    | N/A         | N/A              |
 |                        |               | being provisioned              |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| VlanName               | string        | System assigned vlan name      | N/A         | N/A              |
-+------------------------+---------------+--------------------------------+-------------+------------------+
 | IfIndex                | int32         | System assigned interface id   | N/A         | N/A              |
 |                        |               | for this vlan interface        |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
@@ -23,6 +21,8 @@ VlanState Model Objects
 | SysInternalDescription | string        | This is a system generated     | N/A         | N/A              |
 |                        |               | string that explains the       |             |                  |
 |                        |               | operstate value                |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| VlanName               | string        | System assigned vlan name      | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 
 

@@ -11,37 +11,37 @@ Qsfp Model Objects
 +--------------------------+---------------+--------------------------------+-------------+------------------+
 | QsfpId **[KEY]**         | int32         | Qsfp Id                        | N/A         | N/A              |
 +--------------------------+---------------+--------------------------------+-------------+------------------+
-| AdminState               | string        | Enable/Disable                 | Disable     | Enable, Disable  |
+| LowerWarningTemperature  | float64       | Lower Warning temperature      | N/A         | N/A              |
+|                          |               | threshold for TCA              |             |                  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| LowerWarningVoltage      | float64       | Lower Warning Voltage          | N/A         | N/A              |
+|                          |               | threshold for TCA              |             |                  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassBAdminState       | string        | PM Class-B Admin State         | Disable     | Enable, Disable  |
 +--------------------------+---------------+--------------------------------+-------------+------------------+
 | HigherAlarmVoltage       | float64       | Higher Alarm Voltage threshold | N/A         | N/A              |
 |                          |               | for TCA                        |             |                  |
 +--------------------------+---------------+--------------------------------+-------------+------------------+
-| HigherWarningTemperature | float64       | Higher Warning temperature     | N/A         | N/A              |
-|                          |               | threshold for TCA              |             |                  |
-+--------------------------+---------------+--------------------------------+-------------+------------------+
 | HigherWarningVoltage     | float64       | Higher Warning Voltage         | N/A         | N/A              |
-|                          |               | threshold for TCA              |             |                  |
-+--------------------------+---------------+--------------------------------+-------------+------------------+
-| LowerAlarmTemperature    | float64       | Lower Alarm temperature        | N/A         | N/A              |
-|                          |               | threshold for TCA              |             |                  |
-+--------------------------+---------------+--------------------------------+-------------+------------------+
-| LowerWarningTemperature  | float64       | Lower Warning temperature      | N/A         | N/A              |
-|                          |               | threshold for TCA              |             |                  |
-+--------------------------+---------------+--------------------------------+-------------+------------------+
-| HigherAlarmTemperature   | float64       | Higher Alarm temperature       | N/A         | N/A              |
 |                          |               | threshold for TCA              |             |                  |
 +--------------------------+---------------+--------------------------------+-------------+------------------+
 | LowerAlarmVoltage        | float64       | Lower Alarm Voltage threshold  | N/A         | N/A              |
 |                          |               | for TCA                        |             |                  |
 +--------------------------+---------------+--------------------------------+-------------+------------------+
-| LowerWarningVoltage      | float64       | Lower Warning Voltage          | N/A         | N/A              |
+| LowerAlarmTemperature    | float64       | Lower Alarm temperature        | N/A         | N/A              |
 |                          |               | threshold for TCA              |             |                  |
 +--------------------------+---------------+--------------------------------+-------------+------------------+
 | PMClassAAdminState       | string        | PM Class-A Admin State         | Disable     | Enable, Disable  |
 +--------------------------+---------------+--------------------------------+-------------+------------------+
-| PMClassBAdminState       | string        | PM Class-B Admin State         | Disable     | Enable, Disable  |
-+--------------------------+---------------+--------------------------------+-------------+------------------+
 | PMClassCAdminState       | string        | PM Class-C Admin State         | Disable     | Enable, Disable  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| AdminState               | string        | Enable/Disable                 | Disable     | Enable, Disable  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| HigherAlarmTemperature   | float64       | Higher Alarm temperature       | N/A         | N/A              |
+|                          |               | threshold for TCA              |             |                  |
++--------------------------+---------------+--------------------------------+-------------+------------------+
+| HigherWarningTemperature | float64       | Higher Warning temperature     | N/A         | N/A              |
+|                          |               | threshold for TCA              |             |                  |
 +--------------------------+---------------+--------------------------------+-------------+------------------+
 
 
@@ -141,7 +141,7 @@ Qsfp Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateQsfp(QsfpId=qsfpid, AdminState=adminstate, HigherAlarmVoltage=higheralarmvoltage, HigherWarningTemperature=higherwarningtemperature, HigherWarningVoltage=higherwarningvoltage, LowerAlarmTemperature=loweralarmtemperature, LowerWarningTemperature=lowerwarningtemperature, HigherAlarmTemperature=higheralarmtemperature, LowerAlarmVoltage=loweralarmvoltage, LowerWarningVoltage=lowerwarningvoltage, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate, PMClassCAdminState=pmclasscadminstate)
+		response, error = swtch.updateQsfp(QsfpId=qsfpid, LowerWarningTemperature=lowerwarningtemperature, LowerWarningVoltage=lowerwarningvoltage, PMClassBAdminState=pmclassbadminstate, HigherAlarmVoltage=higheralarmvoltage, HigherWarningVoltage=higherwarningvoltage, LowerAlarmVoltage=loweralarmvoltage, LowerAlarmTemperature=loweralarmtemperature, PMClassAAdminState=pmclassaadminstate, PMClassCAdminState=pmclasscadminstate, AdminState=adminstate, HigherAlarmTemperature=higheralarmtemperature, HigherWarningTemperature=higherwarningtemperature)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -160,7 +160,7 @@ Qsfp Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateQsfpById(ObjectId=objectidAdminState=adminstate, HigherAlarmVoltage=higheralarmvoltage, HigherWarningTemperature=higherwarningtemperature, HigherWarningVoltage=higherwarningvoltage, LowerAlarmTemperature=loweralarmtemperature, LowerWarningTemperature=lowerwarningtemperature, HigherAlarmTemperature=higheralarmtemperature, LowerAlarmVoltage=loweralarmvoltage, LowerWarningVoltage=lowerwarningvoltage, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate, PMClassCAdminState=pmclasscadminstate)
+		response, error = swtch.updateQsfpById(ObjectId=objectidLowerWarningTemperature=lowerwarningtemperature, LowerWarningVoltage=lowerwarningvoltage, PMClassBAdminState=pmclassbadminstate, HigherAlarmVoltage=higheralarmvoltage, HigherWarningVoltage=higherwarningvoltage, LowerAlarmVoltage=loweralarmvoltage, LowerAlarmTemperature=loweralarmtemperature, PMClassAAdminState=pmclassaadminstate, PMClassCAdminState=pmclasscadminstate, AdminState=adminstate, HigherAlarmTemperature=higheralarmtemperature, HigherWarningTemperature=higherwarningtemperature)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

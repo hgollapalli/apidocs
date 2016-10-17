@@ -12,6 +12,9 @@ Vlan Model Objects
 | VlanId **[KEY]**   | int32         | 802.1Q tag/Vlan ID for vlan    | N/A         | N/A              |
 |                    |               | being provisioned              |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
+| AdminState         | string        | Administrative state of this   | UP          | UP, DOWN         |
+|                    |               | vlan interface                 |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
 | IntfList           | string        | List of interface names or     | N/A         | N/A              |
 |                    |               | ifindex values to  be added as |             |                  |
 |                    |               | tagged members of the vlan     |             |                  |
@@ -19,9 +22,6 @@ Vlan Model Objects
 | UntagIntfList      | string        | List of interface names or     | N/A         | N/A              |
 |                    |               | ifindex values to  be added as |             |                  |
 |                    |               | untagged members of the vlan   |             |                  |
-+--------------------+---------------+--------------------------------+-------------+------------------+
-| AdminState         | string        | Administrative state of this   | UP          | UP, DOWN         |
-|                    |               | vlan interface                 |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 
 
@@ -125,7 +125,7 @@ Vlan Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.createVlan(VlanId=vlanid, IntfList=intflist, UntagIntfList=untagintflist, AdminState=adminstate)
+		response, error = swtch.createVlan(VlanId=vlanid, AdminState=adminstate, IntfList=intflist, UntagIntfList=untagintflist)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -182,7 +182,7 @@ Vlan Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateVlan(VlanId=vlanid, IntfList=intflist, UntagIntfList=untagintflist, AdminState=adminstate)
+		response, error = swtch.updateVlan(VlanId=vlanid, AdminState=adminstate, IntfList=intflist, UntagIntfList=untagintflist)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -201,7 +201,7 @@ Vlan Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateVlanById(ObjectId=objectidIntfList=intflist, UntagIntfList=untagintflist, AdminState=adminstate)
+		response, error = swtch.updateVlanById(ObjectId=objectidAdminState=adminstate, IntfList=intflist, UntagIntfList=untagintflist)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

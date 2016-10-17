@@ -9,13 +9,13 @@ QsfpChannelPMDataState Model Objects
 +----------------------+-------------------+-----------------------+-------------+---------------------------+
 |  **PARAMETER NAME**  |   **DATA TYPE**   |    **DESCRIPTION**    | **DEFAULT** |     **VALID VALUES**      |
 +----------------------+-------------------+-----------------------+-------------+---------------------------+
+| ChannelNum **[KEY]** | int32             | Qsfp Channel Number   | N/A         | N/A                       |
++----------------------+-------------------+-----------------------+-------------+---------------------------+
 | Class **[KEY]**      | string            | Class of PM Data      | CLASS-A     | CLASS-A, CLASS-B, CLASS-B |
 +----------------------+-------------------+-----------------------+-------------+---------------------------+
 | QsfpId **[KEY]**     | int32             | QSFP Id               | N/A         | N/A                       |
 +----------------------+-------------------+-----------------------+-------------+---------------------------+
 | Resource **[KEY]**   | string            | QSFP PM Resource Name | N/A         | N/A                       |
-+----------------------+-------------------+-----------------------+-------------+---------------------------+
-| ChannelNum **[KEY]** | int32             | Qsfp Channel Number   | N/A         | N/A                       |
 +----------------------+-------------------+-----------------------+-------------+---------------------------+
 | Data                 | QsfpChannelPMData |                       | N/A         | N/A                       |
 +----------------------+-------------------+-----------------------+-------------+---------------------------+
@@ -50,7 +50,7 @@ QsfpChannelPMDataState Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getQsfpChannelPMDataState(Class=class, QsfpId=qsfpid, Resource=resource, ChannelNum=channelnum)
+		response, error = swtch.getQsfpChannelPMDataState(ChannelNum=channelnum, Class=class, QsfpId=qsfpid, Resource=resource)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

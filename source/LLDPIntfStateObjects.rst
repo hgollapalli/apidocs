@@ -12,16 +12,7 @@ LLDPIntfState Model Objects
 | IntfRef **[KEY]**   | string        | IntfRef where lldp is          | N/A         | N/A              |
 |                     |               | configured                     |             |                  |
 +---------------------+---------------+--------------------------------+-------------+------------------+
-| PeerMac             | string        | Mac address of direct          | N/A         | N/A              |
-|                     |               | connection                     |             |                  |
-+---------------------+---------------+--------------------------------+-------------+------------------+
-| ReceivedFrames      | int32         | Total Frames received from     | N/A         | N/A              |
-|                     |               | neighbor                       |             |                  |
-+---------------------+---------------+--------------------------------+-------------+------------------+
-| SendFrames          | int32         | Total Frames send to the       | N/A         | N/A              |
-|                     |               | neighbor                       |             |                  |
-+---------------------+---------------+--------------------------------+-------------+------------------+
-| SystemCapabilities  | string        | System Capabilities of the     | N/A         | N/A              |
+| EnabledCapabilities | string        | Enabled Capabilities of the    | N/A         | N/A              |
 |                     |               | peer port                      |             |                  |
 +---------------------+---------------+--------------------------------+-------------+------------------+
 | HoldTime            | string        | Validity of the peer           | N/A         | N/A              |
@@ -32,18 +23,27 @@ LLDPIntfState Model Objects
 +---------------------+---------------+--------------------------------+-------------+------------------+
 | LocalPort           | string        | Local interface                | N/A         | N/A              |
 +---------------------+---------------+--------------------------------+-------------+------------------+
-| PeerHostName        | string        | Name of the peer host          | N/A         | N/A              |
-+---------------------+---------------+--------------------------------+-------------+------------------+
 | PeerPort            | string        | Name of directtly connected    | N/A         | N/A              |
 |                     |               | pors                           |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| SendFrames          | int32         | Total Frames send to the       | N/A         | N/A              |
+|                     |               | neighbor                       |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| SystemCapabilities  | string        | System Capabilities of the     | N/A         | N/A              |
+|                     |               | peer port                      |             |                  |
 +---------------------+---------------+--------------------------------+-------------+------------------+
 | SystemDescription   | string        | System Description of the peer | N/A         | N/A              |
 |                     |               | port                           |             |                  |
 +---------------------+---------------+--------------------------------+-------------+------------------+
 | Enable              | bool          | Enable/Disable lldp config     | N/A         | N/A              |
 +---------------------+---------------+--------------------------------+-------------+------------------+
-| EnabledCapabilities | string        | Enabled Capabilities of the    | N/A         | N/A              |
-|                     |               | peer port                      |             |                  |
+| PeerHostName        | string        | Name of the peer host          | N/A         | N/A              |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| PeerMac             | string        | Mac address of direct          | N/A         | N/A              |
+|                     |               | connection                     |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| ReceivedFrames      | int32         | Total Frames received from     | N/A         | N/A              |
+|                     |               | neighbor                       |             |                  |
 +---------------------+---------------+--------------------------------+-------------+------------------+
 
 

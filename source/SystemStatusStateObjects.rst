@@ -11,6 +11,9 @@ SystemStatusState Model Objects
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | Name **[KEY]**     | string        | Name of the system             | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
+| NumCreateCalls     | string        | Number of create api calls     | N/A         | N/A              |
+|                    |               | made                           |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
 | NumGetCalls        | string        | Number of get api calls made   | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | NumUpdateCalls     | string        | Number of update api calls     | N/A         | N/A              |
@@ -19,20 +22,17 @@ SystemStatusState Model Objects
 | Ready              | bool          | System is ready to accept api  | N/A         | N/A              |
 |                    |               | calls                          |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
+| FlexDaemons        | DaemonState   | Daemon states                  | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
 | NumDeleteCalls     | string        | Number of delete api calls     | N/A         | N/A              |
-|                    |               | made                           |             |                  |
-+--------------------+---------------+--------------------------------+-------------+------------------+
-| NumActionCalls     | string        | Number of action api calls     | N/A         | N/A              |
-|                    |               | made                           |             |                  |
-+--------------------+---------------+--------------------------------+-------------+------------------+
-| NumCreateCalls     | string        | Number of create api calls     | N/A         | N/A              |
 |                    |               | made                           |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | Reason             | string        | Reason if system not ready     | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | UpTime             | string        | Uptime of this system          | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
-| FlexDaemons        | DaemonState   | Daemon states                  | N/A         | N/A              |
+| NumActionCalls     | string        | Number of action api calls     | N/A         | N/A              |
+|                    |               | made                           |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 
 

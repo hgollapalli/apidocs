@@ -14,6 +14,9 @@ DWDMModuleClntIntfState Model Objects
 +----------------------+---------------+--------------------------------+-------------+------------------+
 | ModuleId **[KEY]**   | uint8         | DWDM Module identifier         | N/A         | N/A              |
 +----------------------+---------------+--------------------------------+-------------+------------------+
+| PRBSTxErrCntLane1    | float64       | Client interface host lane 1   | N/A         | N/A              |
+|                      |               | PRBS TX Error count            |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
 | PRBSTxErrCntLane2    | float64       | Client interface host lane 2   | N/A         | N/A              |
 |                      |               | PRBS TX Error count            |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
@@ -21,9 +24,6 @@ DWDMModuleClntIntfState Model Objects
 |                      |               | PRBS TX Error count            |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
 | PRBSTxErrCntLane0    | float64       | Client interface host lane 0   | N/A         | N/A              |
-|                      |               | PRBS TX Error count            |             |                  |
-+----------------------+---------------+--------------------------------+-------------+------------------+
-| PRBSTxErrCntLane1    | float64       | Client interface host lane 1   | N/A         | N/A              |
 |                      |               | PRBS TX Error count            |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
 
