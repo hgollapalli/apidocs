@@ -1,5 +1,5 @@
 FanSensor Model Objects
-============================================
+=============================================================
 
 *config/FanSensor*
 ------------------------------------
@@ -11,36 +11,201 @@ FanSensor Model Objects
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | Name **[KEY]**         | string        | Fan Sensor Name                | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassCAdminState     | string        | PM Class-C Admin State         | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| AdminState             | string        | Enable/Disable                 | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
 | LowerAlarmThreshold    | int32         | Lower Alarm Threshold for TCA  | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| PMClassAAdminState     | string        | PM Class-A Admin State         | Enable      | Enable, Disable  |
+| LowerWarningThreshold  | int32         | Lower Warning Threshold for    | N/A         | N/A              |
+|                        |               | TCA                            |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | HigherAlarmThreshold   | int32         | Higher Alarm Threshold for TCA | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | HigherWarningThreshold | int32         | Higher Warning Threshold for   | N/A         | N/A              |
 |                        |               | TCA                            |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassAAdminState     | string        | PM Class-A Admin State         | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
 | PMClassBAdminState     | string        | PM Class-B Admin State         | Enable      | Enable, Disable  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| PMClassCAdminState     | string        | PM Class-C Admin State         | Enable      | Enable, Disable  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
-| AdminState             | string        | Enable/Disable                 | Enable      | Enable, Disable  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
-| LowerWarningThreshold  | int32         | Lower Warning Threshold for    | N/A         | N/A              |
-|                        |               | TCA                            |             |                  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
 
 
-**Flexswitch API Supported:**
+
+**FlexSwitch CURL API Supported:**
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/FanSensor
 	- GET By ID
 		 curl -X GET http://device-management-IP:8080/public/v1/config/FanSensor/<uuid>
 	- GET ALL
 		 curl -X GET http://device-management-IP:8080/public/v1/config/FanSensor?CurrentMarker=<x>&Count=<y>
+	- CREATE(POST)
+		 curl -X POST -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/FanSensor
+	- DELETE By Key
+		 curl -X DELETE -i -H 'Accept:application/json' -d '{<Model Object as json data>}' http://device-management-IP:8080/public/v1/config/FanSensor
+	- DELETE By ID
+		 curl -X DELETE http://device-management-IP:8080/public/v1/config/FanSensor<uuid>
 	- UPDATE(PATCH) By Key
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/FanSensor
 	- UPDATE(PATCH) By ID
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/FanSensor<uuid>
 
 
+**FlexSwitch SDK API Supported:**
+
+
+- **GET**
+
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getFanSensor(Name=name)
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
+
+
+- **GET By ID**
+
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getFanSensorById(ObjectId=objectid)
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
+
+
+
+
+- **GET ALL**
+
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.getAllFanSensors()
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
+
+
+- **CREATE**
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.createFanSensor(Name=name, PMClassCAdminState=pmclasscadminstate, AdminState=adminstate, LowerAlarmThreshold=loweralarmthreshold, LowerWarningThreshold=lowerwarningthreshold, HigherAlarmThreshold=higheralarmthreshold, HigherWarningThreshold=higherwarningthreshold, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate)
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
+
+
+- **DELETE**
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.deleteFanSensor(Name=name)
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
+
+
+- **DELETE By ID**
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.deleteFanSensorById(ObjectId=objectid
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
+
+
+- **UPDATE**
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updateFanSensor(Name=name, PMClassCAdminState=pmclasscadminstate, AdminState=adminstate, LowerAlarmThreshold=loweralarmthreshold, LowerWarningThreshold=lowerwarningthreshold, HigherAlarmThreshold=higheralarmthreshold, HigherWarningThreshold=higherwarningthreshold, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate)
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
+
+
+- **UPDATE By ID**
+
+::
+
+	import sys
+	import os
+	from flexswitchV2 import FlexSwitch
+
+	if __name__ == '__main__':
+		switchIP := "192.168.56.101"
+		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = swtch.updateFanSensorById(ObjectId=objectidPMClassCAdminState=pmclasscadminstate, AdminState=adminstate, LowerAlarmThreshold=loweralarmthreshold, LowerWarningThreshold=lowerwarningthreshold, HigherAlarmThreshold=higheralarmthreshold, HigherWarningThreshold=higherwarningthreshold, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate)
+
+		if error != None: #Error not being None implies there is some problem
+			print error
+		else :
+			print 'Success'
