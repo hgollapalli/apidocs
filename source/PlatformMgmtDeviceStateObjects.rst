@@ -11,6 +11,10 @@ PlatformMgmtDeviceState Model Objects
 +----------------------+---------------+-----------------------------+-------------+------------------+
 | DeviceName **[KEY]** | string        | Device Name                 | BMC         | N/A              |
 +----------------------+---------------+-----------------------------+-------------+------------------+
+| ResetReason          | string        | Reset Reason                | N/A         | N/A              |
++----------------------+---------------+-----------------------------+-------------+------------------+
+| Uptime               | string        | Uptime and load description | N/A         | N/A              |
++----------------------+---------------+-----------------------------+-------------+------------------+
 | Version              | string        | Version                     | N/A         | N/A              |
 +----------------------+---------------+-----------------------------+-------------+------------------+
 | CPUUsage             | string        | CPU Usage                   | N/A         | N/A              |
@@ -19,14 +23,11 @@ PlatformMgmtDeviceState Model Objects
 +----------------------+---------------+-----------------------------+-------------+------------------+
 | MemoryUsage          | string        | Memory Usage                | N/A         | N/A              |
 +----------------------+---------------+-----------------------------+-------------+------------------+
-| ResetReason          | string        | Reset Reason                | N/A         | N/A              |
-+----------------------+---------------+-----------------------------+-------------+------------------+
-| Uptime               | string        | Uptime and load description | N/A         | N/A              |
-+----------------------+---------------+-----------------------------+-------------+------------------+
 
 
 
 **FlexSwitch CURL API Supported:**
+
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/state/PlatformMgmtDevice
 
@@ -45,8 +46,8 @@ PlatformMgmtDeviceState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getPlatformMgmtDeviceState(DeviceName=devicename)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getPlatformMgmtDeviceState(DeviceName=devicename)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -65,8 +66,8 @@ PlatformMgmtDeviceState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getPlatformMgmtDeviceStateById(ObjectId=objectid)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getPlatformMgmtDeviceStateById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -87,8 +88,8 @@ PlatformMgmtDeviceState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getAllPlatformMgmtDeviceStates()
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getAllPlatformMgmtDeviceStates()
 
 		if error != None: #Error not being None implies there is some problem
 			print error

@@ -31,6 +31,7 @@ ConfigLogState Model Objects
 
 
 **FlexSwitch CURL API Supported:**
+
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/state/ConfigLog
 	- GET ALL
@@ -51,8 +52,8 @@ ConfigLogState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getConfigLogState(API=api, SeqNum=seqnum, Time=time)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getConfigLogState(API=api, SeqNum=seqnum, Time=time)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -71,8 +72,8 @@ ConfigLogState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getConfigLogStateById(ObjectId=objectid)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getConfigLogStateById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -93,8 +94,8 @@ ConfigLogState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getAllConfigLogStates()
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getAllConfigLogStates()
 
 		if error != None: #Error not being None implies there is some problem
 			print error

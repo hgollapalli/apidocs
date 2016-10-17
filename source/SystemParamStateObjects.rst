@@ -11,13 +11,6 @@ SystemParamState Model Objects
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | Vrf **[KEY]**      | string        | System Vrf                     | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
-| Description        | string        | System Description             | N/A         | N/A              |
-+--------------------+---------------+--------------------------------+-------------+------------------+
-| Distro             | string        | Linux distro running on this   | N/A         | N/A              |
-|                    |               | system                         |             |                  |
-+--------------------+---------------+--------------------------------+-------------+------------------+
-| Hostname           | string        | System Host Name               | N/A         | N/A              |
-+--------------------+---------------+--------------------------------+-------------+------------------+
 | Kernel             | string        | Kernel version running on this | N/A         | N/A              |
 |                    |               | system                         |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
@@ -27,10 +20,18 @@ SystemParamState Model Objects
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | SwitchMac          | string        | Switch Mac Address             | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
+| Description        | string        | System Description             | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Distro             | string        | Linux distro running on this   | N/A         | N/A              |
+|                    |               | system                         |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Hostname           | string        | System Host Name               | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 
 **FlexSwitch CURL API Supported:**
+
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/state/SystemParam
 	- GET ALL
@@ -51,8 +52,8 @@ SystemParamState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getSystemParamState(Vrf=vrf)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getSystemParamState(Vrf=vrf)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -71,8 +72,8 @@ SystemParamState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getSystemParamStateById(ObjectId=objectid)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getSystemParamStateById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -93,8 +94,8 @@ SystemParamState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getAllSystemParamStates()
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getAllSystemParamStates()
 
 		if error != None: #Error not being None implies there is some problem
 			print error

@@ -11,6 +11,8 @@ SystemParam Model Objects
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | Vrf **[KEY]**      | string        | System Vrf                     | default     | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
+| SwitchMac          | string        | Switch Mac Address             | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
 | Description        | string        | System Description             | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | Hostname           | string        | System Host Name               | N/A         | N/A              |
@@ -19,12 +21,11 @@ SystemParam Model Objects
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | SwVersion          | string        | FlexSwitch Version Information | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
-| SwitchMac          | string        | Switch Mac Address             | N/A         | N/A              |
-+--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 
 **FlexSwitch CURL API Supported:**
+
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/SystemParam
 	- GET By ID
@@ -51,8 +52,8 @@ SystemParam Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getSystemParam(Vrf=vrf)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getSystemParam(Vrf=vrf)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -71,8 +72,8 @@ SystemParam Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getSystemParamById(ObjectId=objectid)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getSystemParamById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -93,8 +94,8 @@ SystemParam Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getAllSystemParams()
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getAllSystemParams()
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -114,8 +115,8 @@ SystemParam Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateSystemParam(Vrf=vrf, Description=description, Hostname=hostname, MgmtIp=mgmtip, SwVersion=swversion, SwitchMac=switchmac)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.updateSystemParam(Vrf=vrf, SwitchMac=switchmac, Description=description, Hostname=hostname, MgmtIp=mgmtip, SwVersion=swversion)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -133,8 +134,8 @@ SystemParam Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateSystemParamById(ObjectId=objectidDescription=description, Hostname=hostname, MgmtIp=mgmtip, SwVersion=swversion, SwitchMac=switchmac)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.updateSystemParamById(ObjectId=objectidSwitchMac=switchmac, Description=description, Hostname=hostname, MgmtIp=mgmtip, SwVersion=swversion)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

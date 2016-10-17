@@ -24,6 +24,7 @@ Vlan Model Objects
 
 
 **FlexSwitch CURL API Supported:**
+
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/Vlan
 	- GET By ID
@@ -50,8 +51,8 @@ Vlan Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getVlan(VlanId=vlanid)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getVlan(VlanId=vlanid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -70,8 +71,8 @@ Vlan Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getVlanById(ObjectId=objectid)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getVlanById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -92,8 +93,8 @@ Vlan Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getAllVlans()
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getAllVlans()
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -113,8 +114,8 @@ Vlan Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateVlan(VlanId=vlanid, IntfList=intflist, UntagIntfList=untagintflist)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.updateVlan(VlanId=vlanid, IntfList=intflist, UntagIntfList=untagintflist)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -132,8 +133,8 @@ Vlan Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateVlanById(ObjectId=objectidIntfList=intflist, UntagIntfList=untagintflist)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.updateVlanById(ObjectId=objectidIntfList=intflist, UntagIntfList=untagintflist)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

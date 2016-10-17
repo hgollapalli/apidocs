@@ -11,28 +11,29 @@ FanSensor Model Objects
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | Name **[KEY]**         | string        | Fan Sensor Name                | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| PMClassCAdminState     | string        | PM Class-C Admin State         | Enable      | Enable, Disable  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
 | AdminState             | string        | Enable/Disable                 | Enable      | Enable, Disable  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| LowerAlarmThreshold    | int32         | Lower Alarm Threshold for TCA  | N/A         | N/A              |
+| PMClassAAdminState     | string        | PM Class-A Admin State         | Enable      | Enable, Disable  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| LowerWarningThreshold  | int32         | Lower Warning Threshold for    | N/A         | N/A              |
-|                        |               | TCA                            |             |                  |
+| PMClassBAdminState     | string        | PM Class-B Admin State         | Enable      | Enable, Disable  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | HigherAlarmThreshold   | int32         | Higher Alarm Threshold for TCA | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | HigherWarningThreshold | int32         | Higher Warning Threshold for   | N/A         | N/A              |
 |                        |               | TCA                            |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| PMClassAAdminState     | string        | PM Class-A Admin State         | Enable      | Enable, Disable  |
+| LowerAlarmThreshold    | int32         | Lower Alarm Threshold for TCA  | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| PMClassBAdminState     | string        | PM Class-B Admin State         | Enable      | Enable, Disable  |
+| LowerWarningThreshold  | int32         | Lower Warning Threshold for    | N/A         | N/A              |
+|                        |               | TCA                            |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassCAdminState     | string        | PM Class-C Admin State         | Enable      | Enable, Disable  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 
 
 
 **FlexSwitch CURL API Supported:**
+
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/FanSensor
 	- GET By ID
@@ -65,8 +66,8 @@ FanSensor Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getFanSensor(Name=name)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getFanSensor(Name=name)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -85,8 +86,8 @@ FanSensor Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getFanSensorById(ObjectId=objectid)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getFanSensorById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -107,8 +108,8 @@ FanSensor Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getAllFanSensors()
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getAllFanSensors()
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -126,8 +127,8 @@ FanSensor Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.createFanSensor(Name=name, PMClassCAdminState=pmclasscadminstate, AdminState=adminstate, LowerAlarmThreshold=loweralarmthreshold, LowerWarningThreshold=lowerwarningthreshold, HigherAlarmThreshold=higheralarmthreshold, HigherWarningThreshold=higherwarningthreshold, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.createFanSensor(Name=name, AdminState=adminstate, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate, HigherAlarmThreshold=higheralarmthreshold, HigherWarningThreshold=higherwarningthreshold, LowerAlarmThreshold=loweralarmthreshold, LowerWarningThreshold=lowerwarningthreshold, PMClassCAdminState=pmclasscadminstate)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -145,8 +146,8 @@ FanSensor Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.deleteFanSensor(Name=name)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.deleteFanSensor(Name=name)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -164,8 +165,8 @@ FanSensor Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.deleteFanSensorById(ObjectId=objectid
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.deleteFanSensorById(ObjectId=objectid
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -183,8 +184,8 @@ FanSensor Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateFanSensor(Name=name, PMClassCAdminState=pmclasscadminstate, AdminState=adminstate, LowerAlarmThreshold=loweralarmthreshold, LowerWarningThreshold=lowerwarningthreshold, HigherAlarmThreshold=higheralarmthreshold, HigherWarningThreshold=higherwarningthreshold, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.updateFanSensor(Name=name, AdminState=adminstate, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate, HigherAlarmThreshold=higheralarmthreshold, HigherWarningThreshold=higherwarningthreshold, LowerAlarmThreshold=loweralarmthreshold, LowerWarningThreshold=lowerwarningthreshold, PMClassCAdminState=pmclasscadminstate)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -202,8 +203,8 @@ FanSensor Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateFanSensorById(ObjectId=objectidPMClassCAdminState=pmclasscadminstate, AdminState=adminstate, LowerAlarmThreshold=loweralarmthreshold, LowerWarningThreshold=lowerwarningthreshold, HigherAlarmThreshold=higheralarmthreshold, HigherWarningThreshold=higherwarningthreshold, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.updateFanSensorById(ObjectId=objectidAdminState=adminstate, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate, HigherAlarmThreshold=higheralarmthreshold, HigherWarningThreshold=higherwarningthreshold, LowerAlarmThreshold=loweralarmthreshold, LowerWarningThreshold=lowerwarningthreshold, PMClassCAdminState=pmclasscadminstate)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

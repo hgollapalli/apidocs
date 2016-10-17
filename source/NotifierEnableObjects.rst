@@ -11,16 +11,17 @@ NotifierEnable Model Objects
 +--------------------+---------------+-----------------+-------------+------------------+
 | Vrf **[KEY]**      | string        | Vrf name        | default     | N/A              |
 +--------------------+---------------+-----------------+-------------+------------------+
-| FaultEnable        | bool          | Enable Notifier | true        | N/A              |
-+--------------------+---------------+-----------------+-------------+------------------+
 | AlarmEnable        | bool          | Enable Notifier | true        | N/A              |
 +--------------------+---------------+-----------------+-------------+------------------+
 | EventEnable        | bool          | Enable Notifier | true        | N/A              |
++--------------------+---------------+-----------------+-------------+------------------+
+| FaultEnable        | bool          | Enable Notifier | true        | N/A              |
 +--------------------+---------------+-----------------+-------------+------------------+
 
 
 
 **FlexSwitch CURL API Supported:**
+
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/NotifierEnable
 	- GET By ID
@@ -45,8 +46,8 @@ NotifierEnable Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getNotifierEnable(Vrf=vrf)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getNotifierEnable(Vrf=vrf)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -65,8 +66,8 @@ NotifierEnable Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getNotifierEnableById(ObjectId=objectid)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getNotifierEnableById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -87,8 +88,8 @@ NotifierEnable Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getAllNotifierEnables()
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getAllNotifierEnables()
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -108,8 +109,8 @@ NotifierEnable Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateNotifierEnable(Vrf=vrf, FaultEnable=faultenable, AlarmEnable=alarmenable, EventEnable=eventenable)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.updateNotifierEnable(Vrf=vrf, AlarmEnable=alarmenable, EventEnable=eventenable, FaultEnable=faultenable)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -127,8 +128,8 @@ NotifierEnable Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateNotifierEnableById(ObjectId=objectidFaultEnable=faultenable, AlarmEnable=alarmenable, EventEnable=eventenable)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.updateNotifierEnableById(ObjectId=objectidAlarmEnable=alarmenable, EventEnable=eventenable, FaultEnable=faultenable)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

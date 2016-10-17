@@ -19,6 +19,7 @@ LLDPIntf Model Objects
 
 
 **FlexSwitch CURL API Supported:**
+
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/LLDPIntf
 	- GET By ID
@@ -51,8 +52,8 @@ LLDPIntf Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getLLDPIntf(IntfRef=intfref)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getLLDPIntf(IntfRef=intfref)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -71,8 +72,8 @@ LLDPIntf Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getLLDPIntfById(ObjectId=objectid)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getLLDPIntfById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -93,8 +94,8 @@ LLDPIntf Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getAllLLDPIntfs()
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getAllLLDPIntfs()
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -112,8 +113,8 @@ LLDPIntf Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.createLLDPIntf(IntfRef=intfref, Enable=enable)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.createLLDPIntf(IntfRef=intfref, Enable=enable)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -131,8 +132,8 @@ LLDPIntf Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.deleteLLDPIntf(IntfRef=intfref)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.deleteLLDPIntf(IntfRef=intfref)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -150,8 +151,8 @@ LLDPIntf Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.deleteLLDPIntfById(ObjectId=objectid
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.deleteLLDPIntfById(ObjectId=objectid
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -169,8 +170,8 @@ LLDPIntf Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateLLDPIntf(IntfRef=intfref, Enable=enable)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.updateLLDPIntf(IntfRef=intfref, Enable=enable)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -188,8 +189,8 @@ LLDPIntf Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateLLDPIntfById(ObjectId=objectidEnable=enable)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.updateLLDPIntfById(ObjectId=objectidEnable=enable)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

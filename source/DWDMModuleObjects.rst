@@ -11,13 +11,6 @@ DWDMModule Model Objects
 +---------------------+---------------+--------------------------------+-------------+------------------+
 | ModuleId **[KEY]**  | uint8         | DWDM Module identifier         | N/A         | N/A              |
 +---------------------+---------------+--------------------------------+-------------+------------------+
-| PMInterval          | uint8         | Performance monitoring         |           1 | N/A              |
-|                     |               | interval                       |             |                  |
-+---------------------+---------------+--------------------------------+-------------+------------------+
-| AdminState          | string        | Reset state of this dwdm       | DOWN        | UP, DOWN         |
-|                     |               | module (false (Reset           |             |                  |
-|                     |               | deasserted)                    |             |                  |
-+---------------------+---------------+--------------------------------+-------------+------------------+
 | EnableExtPMTickSrc  | bool          | Enable/Disable external        | false       | N/A              |
 |                     |               | tick source for performance    |             |                  |
 |                     |               | monitoring                     |             |                  |
@@ -26,10 +19,18 @@ DWDMModule Model Objects
 |                     |               | for the DWDM Module.           |             |                  |
 |                     |               | true-Independent lanes         |             |                  |
 +---------------------+---------------+--------------------------------+-------------+------------------+
+| PMInterval          | uint8         | Performance monitoring         |           1 | N/A              |
+|                     |               | interval                       |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| AdminState          | string        | Reset state of this dwdm       | DOWN        | UP, DOWN         |
+|                     |               | module (false (Reset           |             |                  |
+|                     |               | deasserted)                    |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
 
 
 
 **FlexSwitch CURL API Supported:**
+
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/config/DWDMModule
 	- GET By ID
@@ -62,8 +63,8 @@ DWDMModule Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getDWDMModule(ModuleId=moduleid)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getDWDMModule(ModuleId=moduleid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -82,8 +83,8 @@ DWDMModule Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getDWDMModuleById(ObjectId=objectid)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getDWDMModuleById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -104,8 +105,8 @@ DWDMModule Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getAllDWDMModules()
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getAllDWDMModules()
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -123,8 +124,8 @@ DWDMModule Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.createDWDMModule(ModuleId=moduleid, PMInterval=pminterval, AdminState=adminstate, EnableExtPMTickSrc=enableextpmticksrc, IndependentLaneMode=independentlanemode)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.createDWDMModule(ModuleId=moduleid, EnableExtPMTickSrc=enableextpmticksrc, IndependentLaneMode=independentlanemode, PMInterval=pminterval, AdminState=adminstate)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -142,8 +143,8 @@ DWDMModule Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.deleteDWDMModule(ModuleId=moduleid)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.deleteDWDMModule(ModuleId=moduleid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -161,8 +162,8 @@ DWDMModule Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.deleteDWDMModuleById(ObjectId=objectid
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.deleteDWDMModuleById(ObjectId=objectid
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -180,8 +181,8 @@ DWDMModule Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateDWDMModule(ModuleId=moduleid, PMInterval=pminterval, AdminState=adminstate, EnableExtPMTickSrc=enableextpmticksrc, IndependentLaneMode=independentlanemode)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.updateDWDMModule(ModuleId=moduleid, EnableExtPMTickSrc=enableextpmticksrc, IndependentLaneMode=independentlanemode, PMInterval=pminterval, AdminState=adminstate)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -199,8 +200,8 @@ DWDMModule Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateDWDMModuleById(ObjectId=objectidPMInterval=pminterval, AdminState=adminstate, EnableExtPMTickSrc=enableextpmticksrc, IndependentLaneMode=independentlanemode)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.updateDWDMModuleById(ObjectId=objectidEnableExtPMTickSrc=enableextpmticksrc, IndependentLaneMode=independentlanemode, PMInterval=pminterval, AdminState=adminstate)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

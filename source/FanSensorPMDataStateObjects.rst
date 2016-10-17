@@ -9,9 +9,9 @@ FanSensorPMDataState Model Objects
 +--------------------+-----------------+------------------+-------------+---------------------------+
 | **PARAMETER NAME** |  **DATA TYPE**  | **DESCRIPTION**  | **DEFAULT** |     **VALID VALUES**      |
 +--------------------+-----------------+------------------+-------------+---------------------------+
-| Class **[KEY]**    | string          | Class of PM Data | CLASS-A     | CLASS-A, CLASS-B, CLASS-B |
-+--------------------+-----------------+------------------+-------------+---------------------------+
 | Name **[KEY]**     | string          | Fan Sensor Name  | N/A         | N/A                       |
++--------------------+-----------------+------------------+-------------+---------------------------+
+| Class **[KEY]**    | string          | Class of PM Data | CLASS-A     | CLASS-A, CLASS-B, CLASS-B |
 +--------------------+-----------------+------------------+-------------+---------------------------+
 | Data               | FanSensorPMData |                  | N/A         | N/A                       |
 +--------------------+-----------------+------------------+-------------+---------------------------+
@@ -19,6 +19,7 @@ FanSensorPMDataState Model Objects
 
 
 **FlexSwitch CURL API Supported:**
+
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/state/FanSensorPMData
 	- GET ALL
@@ -39,8 +40,8 @@ FanSensorPMDataState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getFanSensorPMDataState(Class=class, Name=name)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getFanSensorPMDataState(Name=name, Class=class)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -59,8 +60,8 @@ FanSensorPMDataState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getFanSensorPMDataStateById(ObjectId=objectid)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getFanSensorPMDataStateById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -81,8 +82,8 @@ FanSensorPMDataState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getAllFanSensorPMDataStates()
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getAllFanSensorPMDataStates()
 
 		if error != None: #Error not being None implies there is some problem
 			print error

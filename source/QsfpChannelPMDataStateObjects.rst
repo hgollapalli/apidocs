@@ -23,6 +23,7 @@ QsfpChannelPMDataState Model Objects
 
 
 **FlexSwitch CURL API Supported:**
+
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/state/QsfpChannelPMData
 	- GET ALL
@@ -43,8 +44,8 @@ QsfpChannelPMDataState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getQsfpChannelPMDataState(ChannelNum=channelnum, Class=class, QsfpId=qsfpid, Resource=resource)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getQsfpChannelPMDataState(ChannelNum=channelnum, Class=class, QsfpId=qsfpid, Resource=resource)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -63,8 +64,8 @@ QsfpChannelPMDataState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getQsfpChannelPMDataStateById(ObjectId=objectid)
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getQsfpChannelPMDataStateById(ObjectId=objectid)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -85,8 +86,8 @@ QsfpChannelPMDataState Model Objects
 
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
-		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getAllQsfpChannelPMDataStates()
+		fSwitch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
+		response, error = fSwitch.getAllQsfpChannelPMDataStates()
 
 		if error != None: #Error not being None implies there is some problem
 			print error
