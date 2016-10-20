@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Port Model Objects &mdash; FlexSwitchApis 1.0 documentation</title>
+  <title>Port Object &mdash; FlexSwitchApis 1.0 documentation</title>
   
 
   
@@ -31,9 +31,9 @@
 
   
     <link rel="top" title="FlexSwitchApis 1.0 documentation" href="index.html"/>
-        <link rel="up" title="FlexSwitch Ethernet Model Objects" href="EthernetObjects.html"/>
-        <link rel="next" title="PortState Model Objects" href="PortStateObjects.html"/>
-        <link rel="prev" title="MacTableEntryState Model Objects" href="MacTableEntryStateObjects.html"/> 
+        <link rel="up" title="FlexSwitch Ethernet Objects" href="EthernetObjects.html"/>
+        <link rel="next" title="PortState Object" href="PortStateObjects.html"/>
+        <link rel="prev" title="MacTableEntryState Object" href="MacTableEntryStateObjects.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -84,29 +84,29 @@
             
                 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modelObjects.html">Model Objects</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="EthernetObjects.html">Ethernet Model Objects</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="AsicGlobalStateObjects.html">AsicGlobalState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="LLDPGlobalObjects.html">LLDPGlobal Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="LLDPGlobalStateObjects.html">LLDPGlobalState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="LLDPIntfObjects.html">LLDPIntf Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="LLDPIntfStateObjects.html">LLDPIntfState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="MacTableEntryStateObjects.html">MacTableEntryState Model Objects</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Port Model Objects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="FaultAlarmObjects.html">FaultAlarm Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SystemObjects.html">System Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PerformanceObjects.html">Performance Objects</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="EthernetObjects.html">Ethernet Objects</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="AsicGlobalStateObjects.html">AsicGlobalState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LLDPGlobalObjects.html">LLDPGlobal Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LLDPGlobalStateObjects.html">LLDPGlobalState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LLDPIntfObjects.html">LLDPIntf Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LLDPIntfStateObjects.html">LLDPIntfState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MacTableEntryStateObjects.html">MacTableEntryState Objects</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Port Objects</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#config-port"><em>config/Port</em></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flexswitch-curl-api-supported"><em>FlexSwitch CURL API Supported</em></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flexswitch-sdk-api-supported"><em>FlexSwitch SDK API Supported:</em></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="PortStateObjects.html">PortState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="VlanObjects.html">Vlan Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="VlanStateObjects.html">VlanState Model Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PortStateObjects.html">PortState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VlanObjects.html">Vlan Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VlanStateObjects.html">VlanState Objects</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="OpticalObjects.html">Optical Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PlatformObjects.html">Platform Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FaultAlarmObjects.html">FaultAlarm Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SystemObjects.html">System Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PerformanceObjects.html">Performance Model Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpticalObjects.html">Optical Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PlatformObjects.html">Platform Objects</a></li>
 </ul>
 </li>
 </ul>
@@ -141,9 +141,9 @@
       
           <li><a href="modelObjects.html">FlexSwitch Model Objects</a> &raquo;</li>
       
-          <li><a href="EthernetObjects.html">FlexSwitch Ethernet Model Objects</a> &raquo;</li>
+          <li><a href="EthernetObjects.html">FlexSwitch Ethernet Objects</a> &raquo;</li>
       
-    <li>Port Model Objects</li>
+    <li>Port Object</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -157,8 +157,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="port-model-objects">
-<h1>Port Model Objects<a class="headerlink" href="#port-model-objects" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="port-object">
+<h1>Port Object<a class="headerlink" href="#port-object" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="config-port">
 <h2><em>config/Port</em><a class="headerlink" href="#config-port" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -186,23 +186,42 @@ system assigned interface id</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-odd"><td>BreakOutMode</td>
+<tr class="row-odd"><td>AdminState</td>
 <td>string</td>
-<td>Break out mode for the port.
-Only applicable on ports that
-support breakout. Valid modes
-- 1x40</td>
-<td>N/A</td>
-<td>1x40(1), 4x10(2)</td>
+<td>Administrative state of this
+port</td>
+<td>DOWN</td>
+<td>UP, DOWN</td>
 </tr>
-<tr class="row-even"><td>Description</td>
+<tr class="row-even"><td>LoopbackMode</td>
 <td>string</td>
-<td>User provided string
-description</td>
-<td>FP Port</td>
+<td>Desired loopback setting for
+this port</td>
+<td>NONE</td>
+<td>NONE, MAC, PHY, RMT</td>
+</tr>
+<tr class="row-odd"><td>MacAddr</td>
+<td>string</td>
+<td>Mac address associated with
+this port</td>
+<td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-odd"><td>PhyIntfType</td>
+<tr class="row-even"><td>PRBSRxEnable</td>
+<td>bool</td>
+<td>Enable/Disable PRBS checker on
+this port</td>
+<td>false</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>PRBSTxEnable</td>
+<td>bool</td>
+<td>Enable/Disable generation of
+PRBS on this port</td>
+<td>false</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>PhyIntfType</td>
 <td>string</td>
 <td>Type of internal phy interface</td>
 <td>N/A</td>
@@ -211,53 +230,20 @@ XAUI, XLAUI, RXAUI, CR, CR2,
 CR4, KR, KR2, KR4, SR, SR2,
 SR4, SR10, LR, LR4</td>
 </tr>
-<tr class="row-even"><td>Speed</td>
+<tr class="row-odd"><td>Speed</td>
 <td>int32</td>
 <td>Port speed in Mbps</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-odd"><td>LoopbackMode</td>
+<tr class="row-even"><td>BreakOutMode</td>
 <td>string</td>
-<td>Desired loopback setting for
-this port</td>
-<td>NONE</td>
-<td>NONE, MAC, PHY, RMT</td>
-</tr>
-<tr class="row-even"><td>Mtu</td>
-<td>int32</td>
-<td>Maximum transmission unit size
-for this port</td>
+<td>Break out mode for the port.
+Only applicable on ports that
+support breakout. Valid modes
+- 1x40</td>
 <td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-odd"><td>PRBSRxEnable</td>
-<td>bool</td>
-<td>Enable/Disable PRBS checker on
-this port</td>
-<td>false</td>
-<td>N/A</td>
-</tr>
-<tr class="row-even"><td>AdminState</td>
-<td>string</td>
-<td>Administrative state of this
-port</td>
-<td>DOWN</td>
-<td>UP, DOWN</td>
-</tr>
-<tr class="row-odd"><td>Autoneg</td>
-<td>string</td>
-<td>Autonegotiation setting for
-this port</td>
-<td>OFF</td>
-<td>ON, OFF</td>
-</tr>
-<tr class="row-even"><td>EnableFEC</td>
-<td>bool</td>
-<td>Enable/Disable 802.3bj FEC on
-this interface</td>
-<td>false</td>
-<td>N/A</td>
+<td>1x40(1), 4x10(2)</td>
 </tr>
 <tr class="row-odd"><td>IfIndex</td>
 <td>int32</td>
@@ -281,12 +267,12 @@ generation/checking</td>
 <td>2^7</td>
 <td>2^7, 2^23, 2^31</td>
 </tr>
-<tr class="row-even"><td>PRBSTxEnable</td>
-<td>bool</td>
-<td>Enable/Disable generation of
-PRBS on this port</td>
-<td>false</td>
-<td>N/A</td>
+<tr class="row-even"><td>Autoneg</td>
+<td>string</td>
+<td>Autonegotiation setting for
+this port</td>
+<td>OFF</td>
+<td>ON, OFF</td>
 </tr>
 <tr class="row-odd"><td>Duplex</td>
 <td>string</td>
@@ -294,10 +280,24 @@ PRBS on this port</td>
 <td>Full Duplex</td>
 <td>Half Duplex, Full Duplex</td>
 </tr>
-<tr class="row-even"><td>MacAddr</td>
+<tr class="row-even"><td>Description</td>
 <td>string</td>
-<td>Mac address associated with
-this port</td>
+<td>User provided string
+description</td>
+<td>FP Port</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>EnableFEC</td>
+<td>bool</td>
+<td>Enable/Disable 802.3bj FEC on
+this interface</td>
+<td>false</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>Mtu</td>
+<td>int32</td>
+<td>Maximum transmission unit size
+for this port</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
@@ -407,7 +407,7 @@ this port</td>
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
         <span class="n">switchIP</span> <span class="p">:</span><span class="o">=</span> <span class="s2">&quot;192.168.56.101&quot;</span>
         <span class="n">swtch</span> <span class="o">=</span> <span class="n">FlexSwitch</span> <span class="p">(</span><span class="n">switchIP</span><span class="p">,</span> <span class="mi">8080</span><span class="p">)</span>  <span class="c1"># Instantiate object to talk to flexSwitch</span>
-        <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="n">swtch</span><span class="o">.</span><span class="n">updatePort</span><span class="p">(</span><span class="n">IntfRef</span><span class="o">=</span><span class="n">intfref</span><span class="p">,</span> <span class="n">BreakOutMode</span><span class="o">=</span><span class="n">breakoutmode</span><span class="p">,</span> <span class="n">Description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span> <span class="n">PhyIntfType</span><span class="o">=</span><span class="n">phyintftype</span><span class="p">,</span> <span class="n">Speed</span><span class="o">=</span><span class="n">speed</span><span class="p">,</span> <span class="n">LoopbackMode</span><span class="o">=</span><span class="n">loopbackmode</span><span class="p">,</span> <span class="n">Mtu</span><span class="o">=</span><span class="n">mtu</span><span class="p">,</span> <span class="n">PRBSRxEnable</span><span class="o">=</span><span class="n">prbsrxenable</span><span class="p">,</span> <span class="n">AdminState</span><span class="o">=</span><span class="n">adminstate</span><span class="p">,</span> <span class="n">Autoneg</span><span class="o">=</span><span class="n">autoneg</span><span class="p">,</span> <span class="n">EnableFEC</span><span class="o">=</span><span class="n">enablefec</span><span class="p">,</span> <span class="n">IfIndex</span><span class="o">=</span><span class="n">ifindex</span><span class="p">,</span> <span class="n">MediaType</span><span class="o">=</span><span class="n">mediatype</span><span class="p">,</span> <span class="n">PRBSPolynomial</span><span class="o">=</span><span class="n">prbspolynomial</span><span class="p">,</span> <span class="n">PRBSTxEnable</span><span class="o">=</span><span class="n">prbstxenable</span><span class="p">,</span> <span class="n">Duplex</span><span class="o">=</span><span class="n">duplex</span><span class="p">,</span> <span class="n">MacAddr</span><span class="o">=</span><span class="n">macaddr</span><span class="p">)</span>
+        <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="n">swtch</span><span class="o">.</span><span class="n">updatePort</span><span class="p">(</span><span class="n">IntfRef</span><span class="o">=</span><span class="n">intfref</span><span class="p">,</span> <span class="n">AdminState</span><span class="o">=</span><span class="n">adminstate</span><span class="p">,</span> <span class="n">LoopbackMode</span><span class="o">=</span><span class="n">loopbackmode</span><span class="p">,</span> <span class="n">MacAddr</span><span class="o">=</span><span class="n">macaddr</span><span class="p">,</span> <span class="n">PRBSRxEnable</span><span class="o">=</span><span class="n">prbsrxenable</span><span class="p">,</span> <span class="n">PRBSTxEnable</span><span class="o">=</span><span class="n">prbstxenable</span><span class="p">,</span> <span class="n">PhyIntfType</span><span class="o">=</span><span class="n">phyintftype</span><span class="p">,</span> <span class="n">Speed</span><span class="o">=</span><span class="n">speed</span><span class="p">,</span> <span class="n">BreakOutMode</span><span class="o">=</span><span class="n">breakoutmode</span><span class="p">,</span> <span class="n">IfIndex</span><span class="o">=</span><span class="n">ifindex</span><span class="p">,</span> <span class="n">MediaType</span><span class="o">=</span><span class="n">mediatype</span><span class="p">,</span> <span class="n">PRBSPolynomial</span><span class="o">=</span><span class="n">prbspolynomial</span><span class="p">,</span> <span class="n">Autoneg</span><span class="o">=</span><span class="n">autoneg</span><span class="p">,</span> <span class="n">Duplex</span><span class="o">=</span><span class="n">duplex</span><span class="p">,</span> <span class="n">Description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span> <span class="n">EnableFEC</span><span class="o">=</span><span class="n">enablefec</span><span class="p">,</span> <span class="n">Mtu</span><span class="o">=</span><span class="n">mtu</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span> <span class="c1">#Error not being None implies there is some problem</span>
                 <span class="nb">print</span> <span class="n">error</span>
@@ -425,7 +425,7 @@ this port</td>
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
         <span class="n">switchIP</span> <span class="p">:</span><span class="o">=</span> <span class="s2">&quot;192.168.56.101&quot;</span>
         <span class="n">swtch</span> <span class="o">=</span> <span class="n">FlexSwitch</span> <span class="p">(</span><span class="n">switchIP</span><span class="p">,</span> <span class="mi">8080</span><span class="p">)</span>  <span class="c1"># Instantiate object to talk to flexSwitch</span>
-        <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="n">swtch</span><span class="o">.</span><span class="n">updatePortById</span><span class="p">(</span><span class="n">ObjectId</span><span class="o">=</span><span class="n">objectidBreakOutMode</span><span class="o">=</span><span class="n">breakoutmode</span><span class="p">,</span> <span class="n">Description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span> <span class="n">PhyIntfType</span><span class="o">=</span><span class="n">phyintftype</span><span class="p">,</span> <span class="n">Speed</span><span class="o">=</span><span class="n">speed</span><span class="p">,</span> <span class="n">LoopbackMode</span><span class="o">=</span><span class="n">loopbackmode</span><span class="p">,</span> <span class="n">Mtu</span><span class="o">=</span><span class="n">mtu</span><span class="p">,</span> <span class="n">PRBSRxEnable</span><span class="o">=</span><span class="n">prbsrxenable</span><span class="p">,</span> <span class="n">AdminState</span><span class="o">=</span><span class="n">adminstate</span><span class="p">,</span> <span class="n">Autoneg</span><span class="o">=</span><span class="n">autoneg</span><span class="p">,</span> <span class="n">EnableFEC</span><span class="o">=</span><span class="n">enablefec</span><span class="p">,</span> <span class="n">IfIndex</span><span class="o">=</span><span class="n">ifindex</span><span class="p">,</span> <span class="n">MediaType</span><span class="o">=</span><span class="n">mediatype</span><span class="p">,</span> <span class="n">PRBSPolynomial</span><span class="o">=</span><span class="n">prbspolynomial</span><span class="p">,</span> <span class="n">PRBSTxEnable</span><span class="o">=</span><span class="n">prbstxenable</span><span class="p">,</span> <span class="n">Duplex</span><span class="o">=</span><span class="n">duplex</span><span class="p">,</span> <span class="n">MacAddr</span><span class="o">=</span><span class="n">macaddr</span><span class="p">)</span>
+        <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="n">swtch</span><span class="o">.</span><span class="n">updatePortById</span><span class="p">(</span><span class="n">ObjectId</span><span class="o">=</span><span class="n">objectidAdminState</span><span class="o">=</span><span class="n">adminstate</span><span class="p">,</span> <span class="n">LoopbackMode</span><span class="o">=</span><span class="n">loopbackmode</span><span class="p">,</span> <span class="n">MacAddr</span><span class="o">=</span><span class="n">macaddr</span><span class="p">,</span> <span class="n">PRBSRxEnable</span><span class="o">=</span><span class="n">prbsrxenable</span><span class="p">,</span> <span class="n">PRBSTxEnable</span><span class="o">=</span><span class="n">prbstxenable</span><span class="p">,</span> <span class="n">PhyIntfType</span><span class="o">=</span><span class="n">phyintftype</span><span class="p">,</span> <span class="n">Speed</span><span class="o">=</span><span class="n">speed</span><span class="p">,</span> <span class="n">BreakOutMode</span><span class="o">=</span><span class="n">breakoutmode</span><span class="p">,</span> <span class="n">IfIndex</span><span class="o">=</span><span class="n">ifindex</span><span class="p">,</span> <span class="n">MediaType</span><span class="o">=</span><span class="n">mediatype</span><span class="p">,</span> <span class="n">PRBSPolynomial</span><span class="o">=</span><span class="n">prbspolynomial</span><span class="p">,</span> <span class="n">Autoneg</span><span class="o">=</span><span class="n">autoneg</span><span class="p">,</span> <span class="n">Duplex</span><span class="o">=</span><span class="n">duplex</span><span class="p">,</span> <span class="n">Description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span> <span class="n">EnableFEC</span><span class="o">=</span><span class="n">enablefec</span><span class="p">,</span> <span class="n">Mtu</span><span class="o">=</span><span class="n">mtu</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span> <span class="c1">#Error not being None implies there is some problem</span>
                 <span class="nb">print</span> <span class="n">error</span>
@@ -443,10 +443,10 @@ this port</td>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="PortStateObjects.html" class="btn btn-neutral float-right" title="PortState Model Objects" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="PortStateObjects.html" class="btn btn-neutral float-right" title="PortState Object" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="MacTableEntryStateObjects.html" class="btn btn-neutral" title="MacTableEntryState Model Objects" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="MacTableEntryStateObjects.html" class="btn btn-neutral" title="MacTableEntryState Object" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

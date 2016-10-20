@@ -1,4 +1,4 @@
-FanSensorPMDataState Model Objects
+FanSensorPMDataState Object
 =============================================================
 
 *state/FanSensorPMData*

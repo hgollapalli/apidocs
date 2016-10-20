@@ -1,4 +1,4 @@
-DWDMModuleNwIntfPMState Model Objects
+DWDMModuleNwIntfPMState Object
 =============================================================
 
 *state/DWDMModuleNwIntfPM*

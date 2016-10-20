@@ -1,4 +1,4 @@
-Vlan Model Objects
+Vlan Object
 =============================================================
 
 *config/Vlan*

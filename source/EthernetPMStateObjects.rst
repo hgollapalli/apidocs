@@ -1,4 +1,4 @@
-EthernetPMState Model Objects
+EthernetPMState Object
 =============================================================
 
 *state/EthernetPM*
@@ -9,9 +9,9 @@ EthernetPMState Model Objects
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | **PARAMETER NAME** | **DATA TYPE** |        **DESCRIPTION**         | **DEFAULT** | **VALID VALUES** |
 +--------------------+---------------+--------------------------------+-------------+------------------+
-| Resource **[KEY]** | string        | Resource identifier            | N/A         | N/A              |
-+--------------------+---------------+--------------------------------+-------------+------------------+
 | IntfRef **[KEY]**  | string        | Interface name of port         | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Resource **[KEY]** | string        | Resource identifier            | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | ClassAPMData       | PMData        | PM Data corresponding to PM    | N/A         | N/A              |
 |                    |               | Class A                        |             |                  |
@@ -53,7 +53,7 @@ EthernetPMState Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getEthernetPMState(Resource=resource, IntfRef=intfref)
+		response, error = swtch.getEthernetPMState(IntfRef=intfref, Resource=resource)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

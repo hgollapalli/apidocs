@@ -1,4 +1,4 @@
-DWDMModuleClntIntf Model Objects
+DWDMModuleClntIntf Object
 =============================================================
 
 *config/DWDMModuleClntIntf*
@@ -14,14 +14,8 @@ DWDMModuleClntIntf Model Objects
 | ClntIntfId **[KEY]**         | uint8         | DWDM Module client interface   | N/A         | N/A                   |
 |                              |               | identifier                     |             |                       |
 +------------------------------+---------------+--------------------------------+-------------+-----------------------+
-| EnableIntSerdesNWLoopback    | bool          | Enable/Disable serdes internal | false       | N/A                   |
-|                              |               | loopback                       |             |                       |
-+------------------------------+---------------+--------------------------------+-------------+-----------------------+
-| HostRxSerializerTap1Gain     | uint8         | Host RX Serializer tap 1       |           7 | N/A                   |
+| HostRxSerializerTap2Delay    | uint8         | Host RX Serializer tap 2       |           5 | N/A                   |
 |                              |               | control                        |             |                       |
-+------------------------------+---------------+--------------------------------+-------------+-----------------------+
-| HostTxEqDfe                  | uint8         | Host interface TX deserializer |           0 | N/A                   |
-|                              |               | equalization. s-DFE            |             |                       |
 +------------------------------+---------------+--------------------------------+-------------+-----------------------+
 | HostTxEqLfCtle               | uint8         | Host interface TX deserializer |           0 | N/A                   |
 |                              |               | equalization. LELPZRC LF-CTLE  |             |                       |
@@ -32,27 +26,18 @@ DWDMModuleClntIntf Model Objects
 |                              |               | traffic from Host to DWDM      |             |                       |
 |                              |               | Module                         |             |                       |
 +------------------------------+---------------+--------------------------------+-------------+-----------------------+
-| AdminState                   | string        | Administrative state of this   | UP          | UP, DOWN              |
-|                              |               | client interface               |             |                       |
+| EnableIntSerdesNWLoopback    | bool          | Enable/Disable serdes internal | false       | N/A                   |
+|                              |               | loopback                       |             |                       |
 +------------------------------+---------------+--------------------------------+-------------+-----------------------+
-| EnableHostLoopback           | bool          | Enable/Disable loopback on     | false       | N/A                   |
-|                              |               | all host lanes of this client  |             |                       |
-|                              |               | interface                      |             |                       |
-+------------------------------+---------------+--------------------------------+-------------+-----------------------+
-| NwLaneTributaryToClntIntfMap | uint8         | Network lane/tributary id to   | N/A         | N/A                   |
-|                              |               | map to client interface        |             |                       |
-+------------------------------+---------------+--------------------------------+-------------+-----------------------+
-| HostRxSerializerTap2Delay    | uint8         | Host RX Serializer tap 2       |           5 | N/A                   |
+| HostRxSerializerTap1Gain     | uint8         | Host RX Serializer tap 1       |           7 | N/A                   |
 |                              |               | control                        |             |                       |
 +------------------------------+---------------+--------------------------------+-------------+-----------------------+
 | HostRxSerializerTap2Gain     | uint8         | Host RX Serializer tap 2       |          15 | N/A                   |
 |                              |               | control                        |             |                       |
 +------------------------------+---------------+--------------------------------+-------------+-----------------------+
-| HostRxSerializerTap0Delay    | uint8         | Host RX Serializer tap 0       |           7 | N/A                   |
-|                              |               | control                        |             |                       |
-+------------------------------+---------------+--------------------------------+-------------+-----------------------+
-| HostRxSerializerTap0Gain     | uint8         | Host RX Serializer tap 0       |           7 | N/A                   |
-|                              |               | control                        |             |                       |
+| HostTxEqCtle                 | uint8         | Host interface TX deserializer |          18 | N/A                   |
+|                              |               | equalization. LELRC CTLE LE    |             |                       |
+|                              |               | gain code.                     |             |                       |
 +------------------------------+---------------+--------------------------------+-------------+-----------------------+
 | RXFECDecDisable              | bool          | 802.3bj FEC decoder            | false       | N/A                   |
 |                              |               | enable/disable state for       |             |                       |
@@ -60,6 +45,13 @@ DWDMModuleClntIntf Model Objects
 |                              |               | Host                           |             |                       |
 +------------------------------+---------------+--------------------------------+-------------+-----------------------+
 | RxPRBSPattern                | string        | RX PRBS generator pattern      | 2^31        | 2^7, 2^15, 2^23, 2^31 |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| AdminState                   | string        | Administrative state of this   | UP          | UP, DOWN              |
+|                              |               | client interface               |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| EnableHostLoopback           | bool          | Enable/Disable loopback on     | false       | N/A                   |
+|                              |               | all host lanes of this client  |             |                       |
+|                              |               | interface                      |             |                       |
 +------------------------------+---------------+--------------------------------+-------------+-----------------------+
 | EnableRxPRBS                 | bool          | Enable/Disable RX PRBS         | false       | N/A                   |
 |                              |               | generation for all lanes of    |             |                       |
@@ -69,12 +61,20 @@ DWDMModuleClntIntf Model Objects
 |                              |               | for all lanes of this client   |             |                       |
 |                              |               | interface                      |             |                       |
 +------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| HostTxEqDfe                  | uint8         | Host interface TX deserializer |           0 | N/A                   |
+|                              |               | equalization. s-DFE            |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| HostRxSerializerTap0Delay    | uint8         | Host RX Serializer tap 0       |           7 | N/A                   |
+|                              |               | control                        |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| HostRxSerializerTap0Gain     | uint8         | Host RX Serializer tap 0       |           7 | N/A                   |
+|                              |               | control                        |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
+| NwLaneTributaryToClntIntfMap | uint8         | Network lane/tributary id to   | N/A         | N/A                   |
+|                              |               | map to client interface        |             |                       |
++------------------------------+---------------+--------------------------------+-------------+-----------------------+
 | TxPRBSPattern                | string        | PRBS pattern to use for        | 2^31        | 2^7, 2^15, 2^23, 2^31 |
 |                              |               | checker                        |             |                       |
-+------------------------------+---------------+--------------------------------+-------------+-----------------------+
-| HostTxEqCtle                 | uint8         | Host interface TX deserializer |          18 | N/A                   |
-|                              |               | equalization. LELRC CTLE LE    |             |                       |
-|                              |               | gain code.                     |             |                       |
 +------------------------------+---------------+--------------------------------+-------------+-----------------------+
 
 
@@ -174,7 +174,7 @@ DWDMModuleClntIntf Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateDWDMModuleClntIntf(ModuleId=moduleid, ClntIntfId=clntintfid, EnableIntSerdesNWLoopback=enableintserdesnwloopback, HostRxSerializerTap1Gain=hostrxserializertap1gain, HostTxEqDfe=hosttxeqdfe, HostTxEqLfCtle=hosttxeqlfctle, TXFECDecDisable=txfecdecdisable, AdminState=adminstate, EnableHostLoopback=enablehostloopback, NwLaneTributaryToClntIntfMap=nwlanetributarytoclntintfmap, HostRxSerializerTap2Delay=hostrxserializertap2delay, HostRxSerializerTap2Gain=hostrxserializertap2gain, HostRxSerializerTap0Delay=hostrxserializertap0delay, HostRxSerializerTap0Gain=hostrxserializertap0gain, RXFECDecDisable=rxfecdecdisable, RxPRBSPattern=rxprbspattern, EnableRxPRBS=enablerxprbs, EnableTxPRBSChecker=enabletxprbschecker, TxPRBSPattern=txprbspattern, HostTxEqCtle=hosttxeqctle)
+		response, error = swtch.updateDWDMModuleClntIntf(ModuleId=moduleid, ClntIntfId=clntintfid, HostRxSerializerTap2Delay=hostrxserializertap2delay, HostTxEqLfCtle=hosttxeqlfctle, TXFECDecDisable=txfecdecdisable, EnableIntSerdesNWLoopback=enableintserdesnwloopback, HostRxSerializerTap1Gain=hostrxserializertap1gain, HostRxSerializerTap2Gain=hostrxserializertap2gain, HostTxEqCtle=hosttxeqctle, RXFECDecDisable=rxfecdecdisable, RxPRBSPattern=rxprbspattern, AdminState=adminstate, EnableHostLoopback=enablehostloopback, EnableRxPRBS=enablerxprbs, EnableTxPRBSChecker=enabletxprbschecker, HostTxEqDfe=hosttxeqdfe, HostRxSerializerTap0Delay=hostrxserializertap0delay, HostRxSerializerTap0Gain=hostrxserializertap0gain, NwLaneTributaryToClntIntfMap=nwlanetributarytoclntintfmap, TxPRBSPattern=txprbspattern)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -193,7 +193,7 @@ DWDMModuleClntIntf Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateDWDMModuleClntIntfById(ObjectId=objectidEnableIntSerdesNWLoopback=enableintserdesnwloopback, HostRxSerializerTap1Gain=hostrxserializertap1gain, HostTxEqDfe=hosttxeqdfe, HostTxEqLfCtle=hosttxeqlfctle, TXFECDecDisable=txfecdecdisable, AdminState=adminstate, EnableHostLoopback=enablehostloopback, NwLaneTributaryToClntIntfMap=nwlanetributarytoclntintfmap, HostRxSerializerTap2Delay=hostrxserializertap2delay, HostRxSerializerTap2Gain=hostrxserializertap2gain, HostRxSerializerTap0Delay=hostrxserializertap0delay, HostRxSerializerTap0Gain=hostrxserializertap0gain, RXFECDecDisable=rxfecdecdisable, RxPRBSPattern=rxprbspattern, EnableRxPRBS=enablerxprbs, EnableTxPRBSChecker=enabletxprbschecker, TxPRBSPattern=txprbspattern, HostTxEqCtle=hosttxeqctle)
+		response, error = swtch.updateDWDMModuleClntIntfById(ObjectId=objectidHostRxSerializerTap2Delay=hostrxserializertap2delay, HostTxEqLfCtle=hosttxeqlfctle, TXFECDecDisable=txfecdecdisable, EnableIntSerdesNWLoopback=enableintserdesnwloopback, HostRxSerializerTap1Gain=hostrxserializertap1gain, HostRxSerializerTap2Gain=hostrxserializertap2gain, HostTxEqCtle=hosttxeqctle, RXFECDecDisable=rxfecdecdisable, RxPRBSPattern=rxprbspattern, AdminState=adminstate, EnableHostLoopback=enablehostloopback, EnableRxPRBS=enablerxprbs, EnableTxPRBSChecker=enabletxprbschecker, HostTxEqDfe=hosttxeqdfe, HostRxSerializerTap0Delay=hostrxserializertap0delay, HostRxSerializerTap0Gain=hostrxserializertap0gain, NwLaneTributaryToClntIntfMap=nwlanetributarytoclntintfmap, TxPRBSPattern=txprbspattern)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

@@ -1,4 +1,4 @@
-LLDPIntfState Model Objects
+LLDPIntfState Object
 =============================================================
 
 *state/LLDPIntf*
@@ -12,28 +12,11 @@ LLDPIntfState Model Objects
 | IntfRef **[KEY]**   | string        | IntfRef where lldp is          | N/A         | N/A              |
 |                     |               | configured                     |             |                  |
 +---------------------+---------------+--------------------------------+-------------+------------------+
-| SendFrames          | int32         | Total Frames send to the       | N/A         | N/A              |
-|                     |               | neighbor                       |             |                  |
-+---------------------+---------------+--------------------------------+-------------+------------------+
-| SystemCapabilities  | string        | System Capabilities of the     | N/A         | N/A              |
-|                     |               | peer port                      |             |                  |
-+---------------------+---------------+--------------------------------+-------------+------------------+
-| SystemDescription   | string        | System Description of the peer | N/A         | N/A              |
-|                     |               | port                           |             |                  |
-+---------------------+---------------+--------------------------------+-------------+------------------+
-| IfIndex             | int32         | IfIndex where lldp needs to be | N/A         | N/A              |
-|                     |               | configured                     |             |                  |
-+---------------------+---------------+--------------------------------+-------------+------------------+
-| PeerMac             | string        | Mac address of direct          | N/A         | N/A              |
-|                     |               | connection                     |             |                  |
-+---------------------+---------------+--------------------------------+-------------+------------------+
-| PeerPort            | string        | Name of directtly connected    | N/A         | N/A              |
-|                     |               | pors                           |             |                  |
-+---------------------+---------------+--------------------------------+-------------+------------------+
 | ReceivedFrames      | int32         | Total Frames received from     | N/A         | N/A              |
 |                     |               | neighbor                       |             |                  |
 +---------------------+---------------+--------------------------------+-------------+------------------+
-| Enable              | bool          | Enable/Disable lldp config     | N/A         | N/A              |
+| SystemDescription   | string        | System Description of the peer | N/A         | N/A              |
+|                     |               | port                           |             |                  |
 +---------------------+---------------+--------------------------------+-------------+------------------+
 | EnabledCapabilities | string        | Enabled Capabilities of the    | N/A         | N/A              |
 |                     |               | peer port                      |             |                  |
@@ -41,9 +24,26 @@ LLDPIntfState Model Objects
 | HoldTime            | string        | Validity of the peer           | N/A         | N/A              |
 |                     |               | information                    |             |                  |
 +---------------------+---------------+--------------------------------+-------------+------------------+
+| IfIndex             | int32         | IfIndex where lldp needs to be | N/A         | N/A              |
+|                     |               | configured                     |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
 | LocalPort           | string        | Local interface                | N/A         | N/A              |
 +---------------------+---------------+--------------------------------+-------------+------------------+
 | PeerHostName        | string        | Name of the peer host          | N/A         | N/A              |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| PeerMac             | string        | Mac address of direct          | N/A         | N/A              |
+|                     |               | connection                     |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| PeerPort            | string        | Name of directtly connected    | N/A         | N/A              |
+|                     |               | pors                           |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| SendFrames          | int32         | Total Frames send to the       | N/A         | N/A              |
+|                     |               | neighbor                       |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| Enable              | bool          | Enable/Disable lldp config     | N/A         | N/A              |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| SystemCapabilities  | string        | System Capabilities of the     | N/A         | N/A              |
+|                     |               | peer port                      |             |                  |
 +---------------------+---------------+--------------------------------+-------------+------------------+
 
 

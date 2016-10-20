@@ -1,4 +1,4 @@
-SystemStatusState Model Objects
+SystemStatusState Object
 =============================================================
 
 *state/SystemStatus*
@@ -14,8 +14,7 @@ SystemStatusState Model Objects
 | NumActionCalls     | string        | Number of action api calls     | N/A         | N/A              |
 |                    |               | made                           |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
-| NumCreateCalls     | string        | Number of create api calls     | N/A         | N/A              |
-|                    |               | made                           |             |                  |
+| NumGetCalls        | string        | Number of get api calls made   | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | Ready              | bool          | System is ready to accept api  | N/A         | N/A              |
 |                    |               | calls                          |             |                  |
@@ -24,15 +23,16 @@ SystemStatusState Model Objects
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | FlexDaemons        | DaemonState   | Daemon states                  | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
-| NumUpdateCalls     | string        | Number of update api calls     | N/A         | N/A              |
+| NumCreateCalls     | string        | Number of create api calls     | N/A         | N/A              |
 |                    |               | made                           |             |                  |
-+--------------------+---------------+--------------------------------+-------------+------------------+
-| Reason             | string        | Reason if system not ready     | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | NumDeleteCalls     | string        | Number of delete api calls     | N/A         | N/A              |
 |                    |               | made                           |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
-| NumGetCalls        | string        | Number of get api calls made   | N/A         | N/A              |
+| NumUpdateCalls     | string        | Number of update api calls     | N/A         | N/A              |
+|                    |               | made                           |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Reason             | string        | Reason if system not ready     | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 
 

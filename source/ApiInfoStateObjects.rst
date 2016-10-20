@@ -1,4 +1,4 @@
-ApiInfoState Model Objects
+ApiInfoState Object
 =============================================================
 
 *state/ApiInfo*

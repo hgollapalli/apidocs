@@ -1,4 +1,4 @@
-PowerConverterSensorState Model Objects
+PowerConverterSensorState Object
 =============================================================
 
 *state/PowerConverterSensor*

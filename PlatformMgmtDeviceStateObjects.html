@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>PlatformMgmtDeviceState Model Objects &mdash; FlexSwitchApis 1.0 documentation</title>
+  <title>PlatformMgmtDeviceState Object &mdash; FlexSwitchApis 1.0 documentation</title>
   
 
   
@@ -31,9 +31,9 @@
 
   
     <link rel="top" title="FlexSwitchApis 1.0 documentation" href="index.html"/>
-        <link rel="up" title="FlexSwitch Platform Model Objects" href="PlatformObjects.html"/>
-        <link rel="next" title="PowerConverterSensor Model Objects" href="PowerConverterSensorObjects.html"/>
-        <link rel="prev" title="FanSensorState Model Objects" href="FanSensorStateObjects.html"/> 
+        <link rel="up" title="FlexSwitch Platform Objects" href="PlatformObjects.html"/>
+        <link rel="next" title="PowerConverterSensor Object" href="PowerConverterSensorObjects.html"/>
+        <link rel="prev" title="FanSensorState Object" href="FanSensorStateObjects.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -84,32 +84,32 @@
             
                 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modelObjects.html">Model Objects</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="EthernetObjects.html">Ethernet Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="OpticalObjects.html">Optical Model Objects</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="PlatformObjects.html">Platform Model Objects</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="FanSensorObjects.html">FanSensor Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FanSensorStateObjects.html">FanSensorState Model Objects</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">PlatformMgmtDeviceState Model Objects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="FaultAlarmObjects.html">FaultAlarm Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SystemObjects.html">System Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PerformanceObjects.html">Performance Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EthernetObjects.html">Ethernet Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpticalObjects.html">Optical Objects</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="PlatformObjects.html">Platform Objects</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="FanSensorObjects.html">FanSensor Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FanSensorStateObjects.html">FanSensorState Objects</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">PlatformMgmtDeviceState Objects</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#state-platformmgmtdevice"><em>state/PlatformMgmtDevice</em></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flexswitch-curl-api-supported"><em>FlexSwitch CURL API Supported</em></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flexswitch-sdk-api-supported"><em>FlexSwitch SDK API Supported:</em></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="PowerConverterSensorObjects.html">PowerConverterSensor Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PowerConverterSensorStateObjects.html">PowerConverterSensorState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="QsfpObjects.html">Qsfp Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="QsfpChannelObjects.html">QsfpChannel Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="QsfpChannelStateObjects.html">QsfpChannelState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="QsfpStateObjects.html">QsfpState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="TemperatureSensorObjects.html">TemperatureSensor Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="TemperatureSensorStateObjects.html">TemperatureSensorState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="VoltageSensorObjects.html">VoltageSensor Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="VoltageSensorStateObjects.html">VoltageSensorState Model Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PowerConverterSensorObjects.html">PowerConverterSensor Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PowerConverterSensorStateObjects.html">PowerConverterSensorState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="QsfpObjects.html">Qsfp Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="QsfpChannelObjects.html">QsfpChannel Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="QsfpChannelStateObjects.html">QsfpChannelState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="QsfpStateObjects.html">QsfpState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TemperatureSensorObjects.html">TemperatureSensor Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TemperatureSensorStateObjects.html">TemperatureSensorState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VoltageSensorObjects.html">VoltageSensor Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VoltageSensorStateObjects.html">VoltageSensorState Objects</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="FaultAlarmObjects.html">FaultAlarm Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SystemObjects.html">System Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PerformanceObjects.html">Performance Model Objects</a></li>
 </ul>
 </li>
 </ul>
@@ -144,9 +144,9 @@
       
           <li><a href="modelObjects.html">FlexSwitch Model Objects</a> &raquo;</li>
       
-          <li><a href="PlatformObjects.html">FlexSwitch Platform Model Objects</a> &raquo;</li>
+          <li><a href="PlatformObjects.html">FlexSwitch Platform Objects</a> &raquo;</li>
       
-    <li>PlatformMgmtDeviceState Model Objects</li>
+    <li>PlatformMgmtDeviceState Object</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -160,8 +160,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="platformmgmtdevicestate-model-objects">
-<h1>PlatformMgmtDeviceState Model Objects<a class="headerlink" href="#platformmgmtdevicestate-model-objects" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="platformmgmtdevicestate-object">
+<h1>PlatformMgmtDeviceState Object<a class="headerlink" href="#platformmgmtdevicestate-object" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="state-platformmgmtdevice">
 <h2><em>state/PlatformMgmtDevice</em><a class="headerlink" href="#state-platformmgmtdevice" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -312,10 +312,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="PowerConverterSensorObjects.html" class="btn btn-neutral float-right" title="PowerConverterSensor Model Objects" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="PowerConverterSensorObjects.html" class="btn btn-neutral float-right" title="PowerConverterSensor Object" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="FanSensorStateObjects.html" class="btn btn-neutral" title="FanSensorState Model Objects" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="FanSensorStateObjects.html" class="btn btn-neutral" title="FanSensorState Object" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

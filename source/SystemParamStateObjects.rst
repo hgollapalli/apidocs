@@ -1,4 +1,4 @@
-SystemParamState Model Objects
+SystemParamState Object
 =============================================================
 
 *state/SystemParam*

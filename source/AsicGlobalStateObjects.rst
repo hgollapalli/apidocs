@@ -1,4 +1,4 @@
-AsicGlobalState Model Objects
+AsicGlobalState Object
 =============================================================
 
 *state/AsicGlobal*

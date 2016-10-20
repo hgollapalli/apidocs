@@ -1,4 +1,4 @@
-AsicGlobalPMState Model Objects
+AsicGlobalPMState Object
 =============================================================
 
 *state/AsicGlobalPM*

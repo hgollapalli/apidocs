@@ -1,11 +1,11 @@
-FlexSwitch FaultAlarm Model Objects
+FlexSwitch FaultAlarm Objects
 ================================================================
 
 
 .. toctree::
    :maxdepth: 1
 
-   AlarmState Model Objects  <AlarmStateObjects.rst>
-   FMgrGlobal Model Objects  <FMgrGlobalObjects.rst>
-   FaultState Model Objects  <FaultStateObjects.rst>
-   NotifierEnable Model Objects  <NotifierEnableObjects.rst>
+   AlarmState Objects  <AlarmStateObjects.rst>
+   FMgrGlobal Objects  <FMgrGlobalObjects.rst>
+   FaultState Objects  <FaultStateObjects.rst>
+   NotifierEnable Objects  <NotifierEnableObjects.rst>

@@ -1,4 +1,4 @@
-QsfpChannelState Model Objects
+QsfpChannelState Object
 =============================================================
 
 *state/QsfpChannel*

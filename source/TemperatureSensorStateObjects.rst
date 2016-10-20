@@ -1,4 +1,4 @@
-TemperatureSensorState Model Objects
+TemperatureSensorState Object
 =============================================================
 
 *state/TemperatureSensor*

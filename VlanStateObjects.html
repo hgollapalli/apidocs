@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>VlanState Model Objects &mdash; FlexSwitchApis 1.0 documentation</title>
+  <title>VlanState Object &mdash; FlexSwitchApis 1.0 documentation</title>
   
 
   
@@ -31,9 +31,9 @@
 
   
     <link rel="top" title="FlexSwitchApis 1.0 documentation" href="index.html"/>
-        <link rel="up" title="FlexSwitch Ethernet Model Objects" href="EthernetObjects.html"/>
-        <link rel="next" title="FlexSwitch Optical Model Objects" href="OpticalObjects.html"/>
-        <link rel="prev" title="Vlan Model Objects" href="VlanObjects.html"/> 
+        <link rel="up" title="FlexSwitch Ethernet Objects" href="EthernetObjects.html"/>
+        <link rel="next" title="FlexSwitch Optical Objects" href="OpticalObjects.html"/>
+        <link rel="prev" title="Vlan Object" href="VlanObjects.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -84,17 +84,20 @@
             
                 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modelObjects.html">Model Objects</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="EthernetObjects.html">Ethernet Model Objects</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="AsicGlobalStateObjects.html">AsicGlobalState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="LLDPGlobalObjects.html">LLDPGlobal Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="LLDPGlobalStateObjects.html">LLDPGlobalState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="LLDPIntfObjects.html">LLDPIntf Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="LLDPIntfStateObjects.html">LLDPIntfState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="MacTableEntryStateObjects.html">MacTableEntryState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PortObjects.html">Port Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PortStateObjects.html">PortState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="VlanObjects.html">Vlan Model Objects</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">VlanState Model Objects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="FaultAlarmObjects.html">FaultAlarm Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SystemObjects.html">System Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PerformanceObjects.html">Performance Objects</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="EthernetObjects.html">Ethernet Objects</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="AsicGlobalStateObjects.html">AsicGlobalState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LLDPGlobalObjects.html">LLDPGlobal Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LLDPGlobalStateObjects.html">LLDPGlobalState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LLDPIntfObjects.html">LLDPIntf Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LLDPIntfStateObjects.html">LLDPIntfState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MacTableEntryStateObjects.html">MacTableEntryState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PortObjects.html">Port Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PortStateObjects.html">PortState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VlanObjects.html">Vlan Objects</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">VlanState Objects</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#state-vlan"><em>state/Vlan</em></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flexswitch-curl-api-supported"><em>FlexSwitch CURL API Supported</em></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flexswitch-sdk-api-supported"><em>FlexSwitch SDK API Supported:</em></a></li>
@@ -102,11 +105,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="OpticalObjects.html">Optical Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PlatformObjects.html">Platform Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FaultAlarmObjects.html">FaultAlarm Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SystemObjects.html">System Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PerformanceObjects.html">Performance Model Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpticalObjects.html">Optical Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PlatformObjects.html">Platform Objects</a></li>
 </ul>
 </li>
 </ul>
@@ -141,9 +141,9 @@
       
           <li><a href="modelObjects.html">FlexSwitch Model Objects</a> &raquo;</li>
       
-          <li><a href="EthernetObjects.html">FlexSwitch Ethernet Model Objects</a> &raquo;</li>
+          <li><a href="EthernetObjects.html">FlexSwitch Ethernet Objects</a> &raquo;</li>
       
-    <li>VlanState Model Objects</li>
+    <li>VlanState Object</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -157,8 +157,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="vlanstate-model-objects">
-<h1>VlanState Model Objects<a class="headerlink" href="#vlanstate-model-objects" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="vlanstate-object">
+<h1>VlanState Object<a class="headerlink" href="#vlanstate-object" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="state-vlan">
 <h2><em>state/Vlan</em><a class="headerlink" href="#state-vlan" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -186,31 +186,31 @@ being provisioned</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-odd"><td>VlanName</td>
+<tr class="row-odd"><td>SysInternalDescription</td>
+<td>string</td>
+<td>This is a system generated
+string that explains the
+operstate value</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>VlanName</td>
 <td>string</td>
 <td>System assigned vlan name</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-even"><td>IfIndex</td>
+<tr class="row-odd"><td>IfIndex</td>
 <td>int32</td>
 <td>System assigned interface id
 for this vlan interface</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-odd"><td>OperState</td>
+<tr class="row-even"><td>OperState</td>
 <td>string</td>
 <td>Operational state of vlan
 interface</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-even"><td>SysInternalDescription</td>
-<td>string</td>
-<td>This is a system generated
-string that explains the
-operstate value</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
@@ -308,10 +308,10 @@ operstate value</td>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="OpticalObjects.html" class="btn btn-neutral float-right" title="FlexSwitch Optical Model Objects" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="OpticalObjects.html" class="btn btn-neutral float-right" title="FlexSwitch Optical Objects" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="VlanObjects.html" class="btn btn-neutral" title="Vlan Model Objects" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="VlanObjects.html" class="btn btn-neutral" title="Vlan Object" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

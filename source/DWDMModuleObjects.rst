@@ -1,4 +1,4 @@
-DWDMModule Model Objects
+DWDMModule Object
 =============================================================
 
 *config/DWDMModule*
@@ -11,6 +11,13 @@ DWDMModule Model Objects
 +---------------------+---------------+--------------------------------+-------------+------------------+
 | ModuleId **[KEY]**  | uint8         | DWDM Module identifier         | N/A         | N/A              |
 +---------------------+---------------+--------------------------------+-------------+------------------+
+| IndependentLaneMode | bool          | Network lane configuration     | true        | N/A              |
+|                     |               | for the DWDM Module.           |             |                  |
+|                     |               | true-Independent lanes         |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
+| PMInterval          | uint8         | Performance monitoring         |           1 | N/A              |
+|                     |               | interval                       |             |                  |
++---------------------+---------------+--------------------------------+-------------+------------------+
 | AdminState          | string        | Reset state of this dwdm       | DOWN        | UP, DOWN         |
 |                     |               | module (false (Reset           |             |                  |
 |                     |               | deasserted)                    |             |                  |
@@ -18,13 +25,6 @@ DWDMModule Model Objects
 | EnableExtPMTickSrc  | bool          | Enable/Disable external        | false       | N/A              |
 |                     |               | tick source for performance    |             |                  |
 |                     |               | monitoring                     |             |                  |
-+---------------------+---------------+--------------------------------+-------------+------------------+
-| IndependentLaneMode | bool          | Network lane configuration     | true        | N/A              |
-|                     |               | for the DWDM Module.           |             |                  |
-|                     |               | true-Independent lanes         |             |                  |
-+---------------------+---------------+--------------------------------+-------------+------------------+
-| PMInterval          | uint8         | Performance monitoring         |           1 | N/A              |
-|                     |               | interval                       |             |                  |
 +---------------------+---------------+--------------------------------+-------------+------------------+
 
 
@@ -124,7 +124,7 @@ DWDMModule Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateDWDMModule(ModuleId=moduleid, AdminState=adminstate, EnableExtPMTickSrc=enableextpmticksrc, IndependentLaneMode=independentlanemode, PMInterval=pminterval)
+		response, error = swtch.updateDWDMModule(ModuleId=moduleid, IndependentLaneMode=independentlanemode, PMInterval=pminterval, AdminState=adminstate, EnableExtPMTickSrc=enableextpmticksrc)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -143,7 +143,7 @@ DWDMModule Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateDWDMModuleById(ObjectId=objectidAdminState=adminstate, EnableExtPMTickSrc=enableextpmticksrc, IndependentLaneMode=independentlanemode, PMInterval=pminterval)
+		response, error = swtch.updateDWDMModuleById(ObjectId=objectidIndependentLaneMode=independentlanemode, PMInterval=pminterval, AdminState=adminstate, EnableExtPMTickSrc=enableextpmticksrc)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

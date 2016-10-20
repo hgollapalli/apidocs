@@ -1,17 +1,17 @@
-FlexSwitch System Model Objects
+FlexSwitch System Objects
 ================================================================
 
 
 .. toctree::
    :maxdepth: 1
 
-   ApiInfoState Model Objects  <ApiInfoStateObjects.rst>
-   ComponentLogging Model Objects  <ComponentLoggingObjects.rst>
-   ConfigLogState Model Objects  <ConfigLogStateObjects.rst>
-   DaemonState Model Objects  <DaemonStateObjects.rst>
-   SystemParam Model Objects  <SystemParamObjects.rst>
-   SystemParamState Model Objects  <SystemParamStateObjects.rst>
-   SystemStatusState Model Objects  <SystemStatusStateObjects.rst>
-   SystemSwVersionState Model Objects  <SystemSwVersionStateObjects.rst>
-   XponderGlobal Model Objects  <XponderGlobalObjects.rst>
-   XponderGlobalState Model Objects  <XponderGlobalStateObjects.rst>
+   ApiInfoState Objects  <ApiInfoStateObjects.rst>
+   ComponentLogging Objects  <ComponentLoggingObjects.rst>
+   ConfigLogState Objects  <ConfigLogStateObjects.rst>
+   DaemonState Objects  <DaemonStateObjects.rst>
+   SystemParam Objects  <SystemParamObjects.rst>
+   SystemParamState Objects  <SystemParamStateObjects.rst>
+   SystemStatusState Objects  <SystemStatusStateObjects.rst>
+   SystemSwVersionState Objects  <SystemSwVersionStateObjects.rst>
+   XponderGlobal Objects  <XponderGlobalObjects.rst>
+   XponderGlobalState Objects  <XponderGlobalStateObjects.rst>

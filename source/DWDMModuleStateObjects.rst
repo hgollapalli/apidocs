@@ -1,4 +1,4 @@
-DWDMModuleState Model Objects
+DWDMModuleState Object
 =============================================================
 
 *state/DWDMModule*
@@ -11,22 +11,13 @@ DWDMModuleState Model Objects
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | ModuleId **[KEY]**     | uint8         | DWDM Module identifier         | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| Populated              | bool          | Is module populated            | N/A         | N/A              |
-+------------------------+---------------+--------------------------------+-------------+------------------+
-| VendorDateCode         | string        | Device manufacture data code   | N/A         | N/A              |
-|                        |               | of dwdm module                 |             |                  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
-| VendorPartNum          | string        | Vendor assigned part number of | N/A         | N/A              |
-|                        |               | dwdm module                    |             |                  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
 | ModuleActiveFWVersion  | string        | Firmware version of active     | N/A         | N/A              |
 |                        |               | partition of dwdm module       |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | ModuleState            | string        | Current MSA state of dwdm      | N/A         | N/A              |
 |                        |               | module                         |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| VendorSerialNum        | string        | Vendor assigned serial number  | N/A         | N/A              |
-|                        |               | of dwdm module                 |             |                  |
+| Populated              | bool          | Is module populated            | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | ModuleHWVersion        | string        | HW version of dwdm module      | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
@@ -34,20 +25,29 @@ DWDMModuleState Model Objects
 |                        |               | standby partition of dwdm      |             |                  |
 |                        |               | module                         |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
+| ModuleTemp             | float64       | Module temperature in deg      | N/A         | N/A              |
+|                        |               | Celsius                        |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| VendorSerialNum        | string        | Vendor assigned serial number  | N/A         | N/A              |
+|                        |               | of dwdm module                 |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| VendorPartNum          | string        | Vendor assigned part number of | N/A         | N/A              |
+|                        |               | dwdm module                    |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| ModuleStandByFWVersion | string        | Firmware version of standby    | N/A         | N/A              |
+|                        |               | partition of dwdm module       |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
 | ModuleVoltage          | float64       | Module power supply voltage in | N/A         | N/A              |
 |                        |               | Volts                          |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| VendorDateCode         | string        | Device manufacture data code   | N/A         | N/A              |
+|                        |               | of dwdm module                 |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | VendorName             | string        | Vendor name of dwdm module     | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | ModuleActiveFWStatus   | string        | Firmware image status of       | N/A         | N/A              |
 |                        |               | active partition of dwdm       |             |                  |
 |                        |               | module                         |             |                  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
-| ModuleStandByFWVersion | string        | Firmware version of standby    | N/A         | N/A              |
-|                        |               | partition of dwdm module       |             |                  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
-| ModuleTemp             | float64       | Module temperature in deg      | N/A         | N/A              |
-|                        |               | Celsius                        |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 
 

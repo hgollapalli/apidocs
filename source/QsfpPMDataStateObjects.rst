@@ -1,4 +1,4 @@
-QsfpPMDataState Model Objects
+QsfpPMDataState Object
 =============================================================
 
 *state/QsfpPMData*

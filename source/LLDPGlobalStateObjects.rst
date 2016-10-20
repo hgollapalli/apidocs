@@ -1,4 +1,4 @@
-LLDPGlobalState Model Objects
+LLDPGlobalState Object
 =============================================================
 
 *state/LLDPGlobal*
@@ -12,11 +12,6 @@ LLDPGlobalState Model Objects
 | Vrf **[KEY]**      | string        | Vrf where LLDP Global Config   | N/A         | N/A              |
 |                    |               | is running                     |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
-| Enable             | bool          | Enable/Disable LLDP Globally   | N/A         | N/A              |
-+--------------------+---------------+--------------------------------+-------------+------------------+
-| Neighbors          | int32         | Total lldp Neighbors learned   | N/A         | N/A              |
-|                    |               | on the system                  |             |                  |
-+--------------------+---------------+--------------------------------+-------------+------------------+
 | TotalRxFrames      | int32         | Total no.of lldp frames        | N/A         | N/A              |
 |                    |               | received by the system         |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
@@ -25,6 +20,11 @@ LLDPGlobalState Model Objects
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | TranmitInterval    | int32         | LLDP Re-Transmit Interval in   | N/A         | N/A              |
 |                    |               | seconds                        |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Enable             | bool          | Enable/Disable LLDP Globally   | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Neighbors          | int32         | Total lldp Neighbors learned   | N/A         | N/A              |
+|                    |               | on the system                  |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 
 

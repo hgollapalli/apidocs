@@ -1,4 +1,4 @@
-TemperatureSensor Model Objects
+TemperatureSensor Object
 =============================================================
 
 *config/TemperatureSensor*
@@ -11,21 +11,21 @@ TemperatureSensor Model Objects
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | Name **[KEY]**         | string        | Temperature Sensor Name        | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| LowerWarningThreshold  | float64       | Lower Warning Threshold for    | N/A         | N/A              |
-|                        |               | TCA                            |             |                  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
-| PMClassAAdminState     | string        | PM Class-A Admin State         | Enable      | Enable, Disable  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
 | PMClassBAdminState     | string        | PM Class-B Admin State         | Enable      | Enable, Disable  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
-| AdminState             | string        | Enable/Disable                 | Enable      | Enable, Disable  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
-| HigherAlarmThreshold   | float64       | Higher Alarm Threshold for TCA | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | PMClassCAdminState     | string        | PM Class-C Admin State         | Enable      | Enable, Disable  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | HigherWarningThreshold | float64       | Higher Warning Threshold for   | N/A         | N/A              |
 |                        |               | TCA                            |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| LowerWarningThreshold  | float64       | Lower Warning Threshold for    | N/A         | N/A              |
+|                        |               | TCA                            |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassAAdminState     | string        | PM Class-A Admin State         | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| AdminState             | string        | Enable/Disable                 | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| HigherAlarmThreshold   | float64       | Higher Alarm Threshold for TCA | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | LowerAlarmThreshold    | float64       | Lower Alarm Threshold for TCA  | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
@@ -127,7 +127,7 @@ TemperatureSensor Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateTemperatureSensor(Name=name, LowerWarningThreshold=lowerwarningthreshold, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate, AdminState=adminstate, HigherAlarmThreshold=higheralarmthreshold, PMClassCAdminState=pmclasscadminstate, HigherWarningThreshold=higherwarningthreshold, LowerAlarmThreshold=loweralarmthreshold)
+		response, error = swtch.updateTemperatureSensor(Name=name, PMClassBAdminState=pmclassbadminstate, PMClassCAdminState=pmclasscadminstate, HigherWarningThreshold=higherwarningthreshold, LowerWarningThreshold=lowerwarningthreshold, PMClassAAdminState=pmclassaadminstate, AdminState=adminstate, HigherAlarmThreshold=higheralarmthreshold, LowerAlarmThreshold=loweralarmthreshold)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -146,7 +146,7 @@ TemperatureSensor Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateTemperatureSensorById(ObjectId=objectidLowerWarningThreshold=lowerwarningthreshold, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate, AdminState=adminstate, HigherAlarmThreshold=higheralarmthreshold, PMClassCAdminState=pmclasscadminstate, HigherWarningThreshold=higherwarningthreshold, LowerAlarmThreshold=loweralarmthreshold)
+		response, error = swtch.updateTemperatureSensorById(ObjectId=objectidPMClassBAdminState=pmclassbadminstate, PMClassCAdminState=pmclasscadminstate, HigherWarningThreshold=higherwarningthreshold, LowerWarningThreshold=lowerwarningthreshold, PMClassAAdminState=pmclassaadminstate, AdminState=adminstate, HigherAlarmThreshold=higheralarmthreshold, LowerAlarmThreshold=loweralarmthreshold)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

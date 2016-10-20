@@ -1,4 +1,4 @@
-FanSensorState Model Objects
+FanSensorState Object
 =============================================================
 
 *state/FanSensor*

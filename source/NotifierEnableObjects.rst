@@ -1,4 +1,4 @@
-NotifierEnable Model Objects
+NotifierEnable Object
 =============================================================
 
 *config/NotifierEnable*

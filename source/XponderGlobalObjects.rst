@@ -1,4 +1,4 @@
-XponderGlobal Model Objects
+XponderGlobal Object
 =============================================================
 
 *config/XponderGlobal*

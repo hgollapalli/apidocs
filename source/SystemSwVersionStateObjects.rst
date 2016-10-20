@@ -1,4 +1,4 @@
-SystemSwVersionState Model Objects
+SystemSwVersionState Object
 =============================================================
 
 *state/SystemSwVersion*

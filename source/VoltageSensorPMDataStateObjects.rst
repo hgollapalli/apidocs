@@ -1,4 +1,4 @@
-VoltageSensorPMDataState Model Objects
+VoltageSensorPMDataState Object
 =============================================================
 
 *state/VoltageSensorPMData*

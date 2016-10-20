@@ -1,4 +1,4 @@
-XponderGlobalState Model Objects
+XponderGlobalState Object
 =============================================================
 
 *state/XponderGlobal*

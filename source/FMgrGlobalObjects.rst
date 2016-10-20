@@ -1,4 +1,4 @@
-FMgrGlobal Model Objects
+FMgrGlobal Object
 =============================================================
 
 *config/FMgrGlobal*

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>FaultState Model Objects &mdash; FlexSwitchApis 1.0 documentation</title>
+  <title>FaultState Object &mdash; FlexSwitchApis 1.0 documentation</title>
   
 
   
@@ -31,9 +31,9 @@
 
   
     <link rel="top" title="FlexSwitchApis 1.0 documentation" href="index.html"/>
-        <link rel="up" title="FlexSwitch FaultAlarm Model Objects" href="FaultAlarmObjects.html"/>
-        <link rel="next" title="NotifierEnable Model Objects" href="NotifierEnableObjects.html"/>
-        <link rel="prev" title="FMgrGlobal Model Objects" href="FMgrGlobalObjects.html"/> 
+        <link rel="up" title="FlexSwitch FaultAlarm Objects" href="FaultAlarmObjects.html"/>
+        <link rel="next" title="NotifierEnable Object" href="NotifierEnableObjects.html"/>
+        <link rel="prev" title="FMgrGlobal Object" href="FMgrGlobalObjects.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -84,23 +84,23 @@
             
                 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modelObjects.html">Model Objects</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="EthernetObjects.html">Ethernet Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="OpticalObjects.html">Optical Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PlatformObjects.html">Platform Model Objects</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="FaultAlarmObjects.html">FaultAlarm Model Objects</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="AlarmStateObjects.html">AlarmState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="FMgrGlobalObjects.html">FMgrGlobal Model Objects</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">FaultState Model Objects</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="FaultAlarmObjects.html">FaultAlarm Objects</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="AlarmStateObjects.html">AlarmState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FMgrGlobalObjects.html">FMgrGlobal Objects</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">FaultState Objects</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#state-fault"><em>state/Fault</em></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flexswitch-curl-api-supported"><em>FlexSwitch CURL API Supported</em></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flexswitch-sdk-api-supported"><em>FlexSwitch SDK API Supported:</em></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="NotifierEnableObjects.html">NotifierEnable Model Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NotifierEnableObjects.html">NotifierEnable Objects</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="SystemObjects.html">System Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PerformanceObjects.html">Performance Model Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SystemObjects.html">System Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PerformanceObjects.html">Performance Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EthernetObjects.html">Ethernet Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpticalObjects.html">Optical Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PlatformObjects.html">Platform Objects</a></li>
 </ul>
 </li>
 </ul>
@@ -135,9 +135,9 @@
       
           <li><a href="modelObjects.html">FlexSwitch Model Objects</a> &raquo;</li>
       
-          <li><a href="FaultAlarmObjects.html">FlexSwitch FaultAlarm Model Objects</a> &raquo;</li>
+          <li><a href="FaultAlarmObjects.html">FlexSwitch FaultAlarm Objects</a> &raquo;</li>
       
-    <li>FaultState Model Objects</li>
+    <li>FaultState Object</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -151,8 +151,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="faultstate-model-objects">
-<h1>FaultState Model Objects<a class="headerlink" href="#faultstate-model-objects" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="faultstate-object">
+<h1>FaultState Object<a class="headerlink" href="#faultstate-object" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="state-fault">
 <h2><em>state/Fault</em><a class="headerlink" href="#state-fault" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -173,20 +173,6 @@
 <td><strong>DEFAULT</strong></td>
 <td><strong>VALID VALUES</strong></td>
 </tr>
-<tr class="row-even"><td>EventName <strong>[KEY]</strong></td>
-<td>string</td>
-<td>Fault event name picked up
-from events.json</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-odd"><td>OwnerId <strong>[KEY]</strong></td>
-<td>int32</td>
-<td>Fault owner daemon Id picked
-up from events.json</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
 <tr class="row-even"><td>SrcObjName <strong>[KEY]</strong></td>
 <td>string</td>
 <td>Fault event name picked up
@@ -194,23 +180,51 @@ from events.json</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-odd"><td>EventId <strong>[KEY]</strong></td>
-<td>int32</td>
-<td>Fault event id picked up from
-events.json</td>
+<tr class="row-odd"><td>EventName <strong>[KEY]</strong></td>
+<td>string</td>
+<td>Fault event name picked up
+from events.json</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-even"><td>OwnerName <strong>[KEY]</strong></td>
+<tr class="row-even"><td>OwnerId <strong>[KEY]</strong></td>
+<td>int32</td>
+<td>Fault owner daemon Id picked
+up from events.json</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>OwnerName <strong>[KEY]</strong></td>
 <td>string</td>
 <td>Fault owner daemon name picked
 up from events.json</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
+<tr class="row-even"><td>EventId <strong>[KEY]</strong></td>
+<td>int32</td>
+<td>Fault event id picked up from
+events.json</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
 <tr class="row-odd"><td>SrcObjUUID</td>
 <td>string</td>
 <td>Fault Object UUID</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>Description</td>
+<td>string</td>
+<td>Description explaining the
+fault</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>OccuranceTime</td>
+<td>string</td>
+<td>Timestamp at which fault
+occured</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
@@ -229,20 +243,6 @@ up from events.json</td>
 <tr class="row-even"><td>SrcObjKey</td>
 <td>string</td>
 <td>Fault Object Key</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-odd"><td>Description</td>
-<td>string</td>
-<td>Description explaining the
-fault</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-even"><td>OccuranceTime</td>
-<td>string</td>
-<td>Timestamp at which fault
-occured</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
@@ -286,7 +286,7 @@ occured</td>
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
         <span class="n">switchIP</span> <span class="p">:</span><span class="o">=</span> <span class="s2">&quot;192.168.56.101&quot;</span>
         <span class="n">swtch</span> <span class="o">=</span> <span class="n">FlexSwitch</span> <span class="p">(</span><span class="n">switchIP</span><span class="p">,</span> <span class="mi">8080</span><span class="p">)</span>  <span class="c1"># Instantiate object to talk to flexSwitch</span>
-        <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="n">swtch</span><span class="o">.</span><span class="n">getFaultState</span><span class="p">(</span><span class="n">EventName</span><span class="o">=</span><span class="n">eventname</span><span class="p">,</span> <span class="n">OwnerId</span><span class="o">=</span><span class="n">ownerid</span><span class="p">,</span> <span class="n">SrcObjName</span><span class="o">=</span><span class="n">srcobjname</span><span class="p">,</span> <span class="n">EventId</span><span class="o">=</span><span class="n">eventid</span><span class="p">,</span> <span class="n">OwnerName</span><span class="o">=</span><span class="n">ownername</span><span class="p">)</span>
+        <span class="n">response</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="n">swtch</span><span class="o">.</span><span class="n">getFaultState</span><span class="p">(</span><span class="n">SrcObjName</span><span class="o">=</span><span class="n">srcobjname</span><span class="p">,</span> <span class="n">EventName</span><span class="o">=</span><span class="n">eventname</span><span class="p">,</span> <span class="n">OwnerId</span><span class="o">=</span><span class="n">ownerid</span><span class="p">,</span> <span class="n">OwnerName</span><span class="o">=</span><span class="n">ownername</span><span class="p">,</span> <span class="n">EventId</span><span class="o">=</span><span class="n">eventid</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span> <span class="c1">#Error not being None implies there is some problem</span>
                 <span class="nb">print</span> <span class="n">error</span>
@@ -340,10 +340,10 @@ occured</td>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="NotifierEnableObjects.html" class="btn btn-neutral float-right" title="NotifierEnable Model Objects" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="NotifierEnableObjects.html" class="btn btn-neutral float-right" title="NotifierEnable Object" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="FMgrGlobalObjects.html" class="btn btn-neutral" title="FMgrGlobal Model Objects" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="FMgrGlobalObjects.html" class="btn btn-neutral" title="FMgrGlobal Object" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

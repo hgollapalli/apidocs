@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>PortState Model Objects &mdash; FlexSwitchApis 1.0 documentation</title>
+  <title>PortState Object &mdash; FlexSwitchApis 1.0 documentation</title>
   
 
   
@@ -31,9 +31,9 @@
 
   
     <link rel="top" title="FlexSwitchApis 1.0 documentation" href="index.html"/>
-        <link rel="up" title="FlexSwitch Ethernet Model Objects" href="EthernetObjects.html"/>
-        <link rel="next" title="Vlan Model Objects" href="VlanObjects.html"/>
-        <link rel="prev" title="Port Model Objects" href="PortObjects.html"/> 
+        <link rel="up" title="FlexSwitch Ethernet Objects" href="EthernetObjects.html"/>
+        <link rel="next" title="Vlan Object" href="VlanObjects.html"/>
+        <link rel="prev" title="Port Object" href="PortObjects.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -84,29 +84,29 @@
             
                 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modelObjects.html">Model Objects</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="EthernetObjects.html">Ethernet Model Objects</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="AsicGlobalStateObjects.html">AsicGlobalState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="LLDPGlobalObjects.html">LLDPGlobal Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="LLDPGlobalStateObjects.html">LLDPGlobalState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="LLDPIntfObjects.html">LLDPIntf Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="LLDPIntfStateObjects.html">LLDPIntfState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="MacTableEntryStateObjects.html">MacTableEntryState Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="PortObjects.html">Port Model Objects</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">PortState Model Objects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="FaultAlarmObjects.html">FaultAlarm Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SystemObjects.html">System Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PerformanceObjects.html">Performance Objects</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="EthernetObjects.html">Ethernet Objects</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="AsicGlobalStateObjects.html">AsicGlobalState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LLDPGlobalObjects.html">LLDPGlobal Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LLDPGlobalStateObjects.html">LLDPGlobalState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LLDPIntfObjects.html">LLDPIntf Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LLDPIntfStateObjects.html">LLDPIntfState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MacTableEntryStateObjects.html">MacTableEntryState Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PortObjects.html">Port Objects</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">PortState Objects</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#state-port"><em>state/Port</em></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flexswitch-curl-api-supported"><em>FlexSwitch CURL API Supported</em></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#flexswitch-sdk-api-supported"><em>FlexSwitch SDK API Supported:</em></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="VlanObjects.html">Vlan Model Objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="VlanStateObjects.html">VlanState Model Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VlanObjects.html">Vlan Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VlanStateObjects.html">VlanState Objects</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="OpticalObjects.html">Optical Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PlatformObjects.html">Platform Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FaultAlarmObjects.html">FaultAlarm Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="SystemObjects.html">System Model Objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PerformanceObjects.html">Performance Model Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OpticalObjects.html">Optical Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PlatformObjects.html">Platform Objects</a></li>
 </ul>
 </li>
 </ul>
@@ -141,9 +141,9 @@
       
           <li><a href="modelObjects.html">FlexSwitch Model Objects</a> &raquo;</li>
       
-          <li><a href="EthernetObjects.html">FlexSwitch Ethernet Model Objects</a> &raquo;</li>
+          <li><a href="EthernetObjects.html">FlexSwitch Ethernet Objects</a> &raquo;</li>
       
-    <li>PortState Model Objects</li>
+    <li>PortState Object</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -157,8 +157,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="portstate-model-objects">
-<h1>PortState Model Objects<a class="headerlink" href="#portstate-model-objects" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="portstate-object">
+<h1>PortState Object<a class="headerlink" href="#portstate-object" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="state-port">
 <h2><em>state/Port</em><a class="headerlink" href="#state-port" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -186,7 +186,14 @@ system assigned interface id</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-odd"><td>IfInUnknownProtos</td>
+<tr class="row-odd"><td>IfInOctets</td>
+<td>int64</td>
+<td>RFC2233 Total number of octets
+received on this port</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>IfInUnknownProtos</td>
 <td>int64</td>
 <td>RFC2233 Total number of
 inbound packets discarded due
@@ -194,22 +201,22 @@ to unknown protocol</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-even"><td>Name</td>
-<td>string</td>
-<td>System assigned vlan name</td>
+<tr class="row-odd"><td>IfOutOctets</td>
+<td>int64</td>
+<td>RFC2233 Total number of octets
+transmitted on this port</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-odd"><td>PresentInHW</td>
-<td>string</td>
-<td>Indication of whether this
-port object maps to a physical
-port. Set to &#8216;No&#8217; for ports
-that are not broken out.</td>
+<tr class="row-even"><td>IfOutUcastPkts</td>
+<td>int64</td>
+<td>RFC2233 Total number of
+unicast packets transmitted on
+this port</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-even"><td>LastDownEventTime</td>
+<tr class="row-odd"><td>LastDownEventTime</td>
 <td>string</td>
 <td>Timestamp corresponding to the
 last UP to DOWN operational
@@ -217,19 +224,10 @@ state change event</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-odd"><td>LastUpEventTime</td>
-<td>string</td>
-<td>Timestamp corresponding to the
-last DOWN to UP operational
-state change event</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-even"><td>IfEtherMCPkts</td>
+<tr class="row-even"><td>IfEtherCRCAlignError</td>
 <td>int64</td>
-<td>RFC 1757 Total number of
-multicast packets received and
-transmitted</td>
+<td>RFC 1757 Total number of CRC
+alignment errors</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
@@ -241,174 +239,21 @@ transmitted</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-even"><td>IfOutDiscards</td>
-<td>int64</td>
-<td>RFC2233 Total number of error
-free packets discarded and not
-transmitted</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-odd"><td>IfOutUcastPkts</td>
-<td>int64</td>
-<td>RFC2233 Total number of
-unicast packets transmitted on
-this port</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-even"><td>OperState</td>
+<tr class="row-even"><td>PresentInHW</td>
 <td>string</td>
-<td>Operational state of front
-panel port</td>
+<td>Indication of whether this
+port object maps to a physical
+port. Set to &#8216;No&#8217; for ports
+that are not broken out.</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-odd"><td>PRBSRxErrCnt</td>
-<td>int64</td>
-<td>Receive error count reported
-by PRBS checker</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-even"><td>IfEtherPkts65To127Octets</td>
-<td>int64</td>
-<td>RFC 1757 Total number of
-ethernet packets sized between
-65 and 127 bytes</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-odd"><td>IfIndex</td>
-<td>int32</td>
-<td>System assigned interface id
-for this port</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-even"><td>IfOutOctets</td>
-<td>int64</td>
-<td>RFC2233 Total number of octets
-transmitted on this port</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-odd"><td>NumUpEvents</td>
-<td>int32</td>
-<td>Number of times the
-operational state transitioned
-from DOWN to UP</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-even"><td>IfEtherBcastPkts</td>
-<td>int64</td>
-<td>RFC 1757 Total number of
-ethernet broadcast packets
-received and transmitted</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-odd"><td>IfEtherPkts</td>
-<td>int64</td>
-<td>RFC 1757 Total number of
-ethernet packets received and
-transmitted</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-even"><td>IfInOctets</td>
-<td>int64</td>
-<td>RFC2233 Total number of octets
-received on this port</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-odd"><td>Pvid</td>
-<td>int32</td>
-<td>The vlanid assigned to
-untagged traffic ingressing
-this port</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-even"><td>IfOutErrors</td>
+<tr class="row-odd"><td>IfOutErrors</td>
 <td>int64</td>
 <td>RFC2233 Total number of
 packets discarded and not
 transmitted due to packet
 errors</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-odd"><td>ConfigMode</td>
-<td>string</td>
-<td>The current mode of
-configuration on this port
-(L2/L3/Internal)</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-even"><td>IfEtherFragments</td>
-<td>int64</td>
-<td>RFC1757 Total number of
-ethernet fragments received
-and transmitted</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-odd"><td>IfInDiscards</td>
-<td>int64</td>
-<td>RFC2233 Total number of
-inbound packets that were
-discarded</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-even"><td>IfInUcastPkts</td>
-<td>int64</td>
-<td>RFC2233 Total number of
-unicast packets received on
-this port</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-odd"><td>IfEtherCRCAlignError</td>
-<td>int64</td>
-<td>RFC 1757 Total number of CRC
-alignment errors</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-even"><td>IfEtherJabber</td>
-<td>int64</td>
-<td>RFC 1757 Total number of
-jabber frames received and
-transmitted</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-odd"><td>IfEtherPkts256To511Octets</td>
-<td>int64</td>
-<td>RFC 1757 Total number of
-ethernet packets sized between
-256 and 511 bytes</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-even"><td>IfEtherUnderSizePktCnt</td>
-<td>int64</td>
-<td>RFC 1757 Total numbe of
-undersized packets received
-and transmitted</td>
-<td>N/A</td>
-<td>N/A</td>
-</tr>
-<tr class="row-odd"><td>IfEtherPkts1024To1518Octets</td>
-<td>int64</td>
-<td>RFC 1757 Total number of
-ethernet packets sized between
-1024 and 1518 bytes</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
@@ -420,11 +265,105 @@ ethernet packets sized between
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-odd"><td>IfEtherPkts512To1023Octets</td>
+<tr class="row-odd"><td>IfInErrors</td>
+<td>int64</td>
+<td>RFC2233 Total number of
+inbound packets that contained
+an error</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>IfEtherPkts64OrLessOctets</td>
+<td>int64</td>
+<td>RFC1757 Total number of
+ethernet packets sized 64
+bytes or lesser</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>NumUpEvents</td>
+<td>int32</td>
+<td>Number of times the
+operational state transitioned
+from DOWN to UP</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>PRBSRxErrCnt</td>
+<td>int64</td>
+<td>Receive error count reported
+by PRBS checker</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>ConfigMode</td>
+<td>string</td>
+<td>The current mode of
+configuration on this port
+(L2/L3/Internal)</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>IfEtherBcastPkts</td>
+<td>int64</td>
+<td>RFC 1757 Total number of
+ethernet broadcast packets
+received and transmitted</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>IfEtherPkts65To127Octets</td>
+<td>int64</td>
+<td>RFC 1757 Total number of
+ethernet packets sized between
+65 and 127 bytes</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>IfInUcastPkts</td>
+<td>int64</td>
+<td>RFC2233 Total number of
+unicast packets received on
+this port</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>IfEtherPkts</td>
+<td>int64</td>
+<td>RFC 1757 Total number of
+ethernet packets received and
+transmitted</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>IfEtherPkts512To1023Octets</td>
 <td>int64</td>
 <td>RFC 1757 Total number of
 ethernet packets sized between
 512 and 1023 bytes</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>IfEtherUnderSizePktCnt</td>
+<td>int64</td>
+<td>RFC 1757 Total numbe of
+undersized packets received
+and transmitted</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>IfIndex</td>
+<td>int32</td>
+<td>System assigned interface id
+for this port</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>IfOutDiscards</td>
+<td>int64</td>
+<td>RFC2233 Total number of error
+free packets discarded and not
+transmitted</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
@@ -435,19 +374,17 @@ been disabled by protocol code</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-odd"><td>IfEtherPkts64OrLessOctets</td>
+<tr class="row-odd"><td>IfEtherPkts256To511Octets</td>
 <td>int64</td>
-<td>RFC1757 Total number of
-ethernet packets sized 64
-bytes or lesser</td>
+<td>RFC 1757 Total number of
+ethernet packets sized between
+256 and 511 bytes</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
-<tr class="row-even"><td>IfInErrors</td>
-<td>int64</td>
-<td>RFC2233 Total number of
-inbound packets that contained
-an error</td>
+<tr class="row-even"><td>Name</td>
+<td>string</td>
+<td>System assigned vlan name</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
@@ -456,6 +393,69 @@ an error</td>
 <td>Number of times the
 operational state transitioned
 from UP to DOWN</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>Pvid</td>
+<td>int32</td>
+<td>The vlanid assigned to
+untagged traffic ingressing
+this port</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>IfEtherFragments</td>
+<td>int64</td>
+<td>RFC1757 Total number of
+ethernet fragments received
+and transmitted</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>IfEtherMCPkts</td>
+<td>int64</td>
+<td>RFC 1757 Total number of
+multicast packets received and
+transmitted</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>IfInDiscards</td>
+<td>int64</td>
+<td>RFC2233 Total number of
+inbound packets that were
+discarded</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>LastUpEventTime</td>
+<td>string</td>
+<td>Timestamp corresponding to the
+last DOWN to UP operational
+state change event</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>OperState</td>
+<td>string</td>
+<td>Operational state of front
+panel port</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-even"><td>IfEtherJabber</td>
+<td>int64</td>
+<td>RFC 1757 Total number of
+jabber frames received and
+transmitted</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="row-odd"><td>IfEtherPkts1024To1518Octets</td>
+<td>int64</td>
+<td>RFC 1757 Total number of
+ethernet packets sized between
+1024 and 1518 bytes</td>
 <td>N/A</td>
 <td>N/A</td>
 </tr>
@@ -553,10 +553,10 @@ from UP to DOWN</td>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="VlanObjects.html" class="btn btn-neutral float-right" title="Vlan Model Objects" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="VlanObjects.html" class="btn btn-neutral float-right" title="Vlan Object" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="PortObjects.html" class="btn btn-neutral" title="Port Model Objects" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="PortObjects.html" class="btn btn-neutral" title="Port Object" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

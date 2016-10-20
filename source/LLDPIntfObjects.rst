@@ -1,4 +1,4 @@
-LLDPIntf Model Objects
+LLDPIntf Object
 =============================================================
 
 *config/LLDPIntf*

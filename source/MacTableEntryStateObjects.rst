@@ -1,4 +1,4 @@
-MacTableEntryState Model Objects
+MacTableEntryState Object
 =============================================================
 
 *state/MacTableEntry*

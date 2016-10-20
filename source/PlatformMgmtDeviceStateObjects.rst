@@ -1,4 +1,4 @@
-PlatformMgmtDeviceState Model Objects
+PlatformMgmtDeviceState Object
 =============================================================
 
 *state/PlatformMgmtDevice*

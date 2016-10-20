@@ -1,4 +1,4 @@
-ComponentLogging Model Objects
+ComponentLogging Object
 =============================================================
 
 *config/ComponentLogging*

@@ -1,4 +1,4 @@
-VoltageSensorState Model Objects
+VoltageSensorState Object
 =============================================================
 
 *state/VoltageSensor*
