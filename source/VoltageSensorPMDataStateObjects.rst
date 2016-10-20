@@ -24,7 +24,7 @@ VoltageSensorPMDataState Model Objects
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/state/VoltageSensorPMData
 	- GET ALL
-		 curl -X GET http://device-management-IP:8080/public/v1/state/VoltageSensorPMData?CurrentMarker=<x>&Count=<y>
+		 curl -X GET http://device-management-IP:8080/public/v1/state/VoltageSensorPMDatas?CurrentMarker=<x>&Count=<y>
 	- GET By ID
 		 curl -X GET http://device-management-IP:8080/public/v1/config/VoltageSensorPMDataState/<uuid>
 

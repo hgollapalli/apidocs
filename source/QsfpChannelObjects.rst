@@ -16,9 +16,25 @@ QsfpChannel Model Objects
 | LowerAlarmTXBias     | float64       | Lower Alarm Tx Current Bias    | N/A         | N/A              |
 |                      |               | for TCA                        |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
-| PMClassAAdminState   | string        | PM Class-A Admin State         | Disable     | Enable, Disable  |
+| HigherWarningTXBias  | float64       | Higher Warning Tx Current Bias | N/A         | N/A              |
+|                      |               | for TCA                        |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| LowerAlarmRXPower    | float64       | Lower Alarm Rx power Threshold | N/A         | N/A              |
+|                      |               | for TCA                        |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| LowerAlarmTXPower    | float64       | Lower Alarm Rx power for TCA   | N/A         | N/A              |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| LowerWarningRXPower  | float64       | Lower Warning Rx power         | N/A         | N/A              |
+|                      |               | Threshold for TCA              |             |                  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| LowerWarningTXPower  | float64       | Lower Warning Rx power for TCA | N/A         | N/A              |
 +----------------------+---------------+--------------------------------+-------------+------------------+
 | PMClassCAdminState   | string        | PM Class-C Admin State         | Disable     | Enable, Disable  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| AdminState           | string        | Enable/Disable                 | Disable     | Enable, Disable  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| HigherAlarmTXBias    | float64       | Higher Alarm Tx Current Bias   | N/A         | N/A              |
+|                      |               | for TCA                        |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
 | HigherAlarmTXPower   | float64       | Higher Alarm Rx power for TCA  | N/A         | N/A              |
 +----------------------+---------------+--------------------------------+-------------+------------------+
@@ -28,31 +44,15 @@ QsfpChannel Model Objects
 | HigherWarningTXPower | float64       | Higher Warning Rx power for    | N/A         | N/A              |
 |                      |               | TCA                            |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
-| LowerWarningTXPower  | float64       | Lower Warning Rx power for TCA | N/A         | N/A              |
-+----------------------+---------------+--------------------------------+-------------+------------------+
-| PMClassBAdminState   | string        | PM Class-B Admin State         | Disable     | Enable, Disable  |
-+----------------------+---------------+--------------------------------+-------------+------------------+
-| HigherAlarmTXBias    | float64       | Higher Alarm Tx Current Bias   | N/A         | N/A              |
-|                      |               | for TCA                        |             |                  |
-+----------------------+---------------+--------------------------------+-------------+------------------+
-| HigherWarningTXBias  | float64       | Higher Warning Tx Current Bias | N/A         | N/A              |
-|                      |               | for TCA                        |             |                  |
-+----------------------+---------------+--------------------------------+-------------+------------------+
-| LowerWarningRXPower  | float64       | Lower Warning Rx power         | N/A         | N/A              |
-|                      |               | Threshold for TCA              |             |                  |
-+----------------------+---------------+--------------------------------+-------------+------------------+
 | LowerWarningTXBias   | float64       | Lower Warning Tx Current Bias  | N/A         | N/A              |
 |                      |               | for TCA                        |             |                  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
-| AdminState           | string        | Enable/Disable                 | Disable     | Enable, Disable  |
+| PMClassAAdminState   | string        | PM Class-A Admin State         | Disable     | Enable, Disable  |
++----------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassBAdminState   | string        | PM Class-B Admin State         | Disable     | Enable, Disable  |
 +----------------------+---------------+--------------------------------+-------------+------------------+
 | HigherAlarmRXPower   | float64       | Higher Alarm Rx power          | N/A         | N/A              |
 |                      |               | Threshold for TCA              |             |                  |
-+----------------------+---------------+--------------------------------+-------------+------------------+
-| LowerAlarmRXPower    | float64       | Lower Alarm Rx power Threshold | N/A         | N/A              |
-|                      |               | for TCA                        |             |                  |
-+----------------------+---------------+--------------------------------+-------------+------------------+
-| LowerAlarmTXPower    | float64       | Lower Alarm Rx power for TCA   | N/A         | N/A              |
 +----------------------+---------------+--------------------------------+-------------+------------------+
 
 
@@ -65,7 +65,7 @@ QsfpChannel Model Objects
 	- GET By ID
 		 curl -X GET http://device-management-IP:8080/public/v1/config/QsfpChannel/<uuid>
 	- GET ALL
-		 curl -X GET http://device-management-IP:8080/public/v1/config/QsfpChannel?CurrentMarker=<x>&Count=<y>
+		 curl -X GET http://device-management-IP:8080/public/v1/config/QsfpChannels?CurrentMarker=<x>&Count=<y>
 	- UPDATE(PATCH) By Key
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/QsfpChannel
 	- UPDATE(PATCH) By ID
@@ -152,7 +152,7 @@ QsfpChannel Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateQsfpChannel(QsfpId=qsfpid, ChannelNum=channelnum, LowerAlarmTXBias=loweralarmtxbias, PMClassAAdminState=pmclassaadminstate, PMClassCAdminState=pmclasscadminstate, HigherAlarmTXPower=higheralarmtxpower, HigherWarningRXPower=higherwarningrxpower, HigherWarningTXPower=higherwarningtxpower, LowerWarningTXPower=lowerwarningtxpower, PMClassBAdminState=pmclassbadminstate, HigherAlarmTXBias=higheralarmtxbias, HigherWarningTXBias=higherwarningtxbias, LowerWarningRXPower=lowerwarningrxpower, LowerWarningTXBias=lowerwarningtxbias, AdminState=adminstate, HigherAlarmRXPower=higheralarmrxpower, LowerAlarmRXPower=loweralarmrxpower, LowerAlarmTXPower=loweralarmtxpower)
+		response, error = swtch.updateQsfpChannel(QsfpId=qsfpid, ChannelNum=channelnum, LowerAlarmTXBias=loweralarmtxbias, HigherWarningTXBias=higherwarningtxbias, LowerAlarmRXPower=loweralarmrxpower, LowerAlarmTXPower=loweralarmtxpower, LowerWarningRXPower=lowerwarningrxpower, LowerWarningTXPower=lowerwarningtxpower, PMClassCAdminState=pmclasscadminstate, AdminState=adminstate, HigherAlarmTXBias=higheralarmtxbias, HigherAlarmTXPower=higheralarmtxpower, HigherWarningRXPower=higherwarningrxpower, HigherWarningTXPower=higherwarningtxpower, LowerWarningTXBias=lowerwarningtxbias, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate, HigherAlarmRXPower=higheralarmrxpower)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -171,7 +171,7 @@ QsfpChannel Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateQsfpChannelById(ObjectId=objectidLowerAlarmTXBias=loweralarmtxbias, PMClassAAdminState=pmclassaadminstate, PMClassCAdminState=pmclasscadminstate, HigherAlarmTXPower=higheralarmtxpower, HigherWarningRXPower=higherwarningrxpower, HigherWarningTXPower=higherwarningtxpower, LowerWarningTXPower=lowerwarningtxpower, PMClassBAdminState=pmclassbadminstate, HigherAlarmTXBias=higheralarmtxbias, HigherWarningTXBias=higherwarningtxbias, LowerWarningRXPower=lowerwarningrxpower, LowerWarningTXBias=lowerwarningtxbias, AdminState=adminstate, HigherAlarmRXPower=higheralarmrxpower, LowerAlarmRXPower=loweralarmrxpower, LowerAlarmTXPower=loweralarmtxpower)
+		response, error = swtch.updateQsfpChannelById(ObjectId=objectidLowerAlarmTXBias=loweralarmtxbias, HigherWarningTXBias=higherwarningtxbias, LowerAlarmRXPower=loweralarmrxpower, LowerAlarmTXPower=loweralarmtxpower, LowerWarningRXPower=lowerwarningrxpower, LowerWarningTXPower=lowerwarningtxpower, PMClassCAdminState=pmclasscadminstate, AdminState=adminstate, HigherAlarmTXBias=higheralarmtxbias, HigherAlarmTXPower=higheralarmtxpower, HigherWarningRXPower=higherwarningrxpower, HigherWarningTXPower=higherwarningtxpower, LowerWarningTXBias=lowerwarningtxbias, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate, HigherAlarmRXPower=higheralarmrxpower)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

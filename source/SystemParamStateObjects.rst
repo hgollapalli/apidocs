@@ -11,10 +11,6 @@ SystemParamState Model Objects
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | Vrf **[KEY]**      | string        | System Vrf                     | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
-| SwitchMac          | string        | Switch Mac Address             | N/A         | N/A              |
-+--------------------+---------------+--------------------------------+-------------+------------------+
-| Description        | string        | System Description             | N/A         | N/A              |
-+--------------------+---------------+--------------------------------+-------------+------------------+
 | Distro             | string        | Linux distro running on this   | N/A         | N/A              |
 |                    |               | system                         |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
@@ -27,6 +23,10 @@ SystemParamState Model Objects
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | SwVersion          | string        | FlexSwitch Version Information | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
+| SwitchMac          | string        | Switch Mac Address             | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| Description        | string        | System Description             | N/A         | N/A              |
++--------------------+---------------+--------------------------------+-------------+------------------+
 
 
 
@@ -36,7 +36,7 @@ SystemParamState Model Objects
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/state/SystemParam
 	- GET ALL
-		 curl -X GET http://device-management-IP:8080/public/v1/state/SystemParam?CurrentMarker=<x>&Count=<y>
+		 curl -X GET http://device-management-IP:8080/public/v1/state/SystemParams?CurrentMarker=<x>&Count=<y>
 	- GET By ID
 		 curl -X GET http://device-management-IP:8080/public/v1/config/SystemParamState/<uuid>
 

@@ -12,6 +12,10 @@ LLDPGlobal Model Objects
 | Vrf **[KEY]**      | string        | LLDP Global Config For Default | default     | N/A                  |
 |                    |               | VRF                            |             |                      |
 +--------------------+---------------+--------------------------------+-------------+----------------------+
+| TxRxMode           | string        | Transmit/Receive mode          | TxRx        | TxOnly, RxOnly, TxRx |
+|                    |               | configruration for the LLDP    |             |                      |
+|                    |               | agent                          |             |                      |
++--------------------+---------------+--------------------------------+-------------+----------------------+
 | Enable             | bool          | Enable/Disable LLDP Globally   | false       | N/A                  |
 +--------------------+---------------+--------------------------------+-------------+----------------------+
 | SnoopAndDrop       | bool          | Operational mode to determine  | false       | N/A                  |
@@ -22,10 +26,6 @@ LLDPGlobal Model Objects
 +--------------------+---------------+--------------------------------+-------------+----------------------+
 | TranmitInterval    | int32         | LLDP Re-Transmit Interval in   |          30 | N/A                  |
 |                    |               | seconds                        |             |                      |
-+--------------------+---------------+--------------------------------+-------------+----------------------+
-| TxRxMode           | string        | Transmit/Receive mode          | TxRx        | TxOnly, RxOnly, TxRx |
-|                    |               | configruration for the LLDP    |             |                      |
-|                    |               | agent                          |             |                      |
 +--------------------+---------------+--------------------------------+-------------+----------------------+
 
 
@@ -123,7 +123,7 @@ LLDPGlobal Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateLLDPGlobal(Vrf=vrf, Enable=enable, SnoopAndDrop=snoopanddrop, TranmitInterval=tranmitinterval, TxRxMode=txrxmode)
+		response, error = swtch.updateLLDPGlobal(Vrf=vrf, TxRxMode=txrxmode, Enable=enable, SnoopAndDrop=snoopanddrop, TranmitInterval=tranmitinterval)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -142,7 +142,7 @@ LLDPGlobal Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateLLDPGlobalById(ObjectId=objectidEnable=enable, SnoopAndDrop=snoopanddrop, TranmitInterval=tranmitinterval, TxRxMode=txrxmode)
+		response, error = swtch.updateLLDPGlobalById(ObjectId=objectidTxRxMode=txrxmode, Enable=enable, SnoopAndDrop=snoopanddrop, TranmitInterval=tranmitinterval)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

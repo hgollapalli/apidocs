@@ -5,57 +5,9 @@ FlexSwitch Model Objects
 .. toctree::
    :maxdepth: 1
 
-   ConfigLogState  <ConfigLogStateObjects.rst>
-   SystemStatusState  <SystemStatusStateObjects.rst>
-   SystemSwVersionState  <SystemSwVersionStateObjects.rst>
-   ApiInfoState  <ApiInfoStateObjects.rst>
-   XponderGlobal  <XponderGlobalObjects.rst>
-   XponderGlobalState  <XponderGlobalStateObjects.rst>
-   AlarmState  <AlarmStateObjects.rst>
-   FaultState  <FaultStateObjects.rst>
-   FMgrGlobal  <FMgrGlobalObjects.rst>
-   LLDPIntfState  <LLDPIntfStateObjects.rst>
-   LLDPIntf  <LLDPIntfObjects.rst>
-   LLDPGlobal  <LLDPGlobalObjects.rst>
-   LLDPGlobalState  <LLDPGlobalStateObjects.rst>
-   NotifierEnable  <NotifierEnableObjects.rst>
-   TemperatureSensorPMDataState  <TemperatureSensorPMDataStateObjects.rst>
-   TemperatureSensor  <TemperatureSensorObjects.rst>
-   FanSensor  <FanSensorObjects.rst>
-   TemperatureSensorState  <TemperatureSensorStateObjects.rst>
-   QsfpPMDataState  <QsfpPMDataStateObjects.rst>
-   PowerConverterSensorState  <PowerConverterSensorStateObjects.rst>
-   PowerConverterSensorPMDataState  <PowerConverterSensorPMDataStateObjects.rst>
-   FanSensorPMDataState  <FanSensorPMDataStateObjects.rst>
-   QsfpState  <QsfpStateObjects.rst>
-   FanSensorState  <FanSensorStateObjects.rst>
-   QsfpChannel  <QsfpChannelObjects.rst>
-   PowerConverterSensor  <PowerConverterSensorObjects.rst>
-   VoltageSensorPMDataState  <VoltageSensorPMDataStateObjects.rst>
-   VoltageSensor  <VoltageSensorObjects.rst>
-   Qsfp  <QsfpObjects.rst>
-   VoltageSensorState  <VoltageSensorStateObjects.rst>
-   QsfpChannelPMDataState  <QsfpChannelPMDataStateObjects.rst>
-   PlatformMgmtDeviceState  <PlatformMgmtDeviceStateObjects.rst>
-   QsfpChannelState  <QsfpChannelStateObjects.rst>
-   Vlan  <VlanObjects.rst>
-   AsicGlobalPM  <AsicGlobalPMObjects.rst>
-   PortState  <PortStateObjects.rst>
-   VlanState  <VlanStateObjects.rst>
-   EthernetPMState  <EthernetPMStateObjects.rst>
-   EthernetPM  <EthernetPMObjects.rst>
-   AsicGlobalState  <AsicGlobalStateObjects.rst>
-   AsicGlobalPMState  <AsicGlobalPMStateObjects.rst>
-   MacTableEntryState  <MacTableEntryStateObjects.rst>
-   Port  <PortObjects.rst>
-   DWDMModuleNwIntfPMState  <DWDMModuleNwIntfPMStateObjects.rst>
-   DWDMModule  <DWDMModuleObjects.rst>
-   DWDMModuleClntIntfState  <DWDMModuleClntIntfStateObjects.rst>
-   DWDMModuleState  <DWDMModuleStateObjects.rst>
-   DWDMModuleClntIntf  <DWDMModuleClntIntfObjects.rst>
-   DWDMModuleNwIntf  <DWDMModuleNwIntfObjects.rst>
-   DWDMModuleNwIntfState  <DWDMModuleNwIntfStateObjects.rst>
-   SystemParam  <SystemParamObjects.rst>
-   SystemParamState  <SystemParamStateObjects.rst>
-   DaemonState  <DaemonStateObjects.rst>
-   ComponentLogging  <ComponentLoggingObjects.rst>
+   Ethernet Model Objects  <EthernetObjects.rst>
+   Optical Model Objects  <OpticalObjects.rst>
+   Platform Model Objects  <PlatformObjects.rst>
+   FaultAlarm Model Objects  <FaultAlarmObjects.rst>
+   System Model Objects  <SystemObjects.rst>
+   Performance Model Objects  <PerformanceObjects.rst>

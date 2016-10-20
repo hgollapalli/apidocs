@@ -12,9 +12,6 @@ LLDPGlobalState Model Objects
 | Vrf **[KEY]**      | string        | Vrf where LLDP Global Config   | N/A         | N/A              |
 |                    |               | is running                     |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
-| TranmitInterval    | int32         | LLDP Re-Transmit Interval in   | N/A         | N/A              |
-|                    |               | seconds                        |             |                  |
-+--------------------+---------------+--------------------------------+-------------+------------------+
 | Enable             | bool          | Enable/Disable LLDP Globally   | N/A         | N/A              |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | Neighbors          | int32         | Total lldp Neighbors learned   | N/A         | N/A              |
@@ -25,6 +22,9 @@ LLDPGlobalState Model Objects
 +--------------------+---------------+--------------------------------+-------------+------------------+
 | TotalTxFrames      | int32         | Total no.of lldp frames send   | N/A         | N/A              |
 |                    |               | out by the system              |             |                  |
++--------------------+---------------+--------------------------------+-------------+------------------+
+| TranmitInterval    | int32         | LLDP Re-Transmit Interval in   | N/A         | N/A              |
+|                    |               | seconds                        |             |                  |
 +--------------------+---------------+--------------------------------+-------------+------------------+
 
 

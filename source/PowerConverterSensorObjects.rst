@@ -11,23 +11,23 @@ PowerConverterSensor Model Objects
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | Name **[KEY]**         | string        | Power Converter Sensor Name    | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
+| HigherWarningThreshold | float64       | Higher Warning Threshold for   | N/A         | N/A              |
+|                        |               | TCA                            |             |                  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| LowerAlarmThreshold    | float64       | Lower Alarm Threshold for TCA  | N/A         | N/A              |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassBAdminState     | string        | PM Class-B Admin State         | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassAAdminState     | string        | PM Class-A Admin State         | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
+| PMClassCAdminState     | string        | PM Class-C Admin State         | Enable      | Enable, Disable  |
++------------------------+---------------+--------------------------------+-------------+------------------+
 | AdminState             | string        | Enable/Disable                 | Enable      | Enable, Disable  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 | HigherAlarmThreshold   | float64       | Higher Alarm Threshold for TCA | N/A         | N/A              |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| LowerAlarmThreshold    | float64       | Lower Alarm Threshold for TCA  | N/A         | N/A              |
-+------------------------+---------------+--------------------------------+-------------+------------------+
-| HigherWarningThreshold | float64       | Higher Warning Threshold for   | N/A         | N/A              |
-|                        |               | TCA                            |             |                  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
 | LowerWarningThreshold  | float64       | Lower Warning Threshold for    | N/A         | N/A              |
 |                        |               | TCA                            |             |                  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
-| PMClassAAdminState     | string        | PM Class-A Admin State         | Enable      | Enable, Disable  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
-| PMClassBAdminState     | string        | PM Class-B Admin State         | Enable      | Enable, Disable  |
-+------------------------+---------------+--------------------------------+-------------+------------------+
-| PMClassCAdminState     | string        | PM Class-C Admin State         | Enable      | Enable, Disable  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
 
 
@@ -40,7 +40,7 @@ PowerConverterSensor Model Objects
 	- GET By ID
 		 curl -X GET http://device-management-IP:8080/public/v1/config/PowerConverterSensor/<uuid>
 	- GET ALL
-		 curl -X GET http://device-management-IP:8080/public/v1/config/PowerConverterSensor?CurrentMarker=<x>&Count=<y>
+		 curl -X GET http://device-management-IP:8080/public/v1/config/PowerConverterSensors?CurrentMarker=<x>&Count=<y>
 	- UPDATE(PATCH) By Key
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/PowerConverterSensor
 	- UPDATE(PATCH) By ID
@@ -127,7 +127,7 @@ PowerConverterSensor Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updatePowerConverterSensor(Name=name, AdminState=adminstate, HigherAlarmThreshold=higheralarmthreshold, LowerAlarmThreshold=loweralarmthreshold, HigherWarningThreshold=higherwarningthreshold, LowerWarningThreshold=lowerwarningthreshold, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate, PMClassCAdminState=pmclasscadminstate)
+		response, error = swtch.updatePowerConverterSensor(Name=name, HigherWarningThreshold=higherwarningthreshold, LowerAlarmThreshold=loweralarmthreshold, PMClassBAdminState=pmclassbadminstate, PMClassAAdminState=pmclassaadminstate, PMClassCAdminState=pmclasscadminstate, AdminState=adminstate, HigherAlarmThreshold=higheralarmthreshold, LowerWarningThreshold=lowerwarningthreshold)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -146,7 +146,7 @@ PowerConverterSensor Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updatePowerConverterSensorById(ObjectId=objectidAdminState=adminstate, HigherAlarmThreshold=higheralarmthreshold, LowerAlarmThreshold=loweralarmthreshold, HigherWarningThreshold=higherwarningthreshold, LowerWarningThreshold=lowerwarningthreshold, PMClassAAdminState=pmclassaadminstate, PMClassBAdminState=pmclassbadminstate, PMClassCAdminState=pmclasscadminstate)
+		response, error = swtch.updatePowerConverterSensorById(ObjectId=objectidHigherWarningThreshold=higherwarningthreshold, LowerAlarmThreshold=loweralarmthreshold, PMClassBAdminState=pmclassbadminstate, PMClassAAdminState=pmclassaadminstate, PMClassCAdminState=pmclasscadminstate, AdminState=adminstate, HigherAlarmThreshold=higheralarmthreshold, LowerWarningThreshold=lowerwarningthreshold)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

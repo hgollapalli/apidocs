@@ -25,6 +25,15 @@ EthernetPM Model Objects
 +--------------------+---------------+--------------------------------+-------------+--------------------------------+
 | IntfRef **[KEY]**  | string        | Interface name of port         | N/A         | N/A                            |
 +--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| PMClassAEnable     | bool          | Enable/Disable control for     | true        | N/A                            |
+|                    |               | CLASS-A PM                     |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| LowAlarmThreshold  | float64       | Low alarm threshold value for  |     -100000 | N/A                            |
+|                    |               | this PM                        |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
+| LowWarnThreshold   | float64       | Low warning threshold value    |     -100000 | N/A                            |
+|                    |               | for this PM                    |             |                                |
++--------------------+---------------+--------------------------------+-------------+--------------------------------+
 | PMClassBEnable     | bool          | Enable/Disable control for     | true        | N/A                            |
 |                    |               | CLASS-B PM                     |             |                                |
 +--------------------+---------------+--------------------------------+-------------+--------------------------------+
@@ -37,15 +46,6 @@ EthernetPM Model Objects
 | HighWarnThreshold  | float64       | High warning threshold value   |      100000 | N/A                            |
 |                    |               | for this PM                    |             |                                |
 +--------------------+---------------+--------------------------------+-------------+--------------------------------+
-| LowAlarmThreshold  | float64       | Low alarm threshold value for  |     -100000 | N/A                            |
-|                    |               | this PM                        |             |                                |
-+--------------------+---------------+--------------------------------+-------------+--------------------------------+
-| LowWarnThreshold   | float64       | Low warning threshold value    |     -100000 | N/A                            |
-|                    |               | for this PM                    |             |                                |
-+--------------------+---------------+--------------------------------+-------------+--------------------------------+
-| PMClassAEnable     | bool          | Enable/Disable control for     | true        | N/A                            |
-|                    |               | CLASS-A PM                     |             |                                |
-+--------------------+---------------+--------------------------------+-------------+--------------------------------+
 
 
 
@@ -57,7 +57,7 @@ EthernetPM Model Objects
 	- GET By ID
 		 curl -X GET http://device-management-IP:8080/public/v1/config/EthernetPM/<uuid>
 	- GET ALL
-		 curl -X GET http://device-management-IP:8080/public/v1/config/EthernetPM?CurrentMarker=<x>&Count=<y>
+		 curl -X GET http://device-management-IP:8080/public/v1/config/EthernetPMs?CurrentMarker=<x>&Count=<y>
 	- UPDATE(PATCH) By Key
 		 curl -X PATCH -H 'Content-Type: application/json' -d '{<Model Object as json data>}'  http://device-management-IP:8080/public/v1/config/EthernetPM
 	- UPDATE(PATCH) By ID
@@ -144,7 +144,7 @@ EthernetPM Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateEthernetPM(Resource=resource, IntfRef=intfref, PMClassBEnable=pmclassbenable, PMClassCEnable=pmclasscenable, HighAlarmThreshold=highalarmthreshold, HighWarnThreshold=highwarnthreshold, LowAlarmThreshold=lowalarmthreshold, LowWarnThreshold=lowwarnthreshold, PMClassAEnable=pmclassaenable)
+		response, error = swtch.updateEthernetPM(Resource=resource, IntfRef=intfref, PMClassAEnable=pmclassaenable, LowAlarmThreshold=lowalarmthreshold, LowWarnThreshold=lowwarnthreshold, PMClassBEnable=pmclassbenable, PMClassCEnable=pmclasscenable, HighAlarmThreshold=highalarmthreshold, HighWarnThreshold=highwarnthreshold)
 
 		if error != None: #Error not being None implies there is some problem
 			print error
@@ -163,7 +163,7 @@ EthernetPM Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.updateEthernetPMById(ObjectId=objectidPMClassBEnable=pmclassbenable, PMClassCEnable=pmclasscenable, HighAlarmThreshold=highalarmthreshold, HighWarnThreshold=highwarnthreshold, LowAlarmThreshold=lowalarmthreshold, LowWarnThreshold=lowwarnthreshold, PMClassAEnable=pmclassaenable)
+		response, error = swtch.updateEthernetPMById(ObjectId=objectidPMClassAEnable=pmclassaenable, LowAlarmThreshold=lowalarmthreshold, LowWarnThreshold=lowwarnthreshold, PMClassBEnable=pmclassbenable, PMClassCEnable=pmclasscenable, HighAlarmThreshold=highalarmthreshold, HighWarnThreshold=highwarnthreshold)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

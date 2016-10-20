@@ -9,9 +9,9 @@ TemperatureSensorPMDataState Model Objects
 +--------------------+-------------------------+-------------------------+-------------+---------------------------+
 | **PARAMETER NAME** |      **DATA TYPE**      |     **DESCRIPTION**     | **DEFAULT** |     **VALID VALUES**      |
 +--------------------+-------------------------+-------------------------+-------------+---------------------------+
-| Class **[KEY]**    | string                  | Class of PM Data        | CLASS-A     | CLASS-A, CLASS-B, CLASS-B |
-+--------------------+-------------------------+-------------------------+-------------+---------------------------+
 | Name **[KEY]**     | string                  | Temperature Sensor Name | N/A         | N/A                       |
++--------------------+-------------------------+-------------------------+-------------+---------------------------+
+| Class **[KEY]**    | string                  | Class of PM Data        | CLASS-A     | CLASS-A, CLASS-B, CLASS-B |
 +--------------------+-------------------------+-------------------------+-------------+---------------------------+
 | Data               | TemperatureSensorPMData |                         | N/A         | N/A                       |
 +--------------------+-------------------------+-------------------------+-------------+---------------------------+
@@ -24,7 +24,7 @@ TemperatureSensorPMDataState Model Objects
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/state/TemperatureSensorPMData
 	- GET ALL
-		 curl -X GET http://device-management-IP:8080/public/v1/state/TemperatureSensorPMData?CurrentMarker=<x>&Count=<y>
+		 curl -X GET http://device-management-IP:8080/public/v1/state/TemperatureSensorPMDatas?CurrentMarker=<x>&Count=<y>
 	- GET By ID
 		 curl -X GET http://device-management-IP:8080/public/v1/config/TemperatureSensorPMDataState/<uuid>
 
@@ -46,7 +46,7 @@ TemperatureSensorPMDataState Model Objects
 	if __name__ == '__main__':
 		switchIP := "192.168.56.101"
 		swtch = FlexSwitch (switchIP, 8080)  # Instantiate object to talk to flexSwitch
-		response, error = swtch.getTemperatureSensorPMDataState(Class=class, Name=name)
+		response, error = swtch.getTemperatureSensorPMDataState(Name=name, Class=class)
 
 		if error != None: #Error not being None implies there is some problem
 			print error

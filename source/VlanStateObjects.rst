@@ -12,6 +12,8 @@ VlanState Model Objects
 | VlanId **[KEY]**       | int32         | 802.1Q tag/Vlan ID for vlan    | N/A         | N/A              |
 |                        |               | being provisioned              |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
+| VlanName               | string        | System assigned vlan name      | N/A         | N/A              |
++------------------------+---------------+--------------------------------+-------------+------------------+
 | IfIndex                | int32         | System assigned interface id   | N/A         | N/A              |
 |                        |               | for this vlan interface        |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
@@ -22,8 +24,6 @@ VlanState Model Objects
 |                        |               | string that explains the       |             |                  |
 |                        |               | operstate value                |             |                  |
 +------------------------+---------------+--------------------------------+-------------+------------------+
-| VlanName               | string        | System assigned vlan name      | N/A         | N/A              |
-+------------------------+---------------+--------------------------------+-------------+------------------+
 
 
 
@@ -33,7 +33,7 @@ VlanState Model Objects
 	- GET By Key
 		 curl -X GET -H 'Content-Type: application/json' --header 'Accept: application/json' -d '{<Model Object as json-Data>}' http://device-management-IP:8080/public/v1/state/Vlan
 	- GET ALL
-		 curl -X GET http://device-management-IP:8080/public/v1/state/Vlan?CurrentMarker=<x>&Count=<y>
+		 curl -X GET http://device-management-IP:8080/public/v1/state/Vlans?CurrentMarker=<x>&Count=<y>
 	- GET By ID
 		 curl -X GET http://device-management-IP:8080/public/v1/config/VlanState/<uuid>
 
